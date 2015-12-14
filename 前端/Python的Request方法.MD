@@ -24,5 +24,11 @@ Python的urllib函数
 		try: urllib.request.urlopen(req)  
 		except urllib.error.URLError as e:  
 		print(e.reason)    
+
+11. urllib.response类
+	- read()     读取所有内容
+	- readline() 读取一行
+	- info()     返回 `Response Headers`
+	- geturl()   返回当前url
      
       
