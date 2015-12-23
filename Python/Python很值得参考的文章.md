@@ -18,3 +18,7 @@
 18. [Python struct处理字节流](http://www.cnblogs.com/coser/archive/2011/12/17/2291160.html)
 19. [何时跳槽](https://www.zhihu.com/question/20430698#answer-9092345)
 20. [c/c++与python通信](https://www.zhihu.com/question/23003213)
+21. [Python的正则表达式](http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html)
+22. [如何构建学习体系](http://www.jianshu.com/p/cb78a81004f9)
+23. [Python web开发经验](http://www.tuicool.com/articles/ERjIvuy)
+24. [PyMongo文档](http://api.mongodb.org/python/current/)
