@@ -22,3 +22,5 @@
 22. [如何构建学习体系](http://www.jianshu.com/p/cb78a81004f9)
 23. [Python web开发经验](http://www.tuicool.com/articles/ERjIvuy)
 24. [PyMongo文档](http://api.mongodb.org/python/current/)
+25. [Python爬虫CSDN](http://blog.csdn.net/hshl1214/article/category/3245345)
+26. [Python官方参考文档](https://docs.python.org/3.4/library/http.cookiejar.html#http.cookiejar.Cookie)
