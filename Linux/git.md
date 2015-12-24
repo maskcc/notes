@@ -57,4 +57,23 @@
 	- readme.md修改后还没被放到暂存区,现在撤销修改回到和版本库一样的状态
 	- readme.txt已经添加到暂存区,但是又修改了.现在撤销修改就回到添加到暂存区后的状态.
 11. 删除文件: `git rm readme.md`
-12. 待学习
+12. windows下git bash乱码的问题
+	
+		解决Windows Git Bash中文乱码问题
+		在git 安装目录 etc 下面 添加以下配置信息
+		1. /etc/gitconfig：	
+			[gui]
+				encoding = utf-8 #代码库统一用urf-8,在git gui中可以正常显示中文
+			[i18n]
+				commitencoding = GB2312 #log编码，window下默认gb2312,声明后发到服务器才不会乱码
+			[svn]
+				pathnameencoding = GB2312 #支持中文路径
+		2. /etc/git-completion.bash:
+			alias ls='ls --show-control-chars --color=auto' #ls能够正常显示中文
+		3. /etc/inputrc:
+			set output-meta on #bash中可以正常输入中文
+			set convert-meta off
+		4. /etc/profile:
+	        export LESSHARSET=utf-8 #$ git log 命令不像其它 vcs 一样，n 条 log 从头滚到底，它会恰当地停在第一页，
+			按space 键再往后翻页。这是通过将 log 送给 less 处理实现的。以上即是设置 less 的字符编码，
+			使得 $ git log  可以正常显示中文。

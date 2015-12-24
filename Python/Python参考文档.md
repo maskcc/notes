@@ -24,3 +24,4 @@
 24. [PyMongo文档](http://api.mongodb.org/python/current/)
 25. [Python爬虫CSDN](http://blog.csdn.net/hshl1214/article/category/3245345)
 26. [Python官方参考文档](https://docs.python.org/3.4/library/http.cookiejar.html#http.cookiejar.Cookie)
+27. [object与type的关系](https://www.zhihu.com/question/38791962#answer-26695850)
