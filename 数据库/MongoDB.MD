@@ -16,9 +16,9 @@
 11. $unset删除键属性`db.users.update({"name" : "joe"}, 
 			{"$unset" : {"favorite book" : 1}})`
 12. 增加和减少. "$inc"增加已有键的值类似于`db.filename.update({"title" : "value", "user" : joe}, {"$inc" : {"score" : 50}})`
-13. $push 添加
+13. $push 添加 
 14. $pop 删除. `{$pop : {key : 1}} //数组末尾删除一个元素`
-15. upsert. 要是没有文档符合更新条件,就会以这个天剑和更新文档为基础创建一个新的文档. `db.analytics.update({"url" : "/blog"}, {"$inc" : {"visits" : 1}, true})\\最后一个参数表示upsert`
+15. upsert. 要是没有文档符合更新条件,就会以这个条件和更新文档为基础创建一个新的文档. `db.analytics.update({"url" : "/blog"}, {"$inc" : {"visits" : 1}, true})\\最后一个参数表示upsert`
 16. save 是一个shell函数.可以在文档不存在时插入,存在时更新.  
 
 		var x = db.foo.findOne()  
@@ -52,4 +52,4 @@
 19. MongoDB会为前缀型正则表达式(/^joey/)查询创建索引.所以查询会高效.采用Perl兼容的正则表达式.而且能够匹配自身.
 20. $all 通过多个元素来匹配数组
 
-		db.food.find)("fruit" : {"$all" : [apple, "banana"})
+		db.food.find("fruit" : {"$all" : [apple, "banana"]})
