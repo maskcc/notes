@@ -16,7 +16,11 @@
 11. $unset删除键属性`db.users.update({"name" : "joe"}, 
 			{"$unset" : {"favorite book" : 1}})`
 12. 增加和减少. "$inc"增加已有键的值类似于`db.filename.update({"title" : "value", "user" : joe}, {"$inc" : {"score" : 50}})`
-13. $push 添加 
+13. $push 添加 ,只能向`list[]`添加,不能向set添加.文档中没有该键时,会创建改键并插入.
+
+		>>>collection.insert({'name': 'mio', 'list': [1,2,3]})
+        >>>collection.update({'name': 'mio'}, {'$push': {'list': 17}})
+		{'name': 'mio', 'list': [1,2,3,17]}
 14. $pop 删除. `{$pop : {key : 1}} //数组末尾删除一个元素`
 15. upsert. 要是没有文档符合更新条件,就会以这个条件和更新文档为基础创建一个新的文档. `db.analytics.update({"url" : "/blog"}, {"$inc" : {"visits" : 1}, true})\\最后一个参数表示upsert`
 16. save 是一个shell函数.可以在文档不存在时插入,存在时更新.  
@@ -53,3 +57,16 @@
 20. $all 通过多个元素来匹配数组
 
 		db.food.find("fruit" : {"$all" : [apple, "banana"]})
+21. mongodb的数组定位器[参考](http://co-ding.com/?p=169)`$`:
+		
+		{
+    		"list":
+    		[
+        		{"id":1,"name":"a"},
+        		{"id":2,"name":"b"}
+    		]
+		}
+		update({"list.id": 2}, {$set: {"list.$.name": "c"}})
+		update({"list.id": 2},{"$pop":{"list":1}})
+		update({"list.id": 2},{"$pull":{"list":xxx}})
+    	update({"list.id": 2},{"$pop":{"list":"$"}})
