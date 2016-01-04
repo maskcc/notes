@@ -13,7 +13,7 @@
 		5. _Bool 				1字节,    '?'
    		6. short 				2字节,    'h'
    		7. unsigned short 		2字节,    'H'
-   		8. int  				4字节,    'I'
+   		8. int  				4字节,    'i'
    		9. unsigned int 		4字节,    'I'
    		10. long				4字节,    'l'
    		11. unsigned long 		4字节,    'L'
