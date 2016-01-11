@@ -38,3 +38,5 @@
 4. Python3安装pip时,可以去[官网](https://pip.pypa.io/en/stable/installing/),下载页面上 `get-pip.py`来安装最新版本.要使`Python3`能够使用pip,应该使用如下命令:
 
 		python3 get-pip.py
+
+5. 要使用django的templates,必须先要设定`/appname/settings.py`的`TEMPLATES`属性下的`DIRS`数组中添加`templates`目录:`'DIRS': ['/home/cmio/web/page/templates']`
