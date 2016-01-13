@@ -109,3 +109,132 @@ css中html的标签元素大体分为:__块状元素,内联元素__(行内元素
 - 块状:div, p, h1, h6, ol, url, dl, table, address, blockquote, form
 - 内联:a, span, br, i, em, strong, label, q, var, cite, code
 - 内联块状: img, input 
+
+###块状元素
+css中块级元素都从新的一行开始,并且气候的元素也得另起一行,如`h1`,元素的高度,宽度,,行高以及顶和底边距都可设置.设置`sisplay:block`将元素设置为块级元素.如设置:
+
+		a{display:block;}/*将a变成块级元素,这行本身也是块级元素*/
+
+###内联元素
+内联元素和其他元素都在一行上,元素的高度,宽度以及顶部和底部边距不可设置,元素的宽度就是它包含的文字或突变的宽度,不可改变.通过`display:inline`将元素设置为内联元素.如`div{display:inline;}`
+
+###内联块状元素
+内联块状元素和其他元素都在一行上,元素的高度宽度行高以及顶和底边距都可设置.使用`display:inline-block`来设置.
+
+###盒模型边框
+围绕着内容以及补白的线,可为他设置粗细,样式和颜色.
+
+		div{border:2px solid red;}
+		div{
+			border-width:2px;
+			border-style:solid(dashed(虚线)|dotted(点线)|solid(实线));
+			border-color:red;
+		}
+详细样式:
+
+		div{border-bottom:1px solid red;}
+		border-top:1px solid red;
+		border-right:1px solid red;
+		border-left:1px solid red;
+
+###和模型的宽度和高度
+css内定义的宽和高指的是填充以内的内容范围.盒子的实际宽度=左边界 + 左边框 + 内容宽度 + 右边框 + 右边界.高度同理.块状元素的特点之一：在不设置宽度的情况下，显示为父容器的100%.元素与其他元素间的距离用margin设置.padding在框里面,margin在框外面.
+
+		div{
+			width:200px;
+			padding:20px;/*内边边距*/
+			border:1px solid red;
+			margin:10px;/*外边距*/
+		填充
+		div{
+			padding-top:20px;
+			padding-right:10px;
+			padding-bottom:15px;
+			padding-left:30px;
+			padding:10;/*上下左右都填充为10px*/
+		}
+元素盒模型图示:  
+![元素盒模型图示](http://img.mukewang.com/543b4cae0001b34304300350.jpg)  
+
+  
+盒模型里面的宽度和高度:  
+![盒模型里面的宽度和高度](http://img.mukewang.com/539fbb3a0001304305570259.jpg)
+
+line-height 属性设置行间的间距(行高).其值可以为百分比或者数字
+
+##CSS布局模型
+- 流动模型(Flow)是默认的网页布局模式.1,块状元素都会在所处的包含元素内自上而下按顺序垂直延伸分布,默认状态下,块状元素的宽度在没设置width时都为百分百,实际上,块状元素都会以行的形式占据位置正个行,类似贴上代码那行.2.内联元素都会在所处的包含元素内从左到右水平分布显示
+
+		类似这行,流动模型
+
+- 浮动模型.使css定义为浮动来使两个块状元素并排显示.
+	
+		div{width:20px; fload:left;}
+		div{
+    		width:200px;
+    		height:200px;
+    		border:2px red solid;
+		}
+		#div1{float:left;}
+		#div2{float:right;}
+
+###层模型
+- 绝对定位,要设置`position:absolute`,将元素从文档流中拖出来,然后使用left,right,top,bottom属性相对于其最近的一个具有定位属性的父包含块进行绝对定位.如果不存在父包含快,则相对于body即浏览器窗口.
+
+		div{
+		    width:200px;
+		    height:200px;
+		    border:2px red solid;
+		    position:absolute;
+		    left:100px;
+		    top:50px;
+		}
+		<div id="div1"></div>
+
+- 相对定位,需要设置`position:relative`,通过left,right,top,bottom属性确定元素在正常文档流中的便宜位置.元素会相对于以前的位置移动.移动前的位置保留不动.占据的仍然是以前的位置.
+- 固定定位,需要设置`position:fixed`,它的相对移动的坐标是视图(屏幕内的网页)本身.视图是固定的,它不会随浏览器窗口的滚动而变化.与`background-attachment:fixed`功能相同.
+- Relative与Absolute组合使用.设定相对于其他元素进行定位,`position:relative`
+	>1. 参照定位的元素必须是相对定位元素的前辈元素
+	>2. 参照定位的元素必须加入position:relative
+	>3. 定位元素加入position:absolute，便可以使用top、bottom、left、right来进行偏移定位了。
+
+##盒模型代码简写
+- `margin,padding,border:10px 11px 12px 13px` 分别设置上下左右边距.可以缩写,上下一样可以省略,左右一样可以省略,都一样可以只写一个.
+- 颜色值缩写,每两位值相同可以缩写一半.`p{color:#000000;}`-->`p{color:#000}`,`p{color:#336699;}`-->`p{color:#369}`
+- 字体缩写:
+
+		body{
+		    font-style:italic;
+		    font-variant:small-caps; 
+		    font-weight:bold; 
+		    font-size:12px; 
+		    line-height:1.5em; 
+		    font-family:"宋体",sans-serif;
+		}
+		可以缩写成如下
+		body{
+		    font:italic  small-caps  bold  12px/1.5em  "宋体",sans-serif;
+		}
+		1、使用这一简写方式你至少要指定 font-size 和 font-family 属性，其他的属性  
+		  (如 font-weight、font-style、font-varient、line-height)如未指定将自  
+		  动使用默认值。
+
+		2、在缩写时 font-size 与 line-height 中间要加入“/”斜扛。一般情况下因为对于
+		  中文网站，英文还是比较少的，所以下面缩写代码比较常用：
+		
+			body{
+			    font:12px/1.5em  "宋体",sans-serif;
+			}
+			只是有字号、行间距、中文字体、英文字体设置。
+
+##值和单位
+- 颜色值,有字体颜色`color`, 背景色`background-color`,边框色`border`等.有几种配色方案:
+
+		p{color:red;}			   /*英文*/
+		p{color:rgb(133,45,200);}  /*RGB色*/
+		p{color:rgb(20%,33%,25%);} /*百分比*/
+		p{color:#00ffff;}          /*十六进制数字*/
+[常用颜色可查表](http://img.mukewang.com/54c5b4120001f20808000902.jpg)
+- 长度值.`px`:像素,`em`:本元素给定字体的 font-size 值,如果`font-size:14px`,那么`1em`表示14px.但当给 font-size 设置单位为em时，此时计算的标准以p的__父元素的__ `font-size` 为基础。 `百分比`:`p{font-size:12px;line-height:130%}.`设置行高（行间距）为字体的130%.
+		
+		p{font-size:12px;text-indent:2em;}/*首行缩进24px.两个字体大小距离*/
