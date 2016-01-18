@@ -1,3 +1,5 @@
+把下面一小段代码加到你的主页中即可在您的网页上中显示来访用户的IP及其地区<script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>
+
 1. JavaScript代码可以内嵌在网页的任何地方,但是一般将JavaScript代码放到`<head>`中.由`<script></script>`所包围.或者将JavaScript代码放到一个单独的`.js`文件,在Html中使用 `<script src=''></script>`来引入.
 2. Js不强求结尾添加`;`,语句块用`{...}`.
 3. Js使用`//`注释,块注释类似c++`/**/`.

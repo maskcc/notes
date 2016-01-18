@@ -16,6 +16,7 @@
 8. [Python官方参考文档](https://docs.python.org/3.4/library/http.cookiejar.html#http.cookiejar.Cookie)
 9. [object与type的关系](https://www.zhihu.com/question/38791962#answer-26695850)
 10. [Requests的使用](http://cn.python-requests.org/zh_CN/latest/user/quickstart.html),[英文原版](http://cn.python-requests.org/zh_CN/latest/)
+11. [进阶](http://wklken.me/posts/2013/08/31/python-extra-coding-intro.html)
 
 ## 爬虫
 1. [Request的使用指南](http://requests-docs-cn.readthedocs.org/zh_CN/latest/user/advanced.html#advanced)

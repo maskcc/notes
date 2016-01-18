@@ -1,3 +1,6 @@
+安装mongoDB(Ubuntu)可以参考[官网](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)  
+**注意:**`/etc/mongod.conf`文件里的`dbpath`并不是设置db文件的路径的,mongod默认路径为`/data/db`,可以新建此文件夹并给与一定的权限.也可以自定义目录:`mongod --dbpath /data/<path> --port <port no> `  
+
 1. MongoDB是面向文档的数据库.而且没有模式.
 2. MongoDB不但区分类型,也区分大小写.
 3. MongoDB不能有重复的键.
