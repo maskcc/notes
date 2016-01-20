@@ -238,3 +238,7 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 - 长度值.`px`:像素,`em`:本元素给定字体的 font-size 值,如果`font-size:14px`,那么`1em`表示14px.但当给 font-size 设置单位为em时，此时计算的标准以p的__父元素的__ `font-size` 为基础。 `百分比`:`p{font-size:12px;line-height:130%}.`设置行高（行间距）为字体的130%.
 		
 		p{font-size:12px;text-indent:2em;}/*首行缩进24px.两个字体大小距离*/
+		
+		
+##常见style
+隐藏style="display:none"
