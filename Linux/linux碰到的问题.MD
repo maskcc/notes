@@ -11,5 +11,5 @@ php的配置文件在`/etc/php5/apache2/phpi.in`.Apache2的根目录配置文件
 ##0x04
 添加私钥时`ssh-add *`,提示`Could not open a connection to your authentication agent`.应该先启动`ssh-agent`.[参考stackoverflow](http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent).
 
-	eval `ssh-agent -s`
+	eval `ssh-agent -s` //这里是1左边的符号 `
 	ssh-add
