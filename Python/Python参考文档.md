@@ -3,6 +3,7 @@
 2. [tornadoweb](http://www.tornadoweb.cn/)
 3. [Python web开发经验](http://www.tuicool.com/articles/ERjIvuy)
 4. [Django基础教程](http://www.ziqiangxuetang.com/django/django-tutorial.html)
+5. [djangobook 中文翻译](http://djangobook.py3k.cn/2.0/chapter01/)
 
 ## Python语法
 
@@ -17,6 +18,7 @@
 9. [object与type的关系](https://www.zhihu.com/question/38791962#answer-26695850)
 10. [Requests的使用](http://cn.python-requests.org/zh_CN/latest/user/quickstart.html),[英文原版](http://cn.python-requests.org/zh_CN/latest/)
 11. [进阶](http://wklken.me/posts/2013/08/31/python-extra-coding-intro.html)
+12. [Python Guid 很厉害的文档英文](http://docs.python-guide.org/en/latest/starting/which-python/)
 
 ## 爬虫
 1. [Request的使用指南](http://requests-docs-cn.readthedocs.org/zh_CN/latest/user/advanced.html#advanced)
@@ -44,3 +46,6 @@
 6. [Python socket](http://blog.csdn.net/rebelqsp/article/details/22109925)
 7. [c/c++与python通信](https://www.zhihu.com/question/23003213)
 8. [PyMongo文档](http://api.mongodb.org/python/current/)
+
+## 工作
+1. [Python面试会提到的问题](https://www.zhihu.com/question/33398583#answer-30369555)
