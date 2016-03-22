@@ -88,3 +88,6 @@ fi
 source ~/.bashrc 
 
 [参考网页](http://www.cnblogs.com/ask2650/articles/1669637.html)
+
+我常用的 
+export PS1="[\[\033[01;32m\]\u@\h\[\033[00m\]]:\[\033[01;34m\]\w\[\033[00m\]\$ "
