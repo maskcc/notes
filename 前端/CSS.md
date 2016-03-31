@@ -235,10 +235,20 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 		p{color:rgb(20%,33%,25%);} /*百分比*/
 		p{color:#00ffff;}          /*十六进制数字*/
 [常用颜色可查表](http://img.mukewang.com/54c5b4120001f20808000902.jpg)
-- 长度值.`px`:像素,`em`:本元素给定字体的 font-size 值,如果`font-size:14px`,那么`1em`表示14px.但当给 font-size 设置单位为em时，此时计算的标准以p的__父元素的__ `font-size` 为基础。 `百分比`:`p{font-size:12px;line-height:130%}.`设置行高（行间距）为字体的130%.
+- 长度值.`px`:像素,`em`:本元素给定字体的 font-size 值,如果`font-size:14px`,那么`1em`表示14px.但当给 font-size 设置单位为em时，此时计算的标准以p的__父元素的__ `font-size` 为基础。 **`百分比`**:`p{font-size:12px;line-height:130%}.`设置行高（行间距）为字体的130%.
 		
 		p{font-size:12px;text-indent:2em;}/*首行缩进24px.两个字体大小距离*/
+		/*设置博客文章只在中间显示文章列表可以更具百分比来设置, padding*/
+		.wrapper{
+		  box-sizing: border-box;
+		  padding-left: 15%;
+		  padding-right: 15%;
+		  position: relative;
+		  left: 17;		  
+		}
 		
 		
 ##常见style
 隐藏style="display:none"
+
+
