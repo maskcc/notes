@@ -386,3 +386,270 @@
                 $("body").append("<input id='btntest' type='button' value='点击或移出就不可用了' />");
             });
         </script>
+        
+##Ajax请求 
+1. 使用`load()`方法通过Ajax请求加载服务器中的数据,并把返回的数据放置到指定的元素中.
+
+		load(url, [data],[callback])
+		<div id="divtest">
+            <div class="title">
+                <span class="fl">我最爱吃的水果</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul></ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    $("ul")
+                    .html("<img src='Images/Loading.gif' alt=''/>")
+                   .load("http://www.imooc.com/data/fruit_part.html", function() {
+                        $this.attr("disabled", "true");
+                    });
+                })
+            });
+        </script>
+        
+2. 使用`getJSON()`方法可以通过Ajax异步请求的方式,获取服务器中的数据,并对获取的数据进行解析.
+	
+		jQuery.getJSON(url, [data],[callback]) 或
+		$.getJSON(url, [data], [callback])
+		
+		 <div id="divtest">
+            <div class="title">
+                <span class="fl">我最喜欢的一项运动</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul></ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    $.getJSON("http://www.imooc.com/data/sport.json", function(data){
+                        $this.attr("disabled", "true");
+                        $.each(data, function (index, sport) {
+                            if(index==3)
+                            $("ul").append("<li>" + sport["name"] + "</li>");
+                        });
+    
+                    });
+                })
+            });
+        </script>
+        
+3. 使用`getScript()`方法异步请求并执行服务器中的`JavaScript`格式的文件.调用格式如下:
+
+		jQuery.getScript(url, [callback]) 或
+		$.getScript(url, [callback])
+	
+		<div id="divtest">
+            <div class="title">
+                <span class="fl">我最喜欢的运动</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul></ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    ? {
+                        $this.attr("disabled", "true");
+                    });
+                })
+            });
+        </script>
+        
+4. 使用`get()`方法时,采用`GET`方式向服务器请求数据,并通过方法中回调函数的参数返回请求的数据.调用格式为:
+
+		$.get(url, [callback])
+		
+		<body>
+        <div id="divtest">
+            <div class="title">
+                <span class="fl">我的个人资料</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul></ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    $.get("http://www.imooc.com/data/info_f.php", function(data) {
+                        $this.attr("disabled", "true");
+                        $("ul").append("<li>我的名字叫：" + data.name + "</li>");
+                        $("ul").append("<li>男朋友对我说：" + data.say + "</li>");
+                    }, "json");
+                })
+            });
+        </script>
+     
+5. 使用`post()`方法向服务器发送数据.服务器接收到数据后进行处理,并将处理结果返回页面.
+
+		$.post(url, [data], [callback])
+		
+		<div id="divtest">
+            <div class="title">
+                <span class="fl">检测数字是否大于0</span> 
+                <span class="fr"><input id="btnCheck" type="button" value="检测" /></span>
+            </div>
+            <ul>
+               <li>请求输入一个数字 <input id="txtNumber" type="text" size="12" /></li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnCheck").bind("click", function () {
+                    $.post("http://www.imooc.com/data/check_f.php",{
+                        num: $("#txtNumber").val()                        
+                    },  
+                    
+                    function (data) {
+                        $("ul").append("<li>你输入的<b>  "
+                        + $("#txtNumber").val() + " </b>是<b> "
+                        + data + " </b></li>");
+                    });
+                })
+            });
+        </script>
+        
+6. 使用`serialize()`方法可以将表单中有name属性的元素值进行序列化,生成标准URL编码文本字符串,直接可用于`ajax`请求.
+
+		$(selector).serialize()
+		
+7. 使用`ajax()`方法加载服务器数据
+
+		jQuery.ajax([settings])  或
+		$.ajax([settings])
+		
+		<div id="divtest">
+            <div class="title">
+                <span class="fl">检测数字的奇偶性</span> 
+                <span class="fr">
+                    <input id="btnCheck" type="button" value="检测" />
+                </span>
+            </div>
+            <ul>
+               <li>请求输入一个数字 
+                   <input id="txtNumber" type="text" size="12" />
+               </li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnCheck").bind("click", function () {
+                    $.ajax({
+                        url: "http://www.imooc.com/data/check.php",
+                        data: { num: $("#txtNumber").val() },
+                        dataType: "text",
+                        success: function (data) {
+                            $("ul").append("<li>你输入的<b>  "
+                            + $("#txtNumber").val() + " </b>是<b> "
+                            + data + " </b></li>");
+                        }
+                    });
+                })
+            });
+        </script>
+        
+8. 使用`ajaxSetup()`方法可以设置Ajax请求的一些全局性选项值,设置完成后,后面的Ajax请求将不需要再添加这些选项值.
+
+		jQuery.ajaxSetup([options])
+		$.ajaxSetup([options])
+		
+		<div id="divtest">
+            <div class="title">
+                <span class="fl">奇偶性和是否大于0</span> 
+                <span class="fr">
+                    <input id="btnShow_1" type="button" value="验证1" />
+                    <input id="btnShow_2" type="button" value="验证2" />
+                </span>
+            </div>
+            <ul>
+               <li>请求输入一个数字 
+                   <input id="txtNumber" type="text" size="12" />
+               </li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $.ajaxSetup({
+                dataType: "text",
+                success: function(data){
+                        $("ul").append("<li>你输入的<b>  "
+                            + $("#txtNumber").val() + " </b>是<b> "
+                            + data + " </b></li>");
+                    }
+                });
+                $("#btnShow_1").bind("click", function () {
+                    $.ajax({
+                        data: { num: $("#txtNumber").val() },
+                        url: "http://www.imooc.com/data/check.php"
+                    });
+                })
+                $("#btnShow_2").bind("click", function () {
+                    $.ajax({
+                        data: { num: $("#txtNumber").val() },
+                        url: "http://www.imooc.com/data/check_f.php"
+                    });
+                })
+            });
+        </script>
+        
+9. `ajaxStart()`和`ajaxStop()`方法是绑定Ajax事件,`ajaxStart()`方法用于在Ajax请求发出前触发函数,ajaxStop()方法用于在Ajax请求完成后触发函数
+
+		$(selector).ajaxStart(function())和
+		$(selector).ajaxStop(function())
+		
+		 <div id="divtest">
+            <div class="title">
+                <span class="fl">加载一段文字</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul>
+               <li id="divload"></li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("divload").ajaxStart(function(){
+                    $(this).html("正在请求数据...");
+                });
+                $("divload").ajaxStop(function(){
+                    $(this).html("数据请求完成！");
+                });
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    $.ajax({
+                        url: "http://www.imooc.com/data/info_f.php",
+                        dataType: "json",
+                        success: function (data) {
+                            $this.attr("disabled", "true");
+                        $("ul").append("<li>我的名字叫：" + data.name + "</li>");
+                        $("ul").append("<li>男朋友对我说：" + data.say + "</li>");
+                        }
+                    });
+                })
+            });
+        </script>
