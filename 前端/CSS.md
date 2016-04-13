@@ -249,6 +249,8 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 		
 		
 ##常见style
-隐藏style="display:none"
+- 隐藏style="display:none"
+- 背景图body {background-image: url(/i/eg_bg_04.gif);}
+- 元素靠右 float:right 后面一般加个`<br />`如果后面元素需要换行.
 
 
