@@ -12,3 +12,4 @@
 11. `:set nu`显示行号
 12. `/word` 斜杠后接要查找的单词,按回车查找,`n`表示查找下一个,`N`表示上一个
 13. `:w`表示保存, `:q`表示直接退出, `:wq`表示保存后退出 
+14. [配置vim为c++编辑器](http://blog.csdn.net/klarclm/article/details/7932558)
