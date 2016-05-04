@@ -13,3 +13,6 @@ php的配置文件在`/etc/php5/apache2/phpi.in`.Apache2的根目录配置文件
 
 	eval `ssh-agent -s` //这里是1左边的符号 `
 	ssh-add
+
+##0x05
+[中文乱码](http://blog.csdn.net/ariessurfer/article/details/8168012)
