@@ -1,0 +1,2 @@
+//ConCreteSubject *vs = new ConCreteSubject(NameData());
+		//上面使用NameData()后会有pure_virtual function,因为NameData()生成局部变量后跳出作用域,释放了!参考http://www.2cto.com/kf/201107/95095.html  http://blog.csdn.net/livelylittlefish/article/details/5802969

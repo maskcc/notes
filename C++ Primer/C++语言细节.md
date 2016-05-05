@@ -70,3 +70,5 @@
     void print(const int[10]);
 ```
 三个函数等价.p.g 193
+
+14. 在include语句中，“<>”表示在标准路径中搜索头文件，““””表示在本目录中搜索。故在上例中，可把hello1.c的“#include<my.h>”改为“#include “my.h””，当 gcc时 就不需要加上“-I”选项了。
