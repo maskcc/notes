@@ -72,3 +72,29 @@
 三个函数等价.p.g 193
 
 14. 在include语句中，“<>”表示在标准路径中搜索头文件，““””表示在本目录中搜索。故在上例中，可把hello1.c的“#include<my.h>”改为“#include “my.h””，当 gcc时 就不需要加上“-I”选项了。
+15. std::cout 里的解析顺序是从右向左进行的.
+16. [C语言解析结构的右左法则](http://www.cnblogs.com/ficow/p/5282066.html)
+17. 静态成员变量的初始化.`静态成员仍然遵循public，private，protected访问准则。`,`静态成员不能在类定义里边初始化，只能在class body外初始化`.
+数据类型 类名：：静态数据成员名 = 初值
+
+
+		class Singleton
+		{
+		private:
+		static Singleton* _instance;  //私有变量也能修改
+		Singleton(){}
+		public:
+		static Singleton *getInstance()
+		{
+		if (nullptr == _instance)
+		{
+		_instance = new Singleton();
+		cout << "we have create a new singleton" << endl;
+		}
+	
+		return _instance;
+		}
+		};
+	
+		Singleton* Singleton::_instance = nullptr;  //类的静态成员变量要初始化!,也要声明返回值
+		//注意：不能用参数初始化表对静态成员初始化。一般系统缺省初始为0.
