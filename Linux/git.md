@@ -77,3 +77,5 @@
 	        export LESSHARSET=utf-8 #$ git log 命令不像其它 vcs 一样，n 条 log 从头滚到底，它会恰当地停在第一页，
 			按space 键再往后翻页。这是通过将 log 送给 less 处理实现的。以上即是设置 less 的字符编码，
 			使得 $ git log  可以正常显示中文。
+
+13. [Git warning:LF wil be replaced by CRLF的解决](http://blog.csdn.net/feng88724/article/details/11600375)
