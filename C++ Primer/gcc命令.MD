@@ -1,5 +1,5 @@
 详细可参考[azreally](http://www.cnblogs.com/azraelly/archive/2012/07/07/2580839.html) 
-
+[参考2](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
 1. 编译可以用gcc/g++，而链接可以用g++或者gcc -lstdc++  
 2. gcc 编译过程分为预编译(Preprocessing),编译(Compilation),汇编(Assembly),连接(Linking).
