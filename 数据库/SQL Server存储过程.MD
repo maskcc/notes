@@ -1,3 +1,4 @@
+[MSDN SQLServer 官方文档](https://technet.microsoft.com/zh-cn/library/ms187875(v=sql.110).aspx)
 ##用户自定义存储过程
 1. 创建语法
 
@@ -169,3 +170,7 @@
 		   ANSI_NULLS 是在处理计算列或索引视图的索引时必须设置为所需值的七个 SET 选项之一。   
 		还必须将选项 ANSI_PADDING、ANSI_WARNINGS、ARITHABORT、QUOTED_IDENTIFIER 和
 		CONCAT_NULL_YIELDS_NULL 设置为 ON，而必须将 NUMERIC_ROUNDABORT 设置为 OFF。 
+
+14. 获取EXECUTE 的返回值,官方文档最好参考[msdn](https://technet.microsoft.com/zh-cn/library/ms188332(v=sql.110).aspx)
+
+		EXECUTE  @arg_GlamourValue = QPGameTestDB.dbo.sp_mobile_updateOrget_glamourValue @arg_UserID, 0
