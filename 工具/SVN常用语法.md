@@ -9,7 +9,7 @@
 
 		svn add file
 
-5. 强改动的文件提交到版本库
+5. 将改动的文件提交到版本库
 
 		svn commit -m"LogMessage" [-N][--no-unlock]PATH
 		简写: svn ci
