@@ -174,3 +174,14 @@
 14. 获取EXECUTE 的返回值,官方文档最好参考[msdn](https://technet.microsoft.com/zh-cn/library/ms188332(v=sql.110).aspx)
 
 		EXECUTE  @arg_GlamourValue = QPGameTestDB.dbo.sp_mobile_updateOrget_glamourValue @arg_UserID, 0
+
+15. IF NOT EXISTS (SELECT 1 FROM QPGameTestDB.dbo.mobile_zhenRen2Ma_getAvatarLog WHERE userid = @arg_userid AND useState = 1 AND avatarId = @arg_avatarid)
+	BEGIN
+		SET @arg_ret = 1
+		RETURN
+	END
+
+16. 	--查找当前累计的局数
+	SELECT @arg_GameCount = ISNULL(GameCount, 0)
+	FROM QPGameUserDB.dbo.mobile_user_property
+	WHERE userid = @arg_UserID
