@@ -185,3 +185,33 @@
 	SELECT @arg_GameCount = ISNULL(GameCount, 0)
 	FROM QPGameUserDB.dbo.mobile_user_property
 	WHERE userid = @arg_UserID
+
+17. ISNULL 的使用,设置默认值
+
+	Isnull (check_expression , replacement_value) 　　参数check_expression ，是待检查是否为空的表达式，参数replacement_value是带替换的指定值，如果参数check_expression为空则参数replacement_value进行填充，如果check_expression不为空，则返回表达式相应的返回值类型，需要注意到是参数check_expression和参数replacement_value的类型需要保持一致，否则要进行相应的转换，
+	
+		SELECT HeadImageID,CostScore,isnull (CanUseDay,36500),IsFree, isnull (SaleRate, 100) FROM QPGameTestDB.dbo.mobile_head_image_info where IsAvailable = 1
+
+18. CONVERT(data_type(length),data_to_be_converted,style)
+19. update test.dbo.testDate set date='2035-12-31 23:59:59.000' where datediff(second, date, '2035-12-31 23:59:59.000') < 0 
+
+		比较两个时间的大小
+		select count(*) from table where DATEDIFF ([second], '2004-09-18 00:00:18', '2004-09-18 00:00:19')  > 0		
+		说明		
+		　　select  DATEDIFF(day, time1 , time2)    对应示例语句如下
+		　　select  DATEDIFF(day, '2010-07-23 0:41:18', '2010-07-23 23:41:18')		
+		　　time1 > time2 为负数;		
+		　　time1 < time2 为正数;		
+		　　[day] :只会比较 2010-07-23 忽略 0:41:18' 其他同理		
+		以下分别: 		
+		　　年: SELECT DATEDIFF([year],time1 , time2)   返回值： -6 ，说明是后减前 与 mysql 相反的。		
+		　　月: SELECT DATEDIFF([month], time1 , time2)		
+		　　天: SELECT DATEDIFF([day], time1 , time2)		
+		　　小时: SELECT DATEDIFF([hour], time1 , time2)		
+		　　秒: SELECT DATEDIFF([second], time1 , time2)   
+20. 判断账号是否是在字符串内
+
+        if (CHARINDEX('昵称', @arg_NickName) <> 0)
+				begin
+					set @arg_IsSetNickname = 0
+				end

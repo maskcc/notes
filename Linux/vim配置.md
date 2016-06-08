@@ -2,7 +2,7 @@
 终端使用vim进行编辑时,可以设置一些默认的配置,修改`~/.vimrc`修改配置.如果当前的用户目录下没有.vimrc文件,可以`vim ~/.vimrc`然后修改里面的内容.[参考](http://blog.itpub.net/8111049/viewspace-628456).
 
 1. 显示行号: `set nu`
-2. 设置撇皮模式,类似输入左括号会匹配相应右括号
+2. 设置匹配模式,类似输入左括号会匹配相应右括号
 
 ##插件
 ###使用[Vundle.vim](https://github.com/VundleVim/Vundle.vim#about)管理vim插件.
@@ -17,3 +17,52 @@
 
 ###[常用插件](http://harttle.com/2015/07/18/vim-cpp.html)
 ###使用[delimitMate](https://github.com/Raimondi/delimitMate), 在~/.vimrc添加 `Plugin 'Raimondi/delimitMate'`并`PluginInstall`重新打开vim就能自动补全
+
+4. 常用设置
+
+		#语法高亮度显示
+		syntax on 
+		#下面两行在进行编写代码时，在格式对齐上很有用；
+		#vim使用自动对起，也就是把当前行的对起格式应用到下一行；
+		set autoindent
+		#依据上面的对起格式，智能的选择对起方式，对于类似C语言编写上很有用
+		set smartindent
+		#第一行设置tab键为4个空格，第二行设置当行之间交错时使用4个空格
+		set tabstop=4
+		set shiftwidth=4
+		#设置匹配模式，类似当输入一个左括号时会匹配相应的那个右括号
+		set showmatch
+
+		#默认情况下，寻找匹配是高亮度显示的，该设置关闭高亮显示
+		#set nohls
+		#查询时非常方便，如要查找book单词，当输入到/b时，会自动找到第一
+		#个b开头的单词，当输入到/bo时，会自动找到第一个bo开头的单词，依
+		#次类推，进行查找时，使用此设置会快速找到答案，当你找要匹配的单词
+		#时，别忘记回车
+		set incsearch
+
+		# vim  中文无法显示
+		
+		:set fileencodings=ucs-bom,utf-8,cp936                                                                                                               
+		:set fileencoding=utf-8
+		:set encoding=cp936
+		:set cul
+
+5. tab设置为4个空格
+
+		在.vimrc中添加以下代码后，重启vim即可实现按TAB产生4个空格：
+		set ts=4  (注：ts是tabstop的缩写，设TAB宽4个空格)
+		set expandtab
+		
+		对于已保存的文件，可以使用下面的方法进行空格和TAB的替换：
+		TAB替换为空格：
+		:set ts=4
+		:set expandtab
+		:%retab!
+		
+		空格替换为TAB：
+		:set ts=4
+		:set noexpandtab
+		:%retab!
+		
+		加!是用于处理非空白字符之后的TAB，即所有的TAB，若不加!，则只处理行首的TAB。
