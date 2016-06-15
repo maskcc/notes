@@ -1,4 +1,7 @@
-[参考1](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2288004.html#_Toc311658074)[参考2](http://blog.csdn.net/haoel/article/details/2879)
+[参考1](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2288004.html#_Toc311658074)  
+[参考2](http://blog.csdn.net/haoel/article/details/2879)  
+[参考3](http://www.programlife.net/gdb-manual.html)  
+
 1. 编译时加上 `-g` 选项写入调试信息.
 
 		g++ gdb.cpp -o g -g

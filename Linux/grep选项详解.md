@@ -10,6 +10,8 @@
 8. -A num 打印匹配行的下文num行
 9. -B num 打印匹配行的上文num行
 10. -C num 打印匹配行的上下num行
+
+		grep -C number pattern files ：匹配的上下文分别显示[number]行，
 11. -m NUM 找到num个匹配的行后不再读这个文件
 12. -R/-r 递归地读每一目录下的所有文件
 13. -R/-r --include=PATTERN 仅仅在搜索匹配PATERN的文件时在目录中递归搜索.

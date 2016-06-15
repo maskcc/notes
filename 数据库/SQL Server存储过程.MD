@@ -215,3 +215,13 @@
 				begin
 					set @arg_IsSetNickname = 0
 				end
+
+21. 添加日期
+
+		insert into QPGameUserDB.dbo.mobile_user_property (userid, vip_level, create_time, SpecialAvatar, SpecialAvatarOverData)
+		values (@arg_UserID, 0, getdate (), @arg_SettingImageIndex, dateadd (dd, 30, getdate ()))
+
+22. 导出存储过程或者数据库:Sql Server 图形界面
+
+		选中一个数据库实例，右键“所有任务”－－“生成sql脚本”
+		“常规”－－“全部显示”－－选中全部存储过程　复选框
