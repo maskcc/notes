@@ -68,3 +68,11 @@
 		set listsize count
 		show listsize   //设置和查看当前显示源码的行数
 
+15. GDB调试`core`文件步骤
+	- gdb -c core.1111 #将core文件载入gdb
+	- file binaryname  #崩溃的程序,在符号集载入gdb
+	- 注: 在编译源文件时,需要添加`-g` 选项来保存符号信息
+	- bt 显示调用栈信息(函数调用层次结构)
+	- frame n 进入上面显示的函数
+	- n, 单步, s, 进入函数
+
