@@ -13,6 +13,7 @@
 3. 添加到远程仓库:
 		
 		$ git remote add origin git@github.com:PickMio/PSpider.git //将本地和远程关联 
+		$git pull git@github.com:PickMio/PSpider.git//将远程仓库同步下来
 		$ git push -u origin master                                //将本地仓库推送到远程`-u`将本地的master和远程的master关联起来
 	但是当你`GitHub`上的仓库里面创建的类似'readme.md'等文件,会有报错类似
 		

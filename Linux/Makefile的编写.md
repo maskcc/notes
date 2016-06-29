@@ -77,6 +77,10 @@
 		cc -o prog2 prog2.o
 		prog3 : prog3.o sort.o utils.o
 		cc -o prog3 prog3.o sort.o utils.o
+11. 变量高级用法, 变量值的替换.格式为`$(var:a=b)`, 把变量`var`中所有以`a`字符串结尾的a替换成b的字符串.
+
+		foo :=a.o b.o c.o
+		bar := $(foo:.o=.c)
 
 ##常用函数
 - `subst <from>, <to>, <text>`, 字符串替换函数
@@ -90,3 +94,4 @@
 		#x.c.o bar.o
 
 - `strip <string>` 去掉<string>字符串中开头和结尾的空字符.
+

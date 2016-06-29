@@ -49,3 +49,4 @@
 
 ## 工作
 1. [Python面试会提到的问题](https://www.zhihu.com/question/33398583#answer-30369555)
+2. [Python可以使用的代码补全工具](https://www.jetbrains.com/help/pycharm/2016.1/type-hinting-in-pycharm.html)
