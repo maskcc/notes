@@ -17,7 +17,7 @@ pid_t fork(void);    /* #include <unistd.h>*/
 
 
 
-
+/*网际协议使用大端来传递数据*/
 /*常用工具函数*/
 /*使用errno 需要 include<errno.h>*/
 /*p = presentation n = numeric 头文件<arpa/inet.h>*/

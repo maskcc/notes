@@ -5,6 +5,7 @@
 2. 设置匹配模式,类似输入左括号会匹配相应右括号
 
 ##插件
+###[非常常用的插件](http://linux-wiki.cn/wiki/%E7%94%A8Vim%E7%BC%96%E7%A8%8B%E2%80%94%E2%80%94%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%8A%80%E5%B7%A7) 含`git`地址
 ###使用[Vundle.vim](https://github.com/VundleVim/Vundle.vim#about)管理vim插件.
 ###使用[YouCompleteMe](https://github.com/Valloric/YouCompleteMe)自动完成.安装时如果出现错误,什么L9重复
 

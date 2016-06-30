@@ -40,3 +40,12 @@ SSH的一些基本常识
 12. Linux 的hosts文件放在`/etc/hosts`中, 可以将ssh的目标ip映射成简短的名称如, ssh到`192.168.1.133`时,可以使用类似`ssh mio@mysite`.
 
 		192.168.1.133 mysite
+        
+13. scp的使用.`scp 本地用户名 @IP 地址 : 文件名 1 远程用户名 @IP 地址 : 文件名 2 `
+
+        -v 和大多数 linux 命令中的 -v 意思一样 , 用来显示进度 
+        -P 选择端口 . 注意 -p 已经被 rcp 使用 . 
+        -r 复制目录
+        -4 强行使用 IPV4 地址 . 
+        -6 强行使用 IPV6 地址 .
+        例子:#scp -p 4588 remote@www.abc.com:/usr/local/sin.sh /home/administrator

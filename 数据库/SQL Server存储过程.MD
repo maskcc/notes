@@ -225,3 +225,23 @@
 
 		选中一个数据库实例，右键“所有任务”－－“生成sql脚本”
 		“常规”－－“全部显示”－－选中全部存储过程　复选框
+
+23. 使用临时表
+
+		CREATE TABLE #f 
+		(id int IDENTITY(1,1),
+			userid INT)
+
+		INSERT INTO #f(userid)  SELECT userid_1 FROM QPGameTestDB.dbo.mobile_friendship_history_table WHERE userid_2 = @userid AND state = 0
+
+		CREATE TABLE #t
+		(
+		 userid INT,
+		 imageid INT NULL,
+		 ilevel  INT NULL,
+		 viplevel INT NULL,
+		 sex      SMALLINT NULL,
+		 reqtime	datetime NULL,
+		 nickname VARCHAR(32) NULL,
+	   locaddr  VARCHAR(50) NULL
+		) 
