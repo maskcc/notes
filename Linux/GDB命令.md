@@ -21,7 +21,7 @@
 		info b //查询所有断点信息
 		disable 断点, enable once range断点停止一次
 
-4. `s,n`, `s`执行一行源码, `n`单步进入函数.`f`退出函数.`until`直到退出循环体. `c`, Continue,继续执行直到下一个断点.
+4. `n,s,f,u`, `n`执行一行源码, `s`单步进入函数.`f`退出函数.`u`, until 直到退出循环体. `c`, Continue,继续执行直到下一个断点.
 5. `p` 打印变量信息.
 
 		p gameID //打印gameID的信息
