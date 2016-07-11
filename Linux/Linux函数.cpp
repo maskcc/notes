@@ -65,7 +65,7 @@ struct sockaddr
 #define __UNP_H__
 
 #include <sys/socket.h>
-/*socket,listen,bind,accept,connect*/
+/*socket,listen,bind,accept,connect,shutdown*/
 /*sockaddr*/
 
 #include <errno.h>
@@ -113,9 +113,19 @@ off_t lseek(int filedes, off_t offset, int whence);
 
 sszie_t read(int filedes, void *buf, size_t nbytes);
 //成功返回读到的字节数, 到文件结尾返回0, 出错返回 -1				
+//1. 如果对端TCP发送数据,read会返回一个大于0的值
+//2. 如果对端TCP发送一个FIN(对端进程终止),那么read返回0(EOF).
+//3. 如果对端TCP发送一个RST(对端主机崩溃并重新启动), 那么read返回-1, 且errno中含有确切的错误代码
 
 ssize_t write(int filedes, const void *buf, size_t nbytes);
 //返回值通常与参数nbytes的相同
+//
+
+int shutdown(int sockfd, int howto);
+//返回值 :成功返回0, 出错返回-1
+//howto: SHUT_RD,关闭连接的读一半.套接字不再接收数据,现有缓冲区数据都丢弃掉.该套接字接收任何数据确认后丢掉
+//       SHUT_WR,关闭连接的写一半.当前留在套接字缓冲区的数据将被发送掉.后接正常TCP终止序列.进程不能对这样的套接字调用任何写函数.
+//       SHUT_RDWR,连接的读写都关闭,相当于调用了两次shutdown,第一次参数为 SHUT_RD,  第二次参数为 SHUT_WR
 
 
 
@@ -152,3 +162,13 @@ pid_t fork(void);
 pid_t wait(int *statloc);
 pid_t waitpid(pid_t pid, int *staloc, int options);
 //两个函数返回值,弱成功返回进程ID, 0, 出错返回 -1.
+//
+
+//打印错误信息
+printf("errno %d : %s\n",errno,strerror(errno));  
+
+
+ERRORS
+SIGPIPE //对已经关闭写半部的连接进行写操作,或产生SIGPIPE信号
+
+
