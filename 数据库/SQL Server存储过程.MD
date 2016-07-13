@@ -245,3 +245,9 @@
 		 nickname VARCHAR(32) NULL,
 	   locaddr  VARCHAR(50) NULL
 		) 
+
+24. `NEWID()`,[获取随机数,参考](http://www.cnblogs.com/wuming/archive/2010/02/24/1672906.html)
+
+		select   top   10   *,newid()   as   Random   from   ywle where   ywlename='001'   ordey   by   Random 
+		从A表随机取10条记录,用SELECT TOP 10 * FROM ywle order by newid()
+		order by 一般是根据某一字段排序,newid()的返回值 是uniqueidentifier ,order by newid(),newid()在扫描每条记录的时候都生成一个值, 而生成的值是随机的, 没有大小写顺序. 所以最终结果再按这个排序, 排序的结果当然就是无序的了
