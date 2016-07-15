@@ -251,3 +251,26 @@
 		select   top   10   *,newid()   as   Random   from   ywle where   ywlename='001'   ordey   by   Random 
 		从A表随机取10条记录,用SELECT TOP 10 * FROM ywle order by newid()
 		order by 一般是根据某一字段排序,newid()的返回值 是uniqueidentifier ,order by newid(),newid()在扫描每条记录的时候都生成一个值, 而生成的值是随机的, 没有大小写顺序. 所以最终结果再按这个排序, 排序的结果当然就是无序的了
+
+25. `Case when `[用法](http://www.2cto.com/database/201203/124327.html).
+
+		--简单Case函数     
+    
+			CASE sex  
+			 WHEN '1' THEN '男'
+	         WHEN '2' THEN '女'
+			ELSE '其他' END      
+	    
+		--Case搜索函数     
+    
+			CASE WHEN sex = '1' THEN '男' 
+	         WHEN sex = '2' THEN '女'  	
+			ELSE '其他' END   
+
+26. `<>不等于号`用来忽略where中的条件
+
+		-- 当 @arg_Source 不为0(大厅的拜关公), 不为1(斗地主内的求财神)时, 忽略 @arg_Source,
+			 服务器传过来的是3, 显示大厅和斗地主内的奖励
+		select * from ...
+		WHERE	qw.id=log.qianwenID AND log.awardID > 0 AND log.bHasNotice>0 
+			AND (log.source = @arg_Source or (@arg_Source <> 0 and @arg_Source <> 1))
