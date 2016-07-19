@@ -102,3 +102,8 @@
 18. c++中输出百分号.
 
 		%和转义字符\一样特殊，所以输出%是用%%，而不是\%
+
+19. c++ [在cout中的输出控制](http://www.cnblogs.com/lucyjiayou/archive/2012/01/04/2312225.html)
+		
+		输出16进制
+		cout << hex << 98110 << endl;
