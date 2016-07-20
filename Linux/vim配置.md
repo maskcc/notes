@@ -67,3 +67,7 @@
 		:%retab!
 		
 		加!是用于处理非空白字符之后的TAB，即所有的TAB，若不加!，则只处理行首的TAB。
+
+6. 忽略大小写
+	- :set ic(ignorecase 的缩写) 忽略大小写
+	- :set noic(noignorecase 的缩写) 不忽略大小写 
