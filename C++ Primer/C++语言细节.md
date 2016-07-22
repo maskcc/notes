@@ -1,4 +1,9 @@
 #C++的一些基础知识
+ [C++语言细节的官方参考网站](http://www.cplusplus.com/reference/cctype/)  
+ [Linux函数参考](http://linux.die.net/man/3/pthread_join)
+[]()
+- 
+
 1. C++标准库兼容了C语言的标准库,C语言的头文件形如name.h,C++会将文件命名为cname.去掉了.h后缀且在文件面name前加了字母c.名为cname	的头文件从属于std.而.h的头文件则不然.标准库中的名字总能在命名空间中找到.
 2. 要使用vector必须使用下面头文件
     ```
@@ -107,3 +112,17 @@
 		
 		输出16进制
 		cout << hex << 98110 << endl;
+
+20. assert的使用
+	- 头文件: `assert.h`
+	- 函数原型
+
+			void assert(int expression); //参数为0则报错
+
+	- 报错格式 `Assertion failed: expression, file filename, line line number `
+	- 忽略方法: 可以使用
+
+			#define NDEBUG //头文件中
+			-DNDEBUG	   //makefile时的选项
+
+			
