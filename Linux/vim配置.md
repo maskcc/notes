@@ -71,3 +71,12 @@
 6. 忽略大小写
 	- :set ic(ignorecase 的缩写) 忽略大小写
 	- :set noic(noignorecase 的缩写) 不忽略大小写 
+
+7. 众所周知，vim设置tab键为4个空格，对于编写代码非常有用，但是，makefile文件是需要识别tab键的，下面这个设置可以在代码中替换tab，在makefile中不替换。
+
+		vim /etc/vimrc
+		set tabstop=4 "设置tab键为4个空格
+		set shiftwidth=4  “设置当行之间交错时使用4个空格
+		set expandtab
+		set autoindent
+		autocmd BufNewFile, BufRead *.c, *.cpp, *.java :CFOLD

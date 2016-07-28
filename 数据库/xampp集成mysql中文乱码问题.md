@@ -1,0 +1,1 @@
+1. 在配置页面点`configer`, 选`mysql.ini`,找到 `character-set-server=utf8`, 将注释取消.重启mysql就好了.

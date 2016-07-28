@@ -124,5 +124,10 @@
 
 			#define NDEBUG //头文件中
 			-DNDEBUG	   //makefile时的选项
+21. `memset` 对字符串数组的取首址操作一样 
+
+		char name[50];
+		memset(name, 0, 5);
+		memset(&name, 0, 5);
 
 			
