@@ -86,4 +86,20 @@
 		
 		可见对动态库和静态库的使用方法是一样的，同一个库如果同时存在动态库和静态库，优先链接动态库，除非使用--static强制使用静态库。
 
+22. 生成动态库文件. [博客园写得比较好的参考](http://www.cnblogs.com/skynet/p/3372855.html)
+	1. 使用`-fPIC` 选项, `PIC` 指`Position Independent Code`,生成`.o`文件
+		
+			$gcc -c -fPIC -o source.o source.c
+
+	2. 生成共享库, `-shared`表示生成一个共享库.
+
+			$gcc -shared -o libsource.so source.o
+		
+	4. `ldd` 用于显示可执行文件所以来的库
+
+24. linux下查看`.so`导出函数列表
+		
+		nm -D lua.so
+		objdump -tT lua.so
+
 

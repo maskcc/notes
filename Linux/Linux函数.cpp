@@ -69,7 +69,7 @@ struct sockaddr
 /*sockaddr*/
 
 #include <errno.h>
-/*errno*/
+/*errno, EINTR*/
 
 #include <arpa/inet.h>
 /*inet_pton,inet_ntop, inet_aton, inet_addr, inet_ntoa*/
