@@ -224,4 +224,85 @@ int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
 int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout);
 
 
+/* 多线程接口 
+* 头文件
+* #include <pthread.h>
+*/
+//线程
+pthread_mutex_t mymutex=PTHREAD_MUTEX_INITIALIZER;
+int pthread_create(pthread_t *restrict tidp,
+                  const pthread_attr_t *restrict attr,
+                  void *(*start_rtn)(void*), void *restrict arg);
+int pthread_exit(void *rval_ptr);
+int pthread_join(pthread_t thread, void** rval_ptr);
+int pthread_equal(pthread_t tidl1, pthread_t tid2);
+pthread_t pthread_self(void);
+int pthread_cancel(pthread_t tid); //等价于pthread_exit(PTHREAD_CANCELED); 不等待线程终止,仅提出请求
+int pthread_detach(pthread_t tid);
+
+//线程清理处理函数
+void pthread_cleanup_push(void (*rtn)(void *), void *arg);
+void pthread_cleanup_pop(int excute);
+
+//互斥锁
+int pthread_mutex_init(pthread_mutex_t *restrict mutex,
+                      const pthread_mutexattr_t *restrict attr);
+int pthread_mutex_destroy(pthread_mutex_t *mutex);
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+int pthread_mutex_trylock(pthread_mutex_t *mutex);
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+int pthread_mutex_timedlock(pthread_mutex_t *restrict mutex,
+                            const struct timespec *restrict tsptr);
+
+
+/*设置recursive属性的互斥锁.这样既可以解决同一线程递归加锁的问题，又可以避免很多情况下死锁的发生。*/
+pthread_mutexattr_init(&attr); 
+    // 设置 recursive 属性
+pthread_mutexattr_settype(&attr,PTHREAD_MUTEX_RECURSIVE_NP); 
+pthread_mutex_init(theMutex,&attr);
+
+//条件 
+int pthread_cond_init(pthread_cond_t *restrict cond,
+                      pthread_mutex_t *restrict mutex);
+int pthread_cond_destroy(pthread_cond_t *cond);
+int pthread_cond_signal(pthread_cond_t *cond);
+int pthread_cond_broadcast(pthread_cond_t *cond);
+int pthread_cond_wait(pthread_cond_t *restrict cond,
+                      pthread_mutex_t *restrict mutex);
+int pthread_cond_timewait(pthread_cond_t *restrict cond,
+                          pthread_mutex_t *restrict mutex,
+                          const struct timespec *restrict tsptr);
+//读写锁
+int pthread_rwlock_init(pthread_rwlock_t *restrict rwlock,
+                        const pthread_rwlockattr_t *restrict attr);
+int pthread_rwlock_destroy(pthread_rwlock_t *rwlock);
+int pthread_rwlock_rdlock(pthread_rwlock_t *rwlock);
+int pthread_rwlock_wrlock(pthread_rwlock_t *rwlock);
+int pthread_rwlock_unlock(pthread_rwlock_t *rwlock);
+int pthread_rwlock_tryrdlock(pthread_rwlock_t *rwlock);
+int pthread_rwlock_trywrlock(pthread_rwlock_t *rwlock);
+int pthread_rwlock_timerdlock(pthread_rwlock_t *restrict rwlock,
+                              const struct timespec *restrict tsptr);
+int pthread_rwlock_timewrlock(pthread_rwlock_t *restrict rwlock,
+                              const struct timespec *restrict tsptr);
+//线程属性
+int pthread_attr_init(pthread_attr_t *attr);
+int pthread_attr_destrouy(pthread_attr_t *attr);
+int pthread_attr_getdetachstate(const pthread_attr_t *restrict attr,
+                                int *detachstate);
+int pthread_attr_setdetachstate(pthread_attr_t *attr, int *detachstate);
+int pthread_attr_getstack(const pthread_attr_t *restrict attr,
+                          void **restrict stackaddr,
+                          size_t *restrict stacksize);
+int pthread_attr_setstack(pthread_attr_t *attr,
+                          void *stackaddr, size_t stacksize);
+int pthread_attr_getstacksize(const pthread_attr_t *restrict attr,
+                              size_t *restrict stacksize);
+int pthread_attr_setstacksize(pthread_attr_t *attr, size_t stacksize/);
+
+
+
+
+
+
 
