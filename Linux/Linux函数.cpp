@@ -172,3 +172,56 @@ ERRORS
 SIGPIPE //对已经关闭写半部的连接进行写操作,或产生SIGPIPE信号
 
 
+
+
+
+/* --------------EPOLL
+EPOLL事件有两种模型 Level Triggered (LT) 和 Edge Triggered (ET)：
+
+LT(level triggered，水平触发模式)是缺省的工作方式，并且同时支持 block 和 non-block socket。
+在这种做法中，内核告诉你一个文件描述符是否就绪了，然后你可以对这个就绪的fd进行IO操作。
+如果你不作任何操作，内核还是会继续通知你的，所以，这种模式编程出错误可能性要小一点。
+
+ET(edge-triggered，边缘触发模式)是高速工作方式，只支持no-block socket。
+在这种模式下，当描述符从未就绪变为就绪时，内核通过epoll告诉你。
+然后它会假设你知道文件描述符已经就绪，并且不会再为那个文件描述符发送更多的就绪通知，
+等到下次有新的数据进来的时候才会再次出发就绪事件。
+
+ */
+//size 需要监听的数目, 可以查看/proc/进程id/fd, 使用完epoll后必须close()关闭防止fd被耗尽
+int epoll_create(int size);
+
+//epoll事件注册函数,第一个参数是epoll_create()的返回值,
+//第二个参数是动作
+//      EPOLL_CTL_ADD 注册新的fd到epfd中
+//      EPOLL_CTL_MOD 修改已经注册的fd监听事件
+//      EPOLL_CTL_DEL 从epfd中删除一个fd
+//
+typedef unio epoll_data
+{
+  void *ptr;
+  int fd;
+  __uint32_t u32;
+  __uint64_t u64;
+} epoll_data_t;
+
+struct epoll_event{
+  __uint32_t events; //Epoll事件
+  epoll_data_t data; //用户数据
+}
+//
+//events 为:
+//EPOLLIN, EPOLLOUT, EPOLLPRI, EPOLLERR, EPOLLHUP, EPOLLET, EPOLLONESHOT(只监听一次)
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
+
+
+//当对方关闭连接(FIN), EPOLLERR, 都可以认为是EPOLLIN事件,在read时返回0 和-1.
+
+// events 用来从内核得到事件的集合 
+// maxevents 告之内核这个events有多大，其值不能大于创建 epoll_create() 时的size
+// timeout 是超时时间（毫秒，0会立即返回，-1将不确定，也有说法说是永久阻塞）
+// 返回需要处理的事件数目，如返回0表示已超时
+int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout);
+
+
+
