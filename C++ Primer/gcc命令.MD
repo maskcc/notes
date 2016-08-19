@@ -102,4 +102,6 @@
 		nm -D lua.so
 		objdump -tT lua.so
 
+25. [动态库与静态库](http://www.cnblogs.com/zxtp/p/5147608.html)
+
 

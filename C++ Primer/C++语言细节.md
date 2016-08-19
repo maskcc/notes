@@ -130,4 +130,60 @@
 		memset(name, 0, 5);
 		memset(&name, 0, 5);
 
+22. c 的类型定义一般都在`<stdint.h>`中如下:c++的头文件为`<cstdint>`:
+
+		void test()
+        {
+                cout << "long " << sizeof(long) << endl;
+                cout << "signed " << sizeof(signed) << endl;
+                cout << "unsigned " << sizeof(unsigned) << endl;
+                cout << "int " << sizeof(int) << endl;
+                cout << "short " << sizeof(short) << endl;
+                cout << "unsigned short " << sizeof(unsigned short) << endl;
+                cout << "short unsigned " << sizeof(short unsigned) << endl;
+                cout << "char " << sizeof(char) << endl;
+                cout << "unsigned long " << sizeof(unsigned) << endl;
+                cout << "long long " << sizeof(long long) << endl;
+                cout << "float " << sizeof(float) << endl;
+                cout << "double " << sizeof(double) << endl;
+                cout << "char " << sizeof(char) << endl;
+                cout << "long int " << sizeof(long int) << endl;
+                cout << "int64_t " << sizeof(int64_t) << endl;
+                cout << "int32_t " << sizeof(int32_t) << endl;
+                cout << "int16_t " << sizeof(int16_t) << endl;
+                cout << "int8_t " << sizeof(int8_t) << endl;
+
+                cout << "uint64_t " << sizeof(uint64_t) << endl;
+                cout << "uint32_t " << sizeof(uint32_t) << endl;
+                cout << "uint16_t " << sizeof(uint16_t) << endl;
+                cout << "uint8_t " << sizeof(uint8_t) << endl;
+            }
+
+	例如, long 在不同的硬件平台或者编译器下, 会有不同的长度.在64位`ubuntu`, gcc版本 4.8.2时, 结果如下,所以建议长度都设置为 `int32_t` 或 `uint32_t`类似类型来定义数据长度.
+
+			long 		8
+			signed 		4
+			unsigned 	4
+			int 		4
+			short 		2			
+			char 		1			
+			long long 	8
+			float 		4
+			double 		8
+			char 		1
+			long int 	8
+			int64_t 	8
+			int32_t 	4
+			int16_t 	2
+			int8_t 		1
+			uint64_t 	8
+			uint32_t 	4
+			uint16_t 	2
+			uint8_t 	1
+			unsigned short  2
+			unsigned long   4
+			short unsigned  2
+
+
+
 			

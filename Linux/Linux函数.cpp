@@ -230,6 +230,7 @@ int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout)
 */
 //线程
 pthread_mutex_t mymutex=PTHREAD_MUTEX_INITIALIZER;
+//创建线程时, 第4个参数最好是在heap上的, 栈上的在程序进入后可能会被修改.要写个博客关于这个问题
 int pthread_create(pthread_t *restrict tidp,
                   const pthread_attr_t *restrict attr,
                   void *(*start_rtn)(void*), void *restrict arg);
@@ -262,6 +263,8 @@ pthread_mutexattr_settype(&attr,PTHREAD_MUTEX_RECURSIVE_NP);
 pthread_mutex_init(theMutex,&attr);
 
 //条件 
+//pthread_cond_wait所做的第一件事就是同时对互斥对象解锁,并等待cond发生(即收到另一个线程的信号,它将苏醒),此时
+//是一个阻塞操作,线程睡眠不会消耗CPU周期.当收到了broadcast信号后,会重新锁定mutex, 它会返回并且线程会继续执行.
 int pthread_cond_init(pthread_cond_t *restrict cond,
                       pthread_mutex_t *restrict mutex);
 int pthread_cond_destroy(pthread_cond_t *cond);
@@ -273,6 +276,9 @@ int pthread_cond_timewait(pthread_cond_t *restrict cond,
                           pthread_mutex_t *restrict mutex,
                           const struct timespec *restrict tsptr);
 //读写锁
+//非常适合于对数据读的次数远大于写的情况.也叫共享互斥锁
+//与互斥锁相比,读写锁在使用前必须初始化, 释放他们的底层内存前必须销毁
+PTHREAD_RWLOCK_INITIALIZER
 int pthread_rwlock_init(pthread_rwlock_t *restrict rwlock,
                         const pthread_rwlockattr_t *restrict attr);
 int pthread_rwlock_destroy(pthread_rwlock_t *rwlock);
