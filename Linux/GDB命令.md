@@ -1,6 +1,7 @@
 [参考1](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2288004.html#_Toc311658074)  
 [参考2](http://blog.csdn.net/haoel/article/details/2879)  
 [参考3](http://www.programlife.net/gdb-manual.html)  
+[更多详细命令,参考gitbook](https://wizardforcel.gitbooks.io/100-gdb-tips/content/add-copy-inferiors.html)
 
 1. 编译时加上 `-g` 选项写入调试信息.
 
@@ -89,4 +90,16 @@
 		Reading symbols from /home/jinpan/bin/working_copy/zhenrenerma/mid/game/erma_server_easy1...done.
 		(gdb) 
 	
-	
+17. 在gdb中，可以`set var variable=expr`命令设置变量的值
+18. 启动不显示提示信息
+
+		$ gdb -q
+		~/.bashrc
+		alias gdb="gdb -q"
+19. `set confirm off` 退出不提示,可以加入到`.gdbinit`文件
+20. `info functions` 列出函数名
+21. `finish`退出当前函数.`return`不执行后面的,直接退出函数
+22. `call` 或 `print` 直接调用函数执行
+23. `info frame` 显示函数堆栈帧信息
+24. `frame n`命令选择函数堆栈帧
+25. `break 10 if i==101` 条件断点
