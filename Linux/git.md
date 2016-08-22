@@ -80,3 +80,4 @@
 			使得 $ git log  可以正常显示中文。
 
 13. [Git warning:LF wil be replaced by CRLF的解决](http://blog.csdn.net/feng88724/article/details/11600375)
+14. [Git功能简介](http://nulls.cc/git-notes.html)

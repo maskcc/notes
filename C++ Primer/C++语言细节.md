@@ -183,6 +183,8 @@
 			unsigned short  2
 			unsigned long   4
 			short unsigned  2
+            
+23. [Linux下`printf`打印出彩色文字解决方案](http://nulls.cc/linux-printf-color.html)
 
 
 
