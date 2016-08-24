@@ -7,7 +7,7 @@
 			return 1;
 		}
 
-2. 在`cpp`文件生成的库给lua调用时.生成`.so`文件后, 运行lua脚本时,报错:
+2. 在`cpp`文件生成的库给lua调用时.生成`.so`文件后, 运行lua脚本时,报错:.也可以使用lua.hpp
 
 		lua: error loading module 'server.so' from file './server.so':
 		./server.so: undefined symbol: _Z15lua_createtableP9lua_Statei
@@ -40,4 +40,10 @@
 		no module 'server.so' in file './server.so'
 
 	出现这个问题,是由于so文件没找到, lua中的`require`后不能接`.so`
+
+3. 通过源码安装lua时, 会有报错,解决如下
+	
+		If you're running Linux and get compilation errors, make sure you have installed the 
+	  	readline development package (which is probably named libreadline-dev or readline-devel). 
+		If you get link errors after that, then try "make linux MYLIBS=-ltermcap".
 

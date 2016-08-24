@@ -103,3 +103,9 @@
 23. `info frame` 显示函数堆栈帧信息
 24. `frame n`命令选择函数堆栈帧
 25. `break 10 if i==101` 条件断点
+26. 生成core dump 文件方法:
+    1. 查看, 输入ulimit -c 结果为0, 没有dump文件
+    2. ulimit -c unlimited 开启core dump功能
+    3. ulimit -c 1024 限制core文件大小
+    4.生成通过修改/proc/sys/kernel/core_uses_pid文件，可以将进程的pid作为作为扩展名，生成的core文件格式为core.xxx，其中xxx即为pid
+    5.通过修改/proc/sys/kernel/core_pattern可以控制core文件保存位置和文件格式。例如：将所有的core文件生成到/corefile目录下，文件名的格式为core-命令名-pid-时间戳. echo "/corefile/core-%e-%p-%t" > /proc/sys/kernel/core_pattern
