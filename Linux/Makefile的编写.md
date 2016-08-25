@@ -1,3 +1,4 @@
+##[参考,分析云风makefile以及自动化makfile](http://www.cnblogs.com/thoryan/p/3630930.html)
 1. 在makefile中使用变量
 
 		obj = main.o xml.o net.o tst.o

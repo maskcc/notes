@@ -1,6 +1,8 @@
 详细可参考[azreally](http://www.cnblogs.com/azraelly/archive/2012/07/07/2580839.html) 
 [参考2](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
+##[动态库与静态库讲解非常详细的文章](http://www.cnblogs.com/skynet/p/3372855.html)
+
 1. 编译可以用gcc/g++，而链接可以用g++或者gcc -lstdc++  
 2. gcc 编译过程分为预编译(Preprocessing),编译(Compilation),汇编(Assembly),连接(Linking).
 3. 预处理:
@@ -103,5 +105,10 @@
 		objdump -tT lua.so
 
 25. [动态库与静态库](http://www.cnblogs.com/zxtp/p/5147608.html)
+
+        显式调用C++动态库注意点
+        对C++来说，情况稍微复杂。显式加载一个C++动态库的困难一部分是因为C++的name mangling；另一部分是因为没有提供一个合适的API来装载类，在C++中，您可能要用到库中的一个类，而这需要创建该类的一个实例，这不容易做到。
+
+        name mangling可以通过extern "C"解决。C++有个特定的关键字用来声明采用C binding的函数：extern "C" 。用 extern "C"声明的函数将使用函数名作符号名，就像C函数一样。因此，只有非成员函数才能被声明为extern "C"，并且不能被重载。尽管限制多多，extern "C"函数还是非常有用，因为它们可以象C函数一样被dlopen动态加载。冠以extern "C"限定符后，并不意味着函数中无法使用C++代码了，相反，它仍然是一个完全的C++函数，可以使用任何C++特性和各种类型的参数。
 
 

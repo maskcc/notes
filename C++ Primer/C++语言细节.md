@@ -186,6 +186,7 @@
             
 23. [Linux下`printf`打印出彩色文字解决方案](http://nulls.cc/linux-printf-color.html)
 24. 全局变量的内存保证会在程序启动时被清零, 局部变量配置于程序的堆栈中, 堆对象位于heap中, 不一定会被清零, 它们的内容是内存上次被使用后的内容.
+25. [Linux终端下打印彩色文字的调用方法](http://www.cnblogs.com/clover-toeic/p/4031618.html)
 
 
 
