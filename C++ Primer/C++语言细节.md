@@ -187,6 +187,7 @@
 23. [Linux下`printf`打印出彩色文字解决方案](http://nulls.cc/linux-printf-color.html)
 24. 全局变量的内存保证会在程序启动时被清零, 局部变量配置于程序的堆栈中, 堆对象位于heap中, 不一定会被清零, 它们的内容是内存上次被使用后的内容.
 25. [Linux终端下打印彩色文字的调用方法](http://www.cnblogs.com/clover-toeic/p/4031618.html)
+26. 基本类型的对象没有析构函数，所以回收基本类型组成的数组空间用 delete 和 delete[] 都是应该可 以的；但是对于类对象数组，只能用 delete[]。对于 new 的单个对象，只能用 delete 不能用 delete[] 回收空间。所以一个简单的使用原则就是：new 和 delete、new[] 和 delete[] 对应使用。
 
 
 
