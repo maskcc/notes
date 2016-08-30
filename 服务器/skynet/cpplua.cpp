@@ -126,3 +126,94 @@ void lua_setmetatable (lua_State *L, int index);
 						return table[v]
 						end
 24. 表的构造 http://www.shouce.ren/api/lua/5/_30.htm
+25. lua_State *luaL_newstate(void);
+	//创建一个新的lua状态机
+25. void luaL_openlibs(lua_State *L);
+	//打开指定状态机中的所有Lua标准库
+26. const char *lua_pushlstring(lua_State *L, const char *s, size_t len);
+	//把执政s指向的长度为len的字符串压栈.lua对这个字符串做一个内部副本(或是复用一个副本), 字符串
+	//内可以是任意的二进制数据,包括零字符.返回内部副本的指针.
+27. const char *lua_pushliteral(lua_State *L, const char *s);
+	//等价于 lua_pushstring, 区别在于s是一个字面量时才能使用,会自动给出字符串长度
+28. int lua_isstring(lua_State *L, int index);
+	//当给定索引的值是一个字符串或是一个数字时(数字总能转换成字符串)返回1, 否则返回0
+29. int lua_isnumber (lua_State *L, int index);
+	//当给定索引的值是一个数字，或是一个可转换为数字的字符串时，返回 1 ，否则返回 0 。
+30. lua_to* 函数用于从栈上获取一个值.
+31. 当Lua调用的一个C函数返回时, Lua就会清空它的栈, 所以, 不要在C函数之外使用一个C函数内获得的指向
+	Lua字符串的指针.
+32. int lua_gettop(lua_State *L); 
+	//返回栈中元素的个数,就是栈顶元素的所有. lua_settop(L, 0);能清空栈
+33. void lua_pushvalue(lua_State *L, int index);
+	//把栈上给定索引处的元素做一个副本压栈.
+34. int lua_getglobal(lua_State *L, const char *name);
+	//把全局变量 name 里面的值压栈,返回该值的类型
+35. int lua_getfield(lua_State *L, int index, const char *k);
+	//把 t[k]的值压栈, 这里的t是索引指向的值.
+36. int lua_gettable(lua_State *L, int index);
+	// 把t[k] 的值压栈, t是指向索引的值,k是栈顶存放的值,会弹出栈上的键, 把结果放在栈上同样的位置.可能触发对应的index元方法
+37. typedef int (* lua_CFunctin) (lua_State *L)	; 
+	//C函数的类型.返回值是压入栈中的返回值数量, 返回后lua会自动删除栈中结果.
+38. void lua_pushcfunction(lua_State *L, lua_CFunctin f);
+	//
+39. 对于一个Lua 函数而言, 有三个地方可以存放非局部的数据.他们是
+	//1. 全局变量
+	//2. 函数环境
+	//3. 非局部的变量(closure)
+	而C API 也有三种地方来保存这类数据
+	//1. 注册表 是一个全局的table, 只能被C代码访问,保存需要再几个模块中共享的数据
+	//2. 环境 每个C函数都有自己的环境table,一个模块内的所有函数共享一个环境table
+	//3. upvalue
+	//
+	//获取注册表中key为 "Key" 的值:
+	//	lua_getfield(L, LUA_REGISTERINDEX, "Key");.
+	//	注册表中不应该使用数字类型的key, 其为引用系统所保留
+	//	
+	//	环境表的伪索引是L: LUA_ENVIRONINDEX.
+	// int luaopen_foo(lua_State *L)
+	//{ 
+	//	lua_newtable(L);
+	//	lua_replace(L, LUA_ENVIRONINDEX);
+	//	luaL_register(L, '库名', '函数列表');
+	// 	}
+	//
+	//C函数与 upvalue的关联称为closure.
+	//
+40. luaL_newlib
+
+	void luaL_newlib (lua_State *L, const luaL_Reg l[]);
+	创建一张新的表，并把列表 l 中的函数注册进去。
+
+	它是用下列宏实现的：
+
+	     (luaL_newlibtable(L,l), luaL_setfuncs(L,l,0))
+	数组 l 必须是一个数组，而不能是一个指针。
+
+41. uaL_newlibtable
+
+	void luaL_newlibtable (lua_State *L, const luaL_Reg l[]);
+	创建一张新的表，并预分配足够保存下数组 l 内容的空间（但不填充）。 这是给 luaL_setfuncs 一起用的 （参见 luaL_newlib）。
+
+	它以宏形式实现， 数组 l 必须是一个数组，而不能是一个指针。
+
+42. luaL_setfuncs
+
+	void luaL_setfuncs (lua_State *L, const luaL_Reg *l, int nup);
+	把数组 l 中的所有函数 （参见 luaL_Reg） 注册到栈顶的表中（该表在可选的上值之下，见下面的解说）。
+
+	若 nup 不为零， 所有的函数都共享 nup 个上值。 这些值必须在调用之前，压在表之上。 这些值在注册完毕后都会从栈弹出。//用法如下
+	struct skynet_context * context = lua_touserdata(L, lua_upvalueindex(1));  //获取upvalue
+
+	
+	lua_pushlightuserdata(L, ctx);
+	lua_setfield(L, LUA_REGISTRYINDEX, "skynet_context");  //ctx为常驻内存的一个变量, 将其设置为轻量用户数据
+
+	luaL_newlibtable(L, l);
+	lua_getfield(L, LUA_REGISTRYINDEX, "skynet_context");
+	struct skynet_context *ctx = lua_touserdata(L,-1);
+	if (ctx == NULL) {
+		return luaL_error(L, "Init skynet context first");
+	}
+	luaL_setfuncs(L,l,1);  //最后一个参数为一, 表示将栈上的一个参数(ctx)设置为所有函数公用的upvalue
+
+	struct skynet_context * context = lua_touserdata(L, lua_upvalueindex(1));  //获取upvalue

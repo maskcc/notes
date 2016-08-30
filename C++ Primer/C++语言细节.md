@@ -188,6 +188,9 @@
 24. 全局变量的内存保证会在程序启动时被清零, 局部变量配置于程序的堆栈中, 堆对象位于heap中, 不一定会被清零, 它们的内容是内存上次被使用后的内容.
 25. [Linux终端下打印彩色文字的调用方法](http://www.cnblogs.com/clover-toeic/p/4031618.html)
 26. 基本类型的对象没有析构函数，所以回收基本类型组成的数组空间用 delete 和 delete[] 都是应该可 以的；但是对于类对象数组，只能用 delete[]。对于 new 的单个对象，只能用 delete 不能用 delete[] 回收空间。所以一个简单的使用原则就是：new 和 delete、new[] 和 delete[] 对应使用。
+27. 对sizeof ('a') 和 char ch = 'a'; sizeof(ch) 的处理, c和c++方式不同.c 中的结果为 4, 1, c++中为 1, 1
+    In C, the type of a character constant like 'a' is actually an int, with size of 4 (or some other implementation-dependent value). In C++, the type is char, with size of 1. This is one of many small differences between the two languages.
+28. [ISO C99 和 ISO c++ 的细微不同之处](http://david.tribble.com/text/cdiffs.htm#C99-char-literal)
 
 
 
