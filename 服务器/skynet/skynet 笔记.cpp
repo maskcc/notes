@@ -51,3 +51,11 @@ _open_sym 会创建服务 如mod->create = dlsym(mod->module, tmp);  执行snlua
 8. skynet_command 会执行 REG等函数
 9. init_cb snlua调用脚本的函数
 	skynet_send(ctx, 0, handle_id, PTYPE_TAG_DONTCOPY,0, tmp, sz);
+10. require 某个脚本后, 会就执行这个脚本, 当脚本里面声明一个skynet, 在结尾的时候返回
+	别的脚本就可以通过 local skynet = require "skynet" 来使用脚本里面的内容
+11. _cb(context, ud, type, session, source, msg, sz);
+	skynet.dispatch("lua", function(session, address, cmd , ...)
+
+	function skynet.start(start_func)
+		c.callback(skynet.dispatch_message) 会将dispatch_message函数注册到 skynet_callback(context, gL, _cb);
+12. cmd_launch 会启动服务 skynet_module_instance_init 每次launch都会有个新的context和lua_State
