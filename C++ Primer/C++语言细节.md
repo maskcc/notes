@@ -191,6 +191,7 @@
 27. 对sizeof ('a') 和 char ch = 'a'; sizeof(ch) 的处理, c和c++方式不同.c 中的结果为 4, 1, c++中为 1, 1
     In C, the type of a character constant like 'a' is actually an int, with size of 4 (or some other implementation-dependent value). In C++, the type is char, with size of 1. This is one of many small differences between the two languages.
 28. [ISO C99 和 ISO c++ 的细微不同之处](http://david.tribble.com/text/cdiffs.htm#C99-char-literal)
+29. `memset` 是按字节赋值的... 所以对`int`型赋值`1` 会有奇怪的数值产生
 
 
 

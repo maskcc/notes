@@ -2,7 +2,7 @@
 struct sockaddr_in servaddr;
 int socket (int family, int type, int protocol);
 int connect(int sockfd, const struct sockaddr *servaddr, socklen_t addrlen);
-int bind   (int sockfd, const struct sockaddr *myaddr, socklen_t addrlen);
+int bind   (int sockfd, const struct sockaddr *myaddr, socklen_t addrlen); //INADDR_ANY
 int listen (int sockfd, int backlog);
 int accept (int sockfd, struct sockaddr *cliaddr, socklen_t *addrlen);//出错返回-1
 int close(int sockfd);//#include <unistd.h>
@@ -25,6 +25,9 @@ pid_t fork(void);    /* #include <unistd.h>*/
 int inet_pton(int family, const char * strptr, void *addrptr);
 /*成功为结果的指针，出错为NULL*/
 const char *inet_ntop(int family, const void *addrptr, char *strptr, size_t len);
+
+/**/
+int inet_aton(const char *string, struct in_addr*addr);
 
 /*<netinet/in.h>*/
 #define INET_ADDRSTRLEN 16

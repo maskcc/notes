@@ -16,3 +16,10 @@ php的配置文件在`/etc/php5/apache2/phpi.in`.Apache2的根目录配置文件
 
 ##0x05
 [中文乱码](http://blog.csdn.net/ariessurfer/article/details/8168012)
+
+##0x06
+不小心点击`Ctrl + s` 后, tty 感觉像卡死了一样.其实是把消息阻塞了.要按`Ctrl + q` 解锁
+        
+        To disable this altogether, stick stty -ixon in a startup script. To allow any key to get things flowing again, use stty ixany.
+
+        ps: It's neither the terminal nor the shell that does this, but the OS's terminal driver.
