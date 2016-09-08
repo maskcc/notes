@@ -75,6 +75,9 @@
 			1   1
 			2	2
 
+8. table 的内置函数:
+	- table.unpack(t) 将table 中从下标1开始返回所有元素.(数组)
+
 ##0x03 运算操作符
 1. 对于table, userdata 和函数, Lua 是作引用个比较的.只有当其引用的是同一个对象时, 才认为他们相等.
 2. Lua 中的不等于用`~=`表示.
@@ -146,7 +149,86 @@
 1. 如果函数只有一个参数,而且此参数是一个字面字符串或table 构造式, 可以省略圆括号
 
 		setname{a= 1, b =2}
-as
+2. 如果一个函数调用, 不是一系列表达式的最后一个元素, 那么只产生一个值
+		function foo()
+			return "a", "b"
+		end
+		x, y = foo(), 20    --x = "a" y = 20, foo返回多个值
+		
+		print(foo().."x")   -- ax 函数调用不是表达式的最后一个元素, 只产生一个值
+		print((foo())) --将函数放入一对圆括号, 只返回一个值
+3. Lua 中参数表中的三个点`(...)`表示该函数可接受不同参数两的实参
+4. 具名实参的写法
+
+		rename{old = "timo.lua", new = "gank.lua"}
+		将一个table传入
+		function rename(arg)
+			return os.rename(arg.old, arg.new)
+		end
+5. 函数的写法
+
+		function foo(x)
+			return 2 * x
+		end --语法糖
+
+		foo = functoin(x)
+			return 2 * x
+		end
+6. 一个闭包(cloure)就是一个函数加上该函数所需范文的所有`非局部变量`
+
+		function newCounter()
+			i = 0
+			return function ()
+				i = i + 1
+				return i
+			end
+		end
+		
+		c1 = newCounter()
+		print(c1()) --> 1
+		print(c1()) --> 2
+		print(c1()) --> 3
+		
+		--创建了新的局部变量i, 返回了新的cloure
+		c2 = newCounter()
+		print(c2())	--> 1
+		print(c2()) --> 2
+7. 局部函数
+
+	它们具有特定的词法域(Lexical Scoping).指这个函数可以嵌套在另外一个函数中, 内部的函数可以访问外部函数中的变量
+
+		local function foo()  ... end
+		展开为
+		local foo
+		foo = function() ... end
+		
+		local pack = {}	
+		function pack.new() ... end
+8. 尾调用, 当return 后, 该函数的栈信息不需要保存(无其他事情要做)
+
+		function f(x) g(x) end -- 不是尾调用, 需要丢弃g返回值
+		return g(x) + 1		-- 不是, 得加一
+		return x or g(x)    -- 要调整为一个返回值
+		return (g(x))		-- 要调整为一个返回值
+	 形式如下: `return <func>(args)` 才为尾调用
+9. 使用next
+
+		for k, v in next, t do
+			...
+		end
+## 0x06 编译连接和错误
+1. 可以在在c函数动态链接库 
+
+		local path = "*.so"
+		local f = package.loadlib(path, "luaopen_socket(函数名)")
+2. 显式调用 `error` 来触发错误
+	
+		if not ptr then error("invalid pointer") end
+		或者使用
+		assert(nil != ptr, "invalid pointer")
+		assert 会检查第一个参数, 为false或nil会引发错误
+		file = assert(io.open("name", "r")), assert的第二个参数是io.open 的返回值
+ 		
 
 	        
         
