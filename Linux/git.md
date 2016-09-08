@@ -2,6 +2,9 @@
 
 		$ git config --global user.name "your name"
 		$ git config --global user.email "email@example.com"
+
+		$ git config user.name "your name"  #这是单个项目的作者配置
+		###注意, 这里设置的用户名和email要和GitHub上的用户名和email一致, 否则, 提交不会显示在下面的日志中
 2. 创建版本库
 	- 新建一个空目录
 	- 通过`git init` 将目录变成Git可以管理的仓库
