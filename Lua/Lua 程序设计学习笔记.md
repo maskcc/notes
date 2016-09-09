@@ -228,7 +228,102 @@
 		assert(nil != ptr, "invalid pointer")
 		assert 会检查第一个参数, 为false或nil会引发错误
 		file = assert(io.open("name", "r")), assert的第二个参数是io.open 的返回值
- 		
+## 0x07 元表
+1. Lua中的每个值都有一个元表, table 和userdata可以有个字独立的元表, 其他类型的值共享器类型所属的单一元表.创建table时不会创建元表.可以用`setmetatable`来设置或修改元表.
 
-	        
+		-- 设置table的元表
+		t1 = {}
+		setmettable(t, t1)
+		assert(getmetatable(t) == t1)
+2. `setmetatable` 和`getmetatable` 也会用到元表的一个字段, 用于保护元表. 设置该字段后, 用户既不能能看到也不能修改该元表, 需要设置字段`__metatable`. 设置后`getmetatable`会返回这个字段的值, 且`setmetatable`会引发错误
+3. 当访问table 中不存在的字段时, 解释器会查找`__index`的元方法, 由它提供结果.
+
+		mt = {}
+		function mt.test()
+		    --方法一, 直接将base的 __index 设置
+		    base = {}
+		    base.__index = {age=0, sex=0, name="rose", id="0"}
+		    der = {}
+		    setmetatable(der, base)
+		    print(der.name, der.age)
+		   
+		    -- 方法二, 写个函数, Lua 检测到der 中没有字段, 会用 der 和 key 来调用__index函数:
+		    base = {}
+		    base.tb = {age = 0, sex = 0, name = "rose, id = 0"}
+		    base.__index = function(t, key)
+		                   return base.tb[key]
+		                   end 
+		    der = {}
+		    setmetatable(der, base)
+		    print(der.name, der.age)
+		
+		end
+4. 如果不想在访问时涉及到 `__index`方法, 可以使用 `rawget(t, i)` 函数.`rawset(t, k, v)` 可以不涉及任何原方法而直接设置table t中与 key(k) 相关的value(v)
+5. 具有默认值的table. 常规table中任何字段的默认值都是nil.通过元表设置可修改
+
+		function setDefault(t, d)
+			local mt = {__index = functoin() return d end}
+			setmetatable(t, mt)
+		end
+		tab = { a = 7}
+		setDefault(tab, 0)
+		print(tab.x, tab.m) >> 7, 0
+
+6. 创建只读的table
+	
+		function readOnly (t)
+			local proxy = {}
+			local mt = {
+				__index = t
+				__nexindex = function(t, k, v)
+					error("attempt to update a read-only table", 2)
+			end
+			setmetatable(proxy, mt)
+			return proxy
+
+## 0x08 环境 
+1. Lua将其所有的全局变量表存在一个常规的table, 这个table称为环境. Lua 将环境table 自身保存在全局变量 `_G`中.
+
+## 0x09 编写模块
+1. 编写模块, 创建一个table, 将所有需要导出的函数放入其中, 追后返回这个table.
+
+		local M = {}
+		complex = M
+		function M.add(a, b)
+			...
+		end 
+		return complex
+
+		local modname = ...
+		local M = {]
+		_G[modname] = M
+		package.loaded[modname] = M
+		这样不需要在块结尾返回M, 此时require 会返回package.loaded[modname]的当前值
+
+## 0x10 面向对象
+1. 创建新实例的方法
+
+		function Account:new(o)
+			o = o or {}  --用户没提供table 就创建一个
+			setmetatable(o, self)	--使用自身作为元表
+			self.__index = self
+			return 0
+		end
+
+## 0x11 弱引用
+1. table的弱引用类型通过其元表中的 `__mode` 字段决定, 如果字符串中包含`k`, 则这个table的key 是弱引用的, 包含`v` 则value是弱引用的.如果table内的某个key 或value 是弱引用, 只要有一个key或value被回收了, 则该条目会从table中删除
+
+		a = {}
+		b = {__mode = "k"}	--a 的key就是弱引用了
+		setmetatable(a,b)
+		key = {}			--第一个key
+		a[key] = 1
+		key = {}			--创建第二个key, 第一个key会被回收
+								(没有其他地方引用第一个key)
+		a[key] = 2
+		collectgarbage()    --垃圾回收
+		for k, v in pairs(a) do print(v) end
+		>> 2
+		字符串想数字和bool一样, 不会从弱引用table中删除, 除非与他关联的value被回收了.
+
         
