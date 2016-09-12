@@ -111,4 +111,8 @@
 
         name mangling可以通过extern "C"解决。C++有个特定的关键字用来声明采用C binding的函数：extern "C" 。用 extern "C"声明的函数将使用函数名作符号名，就像C函数一样。因此，只有非成员函数才能被声明为extern "C"，并且不能被重载。尽管限制多多，extern "C"函数还是非常有用，因为它们可以象C函数一样被dlopen动态加载。冠以extern "C"限定符后，并不意味着函数中无法使用C++代码了，相反，它仍然是一个完全的C++函数，可以使用任何C++特性和各种类型的参数。
 
+26 [编译成动态链接库时, 可以使用 -Wl, -E 来使动态链接库使用主程序的全局变量](http://blog.chinaunix.net/uid-28647963-id-4190817.html)
+	[ld命令讲解(En)](https://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_node/ld_3.html)
+	[Linux动态库之同名符号](http://stackoverflow.com/questions/2172621/cannot-open-shared-object-file-no-such-file-or-directory)
 
+27. [调用动态库时, 提示 cannot open shared object file: No such file or directory](http://stackoverflow.com/questions/2172621/cannot-open-shared-object-file-no-such-file-or-directory)
