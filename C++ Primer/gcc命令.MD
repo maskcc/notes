@@ -116,3 +116,6 @@
 	[Linux动态库之同名符号](http://stackoverflow.com/questions/2172621/cannot-open-shared-object-file-no-such-file-or-directory)
 
 27. [调用动态库时, 提示 cannot open shared object file: No such file or directory](http://stackoverflow.com/questions/2172621/cannot-open-shared-object-file-no-such-file-or-directory)
+
+28. Gprof 可以用来查看c++ 代码性能. 编译程序时`g++/gcc`添加`-pg`选项, 运行程序并正常退出, 查看`gmon.out`文件. 使用`gprof -b ./main gmon.out > tmp.txt`, 将内容导出到`tmp.txt`文档中.无法得到程序内核空间的运行时间。它对内核态的调用分析无能为力。[参考1](http://en.wikipedia.org/wiki/List_of_performance_analysis_tools), [参考2](https://computing.llnl.gov/tutorials/performance_tools/#Considerations)...内存泄漏问题也可以使用这个工具`valgrind` [使用参考](http://blog.csdn.net/sunmenggmail/article/details/10543483)
+29. readelf,
