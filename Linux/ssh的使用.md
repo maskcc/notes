@@ -49,3 +49,4 @@ SSH的一些基本常识
         -4 强行使用 IPV4 地址 . 
         -6 强行使用 IPV6 地址 .
         例子:#scp -p 4588 remote@www.abc.com:/usr/local/sin.sh /home/administrator
+14. `ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key` 查看 秘钥的指纹
