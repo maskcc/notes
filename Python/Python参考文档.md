@@ -19,6 +19,7 @@
 10. [Requests的使用](http://cn.python-requests.org/zh_CN/latest/user/quickstart.html),[英文原版](http://cn.python-requests.org/zh_CN/latest/)
 11. [进阶](http://wklken.me/posts/2013/08/31/python-extra-coding-intro.html)
 12. [Python Guid 很厉害的文档英文](http://docs.python-guide.org/en/latest/starting/which-python/)
+13. [Python CookBook 非常详细](http://python3-cookbook.readthedocs.io/zh_CN/latest/copyright.html)
 
 ## 爬虫
 1. [Request的使用指南](http://requests-docs-cn.readthedocs.org/zh_CN/latest/user/advanced.html#advanced)
