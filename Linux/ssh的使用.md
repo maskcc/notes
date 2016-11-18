@@ -50,3 +50,7 @@ SSH的一些基本常识
         -6 强行使用 IPV6 地址 .
         例子:#scp -p 4588 remote@www.abc.com:/usr/local/sin.sh /home/administrator
 14. `ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key` 查看 秘钥的指纹
+15. 添加私钥时`ssh-add *`,提示`Could not open a connection to your authentication agent.`应该先启动`ssh-agent`.参考stackoverflow.
+
+        eval `ssh-agent -s` //这里是1左边的符号 `
+        ssh-add

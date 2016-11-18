@@ -1,0 +1,1 @@
+1. vector 进行push_back等操作时是执行的拷贝构造函数`Base(const Base&)`. 调用emplace 函数时, 是直接调用的构造函数进行直接初始化.

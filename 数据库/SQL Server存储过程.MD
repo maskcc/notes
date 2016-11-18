@@ -274,3 +274,29 @@
 		select * from ...
 		WHERE	qw.id=log.qianwenID AND log.awardID > 0 AND log.bHasNotice>0 
 			AND (log.source = @arg_Source or (@arg_Source <> 0 and @arg_Source <> 1))
+            
+27. 使用cusor 来读取多列
+
+    select @arg_ItemID_temp = ItemID from QPGameTestDB.dbo.mobile_item_use_info where ItemID = @arg_ItemID
+
+	if( @@ROWCOUNT = 0 )
+		return @ERROR_ITEM_NOT_EXIST
+	
+	declare cur cursor for
+	select AwardType, AwardItemID, AwardCount, AwardReserve from QPGameTestDB.dbo.mobile_item_use_info where ItemID = @arg_ItemID
+	open cur
+	fetch next from cur into @arg_awardType, @arg_awardItemID, @arg_awardCount, @arg_AwardReserve
+	while @@fetch_status = 0
+	begin
+
+		SET @arg_awardCount = @arg_awardCount * @arg_ItemCount
+
+		EXECUTE QPGameTestDB.dbo.sp_mobile_add_player_award @arg_UserID, 0, 0, 1297, @arg_awardType, @arg_awardItemID, @arg_awardCount, @arg_AwardReserve, 0, ''
+		PRINT 'send reward success type:' + cast( @arg_awardType as varchar ) + ' itemId = ' + cast( @arg_awardItemID as varchar ) + ' count = ' + cast( @arg_awardCount as varchar )
+		fetch next from cur into @arg_awardType, @arg_awardItemID, @arg_awardCount, @arg_AwardReserve
+
+	end
+
+	--关闭游标
+	close cur 
+	deallocate cur
