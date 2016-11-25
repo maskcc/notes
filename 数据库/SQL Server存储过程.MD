@@ -300,3 +300,12 @@
 	--关闭游标
 	close cur 
 	deallocate cur
+
+28. 存储过程中使用 select 后, 如果没将select 的结果保存下来, 就会将数据返回, 如果没将select
+
+    --下面这条会将userid返回 
+	select top 1 userid from QPUserLobbyDB.dbo.juezhan_Lobby_UserTaskInfo where userid = @arg_userid and take_type = 3 order by taskid asc
+    
+    --下面这条没有返回结果 
+    declare @_userid INT
+	select top 1 @_userid = userid from QPUserLobbyDB.dbo.juezhan_Lobby_UserTaskInfo where userid = @arg_userid and take_type = 3 order by taskid asc

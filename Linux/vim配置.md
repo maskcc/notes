@@ -80,3 +80,13 @@
 		set expandtab
 		set autoindent
 		autocmd BufNewFile, BufRead *.c, *.cpp, *.java :CFOLD
+
+8. 重装vim, 让vim 支持lua扩展
+    1. 在git 下载 vim 最新源代码 
+    
+        git clone https://github.com/vim/vim.git
+    
+    2. 参考 [安装vim方法](https://www.dwhd.org/20151004_133637.html)
+    3. 注意, 要检查各种配置是否ok, 看 configure 输出, 发现lua配置有问题, 在 /usr/bin 中没找到lua, 实际上lua的安装目录可能是在 /usr/local/bin , 要修改 src/auto/configure 文件的 vi_cv_path_lua_pfx="/usr/"为 vi_cv_path_lua_pfx="/usr/local", 再按照其步骤设置
+
+   
