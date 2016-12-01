@@ -41,10 +41,10 @@ int inet_aton(const char *string, struct in_addr*addr);
 /*
    1.sockaddr_in    <netinet/in.h>  忘记套接字地址结构
 */
-struct sockaddr_in
-{
-    uint8_t        sin_len;
-    sa_family_t    sin_family;
+   struct sockaddr_in
+   {
+   	uint8_t        sin_len;
+   	sa_family_t    sin_family;
     in_port_t      sin_port;     //network byte ordered
     struct in_addr sin_addr;      //network byte ordered 32-bits ipv4 address
     char           sin_zero[8];
@@ -58,9 +58,9 @@ struct in_addr
 /* <sys/socket.h>*/
 struct sockaddr
 {
-    uint8_t       sa_len;
-    sa_family_t   sa_family;
-    char          sa_data[14];
+	uint8_t       sa_len;
+	sa_family_t   sa_family;
+	char          sa_data[14];
 };
 
 
@@ -106,25 +106,25 @@ int open(const char *pathname, int oflag, .../*mode_t mode*/);
 //出错返回-1,成功返回文件描述符+,oflag:O_RDONLY 只读打开, O_WRONLY 只写打开, O_RDWR 读.写打开
 //可选flag:O_APPEND, O_CREAT, O_EXCL, O_TRUNC, O_NOCTTY, O_NONBLOCK
 
-int creat(const char *pathname, mode_t mode);
+	int creat(const char *pathname, mode_t mode);
 //出错返回-1, 成功返回只写方式打开的文件描述符.等价于 open(pathname, O_WRONLY | O_CREAT | O_TRUNC, mode);
 
-int close(int filedes);
+	int close(int filedes);
 //成功返回0, 失败返回-1.当一个进程终止时内核自动关闭它所有打开的文件
 
-off_t lseek(int filedes, off_t offset, int whence);
+	off_t lseek(int filedes, off_t offset, int whence);
 
-sszie_t read(int filedes, void *buf, size_t nbytes);
+	sszie_t read(int filedes, void *buf, size_t nbytes);
 //成功返回读到的字节数, 到文件结尾返回0, 出错返回 -1				
 //1. 如果对端TCP发送数据,read会返回一个大于0的值
 //2. 如果对端TCP发送一个FIN(对端进程终止),那么read返回0(EOF).
 //3. 如果对端TCP发送一个RST(对端主机崩溃并重新启动), 那么read返回-1, 且errno中含有确切的错误代码
 
-ssize_t write(int filedes, const void *buf, size_t nbytes);
+	ssize_t write(int filedes, const void *buf, size_t nbytes);
 //返回值通常与参数nbytes的相同
 //
 
-int shutdown(int sockfd, int howto);
+	int shutdown(int sockfd, int howto);
 //返回值 :成功返回0, 出错返回-1
 //howto: SHUT_RD,关闭连接的读一半.套接字不再接收数据,现有缓冲区数据都丢弃掉.该套接字接收任何数据确认后丢掉
 //       SHUT_WR,关闭连接的写一半.当前留在套接字缓冲区的数据将被发送掉.后接正常TCP终止序列.进程不能对这样的套接字调用任何写函数.
@@ -202,10 +202,10 @@ int epoll_create(int size);
 //
 typedef unio epoll_data
 {
-  void *ptr;
-  int fd;
-  __uint32_t u32;
-  __uint64_t u64;
+	void *ptr;
+	int fd;
+	__uint32_t u32;
+	__uint64_t u64;
 } epoll_data_t;
 
 struct epoll_event{
@@ -235,8 +235,8 @@ int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout)
 pthread_mutex_t mymutex=PTHREAD_MUTEX_INITIALIZER;
 //创建线程时, 第4个参数最好是在heap上的, 栈上的在程序进入后可能会被修改.要写个博客关于这个问题
 int pthread_create(pthread_t *restrict tidp,
-                  const pthread_attr_t *restrict attr,
-                  void *(*start_rtn)(void*), void *restrict arg);
+	const pthread_attr_t *restrict attr,
+	void *(*start_rtn)(void*), void *restrict arg);
 int pthread_exit(void *rval_ptr);
 int pthread_join(pthread_t thread, void** rval_ptr);
 int pthread_equal(pthread_t tidl1, pthread_t tid2);
@@ -250,13 +250,13 @@ void pthread_cleanup_pop(int excute);
 
 //互斥锁
 int pthread_mutex_init(pthread_mutex_t *restrict mutex,
-                      const pthread_mutexattr_t *restrict attr);
+	const pthread_mutexattr_t *restrict attr);
 int pthread_mutex_destroy(pthread_mutex_t *mutex);
 int pthread_mutex_lock(pthread_mutex_t *mutex);
 int pthread_mutex_trylock(pthread_mutex_t *mutex);
 int pthread_mutex_unlock(pthread_mutex_t *mutex);
 int pthread_mutex_timedlock(pthread_mutex_t *restrict mutex,
-                            const struct timespec *restrict tsptr);
+	const struct timespec *restrict tsptr);
 
 
 /*设置recursive属性的互斥锁.这样既可以解决同一线程递归加锁的问题，又可以避免很多情况下死锁的发生。*/
@@ -269,21 +269,21 @@ pthread_mutex_init(theMutex,&attr);
 //pthread_cond_wait所做的第一件事就是同时对互斥对象解锁,并等待cond发生(即收到另一个线程的信号,它将苏醒),此时
 //是一个阻塞操作,线程睡眠不会消耗CPU周期.当收到了broadcast信号后,会重新锁定mutex, 它会返回并且线程会继续执行.
 int pthread_cond_init(pthread_cond_t *restrict cond,
-                      pthread_mutex_t *restrict mutex);
+	pthread_mutex_t *restrict mutex);
 int pthread_cond_destroy(pthread_cond_t *cond);
 int pthread_cond_signal(pthread_cond_t *cond);
 int pthread_cond_broadcast(pthread_cond_t *cond);
 int pthread_cond_wait(pthread_cond_t *restrict cond,
-                      pthread_mutex_t *restrict mutex);
+	pthread_mutex_t *restrict mutex);
 int pthread_cond_timewait(pthread_cond_t *restrict cond,
-                          pthread_mutex_t *restrict mutex,
-                          const struct timespec *restrict tsptr);
+	pthread_mutex_t *restrict mutex,
+	const struct timespec *restrict tsptr);
 //读写锁
 //非常适合于对数据读的次数远大于写的情况.也叫共享互斥锁
 //与互斥锁相比,读写锁在使用前必须初始化, 释放他们的底层内存前必须销毁
 PTHREAD_RWLOCK_INITIALIZER
 int pthread_rwlock_init(pthread_rwlock_t *restrict rwlock,
-                        const pthread_rwlockattr_t *restrict attr);
+	const pthread_rwlockattr_t *restrict attr);
 int pthread_rwlock_destroy(pthread_rwlock_t *rwlock);
 int pthread_rwlock_rdlock(pthread_rwlock_t *rwlock);
 int pthread_rwlock_wrlock(pthread_rwlock_t *rwlock);
@@ -291,27 +291,70 @@ int pthread_rwlock_unlock(pthread_rwlock_t *rwlock);
 int pthread_rwlock_tryrdlock(pthread_rwlock_t *rwlock);
 int pthread_rwlock_trywrlock(pthread_rwlock_t *rwlock);
 int pthread_rwlock_timerdlock(pthread_rwlock_t *restrict rwlock,
-                              const struct timespec *restrict tsptr);
+	const struct timespec *restrict tsptr);
 int pthread_rwlock_timewrlock(pthread_rwlock_t *restrict rwlock,
-                              const struct timespec *restrict tsptr);
+	const struct timespec *restrict tsptr);
 //线程属性
 int pthread_attr_init(pthread_attr_t *attr);
 int pthread_attr_destrouy(pthread_attr_t *attr);
 int pthread_attr_getdetachstate(const pthread_attr_t *restrict attr,
-                                int *detachstate);
+	int *detachstate);
 int pthread_attr_setdetachstate(pthread_attr_t *attr, int *detachstate);
 int pthread_attr_getstack(const pthread_attr_t *restrict attr,
-                          void **restrict stackaddr,
-                          size_t *restrict stacksize);
+	void **restrict stackaddr,
+	size_t *restrict stacksize);
 int pthread_attr_setstack(pthread_attr_t *attr,
-                          void *stackaddr, size_t stacksize);
+	void *stackaddr, size_t stacksize);
 int pthread_attr_getstacksize(const pthread_attr_t *restrict attr,
-                              size_t *restrict stacksize);
+	size_t *restrict stacksize);
 int pthread_attr_setstacksize(pthread_attr_t *attr, size_t stacksize/);
 
 
 
 
+##示例函数
+1.  服务器
 
+		int svr()
+		{    
+			struct sockaddr_in server_addr;
+			bzero(&server_addr,sizeof(server_addr)); 
+			server_addr.sin_family = AF_INET;
+			server_addr.sin_addr.s_addr = htons(INADDR_ANY);
+			server_addr.sin_port = htons(10011);
+
+			int server_socket = socket(AF_INET,SOCK_STREAM,0);
+			int opt =1;
+			setsockopt(server_socket,SOL_SOCKET,SO_REUSEADDR,&opt,sizeof(opt));
+
+			bind(server_socket,(struct sockaddr*)&server_addr,sizeof(server_addr))
+			listen(server_socket, 200) 
+			    while (1) //服务器端要一直运行
+			    {
+			    	struct sockaddr_in client_addr;
+			    	socklen_t length = sizeof(client_addr);
+
+			    	int new_server_socket = accept(server_socket,(struct sockaddr*)&client_addr,&length);
+			    	char buffer[BUFFER_SIZE] = {0};
+			    	length = read(new_server_socket,buffer,BUFFER_SIZE);
+			    	close(new_server_socket);
+			    }
+		    close(server_socket);
+		    return 0;
+		}
+
+	2. 客户端
+
+	void client(){
+		int client_socket = socket(AF_INET,SOCK_STREAM,0);
+		struct sockaddr_in server_addr;
+		bzero(&server_addr,sizeof(server_addr));
+		server_addr.sin_family = AF_INET;
+		inet_aton("127.0.0.1",&server_addr.sin_addr) 
+		server_addr.sin_port = htons(10011);
+		socklen_t server_addr_length = sizeof(server_addr);
+		connect(client_socket,(struct sockaddr*)&server_addr, server_addr_length) 
+		close(client_socket);
+	}
 
 
