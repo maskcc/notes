@@ -19,6 +19,11 @@
 ###[常用插件](http://harttle.com/2015/07/18/vim-cpp.html)
 ###使用[delimitMate](https://github.com/Raimondi/delimitMate), 在~/.vimrc添加 `Plugin 'Raimondi/delimitMate'`并`PluginInstall`重新打开vim就能自动补全
 
+如果出错`ValueError: Still no compile flags, no completions yet.` 需要编辑 `~/.vimrc`,添加配置文件路径
+
+		"Youcompleteme fix
+		let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 4. 常用设置
 
 		#语法高亮度显示
