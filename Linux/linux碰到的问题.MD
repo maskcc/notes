@@ -24,3 +24,17 @@ php的配置文件在`/etc/php5/apache2/phpi.in`.Apache2的根目录配置文件
         To disable this altogether, stick stty -ixon in a startup script. To allow any key to get things flowing again, use stty ixany.
 
         ps: It's neither the terminal nor the shell that does this, but the OS's terminal driver.
+
+##0x07
+使用`sudo` 命令执行一些命令时, 显示 `command not found`, 应该是sudo的配置问题, 应该修改 `/etc/sudoers`的secure_path, 在后面加上 `:/usr/local/bin`
+
+        root@host ~]# sudo -V | grep 'Value to override'
+        Value to override user's $PATH with: /sbin:/bin:/usr/sbin:/usr/bin
+        If $PATH is being overridden use visudo and edit /etc/sudoers
+
+        Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+        
+##0x08
+当编译没问题, 运行时提示 `/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by ./r)`, 需要添加连接选项 `-static-libstdc++ -static-libgcc` [问题](http://stackoverflow.com/questions/19386651/how-to-fix-usr-lib-libstdc-so-6-version-glibcxx-3-4-15-not-found)
+[原因](http://stackoverflow.com/questions/13636513/linking-libstdc-statically-any-gotchas)
+[是由于最新版本的 libstdc++.so.6 没有拷贝到相应的位置 ](http://itbilu.com/linux/management/NymXRUieg.html)

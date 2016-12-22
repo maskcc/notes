@@ -119,3 +119,6 @@
 
 28. Gprof 可以用来查看c++ 代码性能. 编译程序时`g++/gcc`添加`-pg`选项, 运行程序并正常退出, 查看`gmon.out`文件. 使用`gprof -b ./main gmon.out > tmp.txt`, 将内容导出到`tmp.txt`文档中.无法得到程序内核空间的运行时间。它对内核态的调用分析无能为力。[参考1](http://en.wikipedia.org/wiki/List_of_performance_analysis_tools), [参考2](https://computing.llnl.gov/tutorials/performance_tools/#Considerations)...内存泄漏问题也可以使用这个工具`valgrind` [使用参考](http://blog.csdn.net/sunmenggmail/article/details/10543483)
 29. readelf,
+30. 当编译没问题, 运行时提示 `/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by ./r)`, 需要添加连接选项 `-static-libstdc++ -static-libgcc` [问题](http://stackoverflow.com/questions/19386651/how-to-fix-usr-lib-libstdc-so-6-version-glibcxx-3-4-15-not-found)
+[原因](http://stackoverflow.com/questions/13636513/linking-libstdc-statically-any-gotchas)
+[解决类似 /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found 的问题](http://itbilu.com/linux/management/NymXRUieg.html)

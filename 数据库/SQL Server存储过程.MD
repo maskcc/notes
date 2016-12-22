@@ -309,3 +309,5 @@
     --下面这条没有返回结果 
     declare @_userid INT
 	select top 1 @_userid = userid from QPUserLobbyDB.dbo.juezhan_Lobby_UserTaskInfo where userid = @arg_userid and take_type = 3 order by taskid asc
+    
+29. DATEPART(dw, GetDate() - 1) 获取今天星期几, 1 表示星期一
