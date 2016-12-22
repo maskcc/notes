@@ -74,6 +74,8 @@ CentOS 7 默认gcc版本是4.8, 要使用更多`c++ 11` 的特性, 需要升级�
 		cd /usr/bin  
 		ln -s /usr/local/gcc/bin/gcc gcc  
 		ln -s /usr/local/gcc/bin/g++ g++
+		sudo cp /gcc-5.4.0/build/prev-x86_64-redhat-linux/libstdc++-v3/src/.libs/libstdc++.so.6 /usr/lib64/ 
+		更新libstdc++.so.6到/usr/lib64/ 和 /usr/lib
 
 10. 添加man帮助
 	
