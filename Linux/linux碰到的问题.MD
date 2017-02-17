@@ -38,3 +38,17 @@ php的配置文件在`/etc/php5/apache2/phpi.in`.Apache2的根目录配置文件
 当编译没问题, 运行时提示 `/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by ./r)`, 需要添加连接选项 `-static-libstdc++ -static-libgcc` [问题](http://stackoverflow.com/questions/19386651/how-to-fix-usr-lib-libstdc-so-6-version-glibcxx-3-4-15-not-found)
 [原因](http://stackoverflow.com/questions/13636513/linking-libstdc-statically-any-gotchas)
 [是由于最新版本的 libstdc++.so.6 没有拷贝到相应的位置 ](http://itbilu.com/linux/management/NymXRUieg.html)
+
+##0x09 
+编译glog, configure 后再make, 会报错
+
+        CDPATH="${ZSH_VERSION+.}:" && cd . && aclocal-1.14 -I m4
+        /bin/bash: aclocal-1.14: command not found
+        Makefile:957: recipe for target 'aclocal.m4' failed
+        
+[解决方法:]( http://blog.csdn.net/arackethis/article/details/42222905 )
+         1. 安装需要的一些库 `autotools-dev, automake, autoconf2.13, m4, perl, libperl5.14`
+         2. 在目录下执行 `sudo autoreconf -ivf`
+         3. 重新configure和make就行
+         
+         

@@ -17,9 +17,9 @@ lambda 不能有默认参数.
 	//此处使用的是值捕获, 传递的是sz的一个拷贝, 
 	//要使用引用捕获, 需要传入一个引用 [&sz]
 	//传入引用要保证在函数结束后该值还有效...lambda表达式会比函数生存周期长 
-	//含有引用捕获的lambda 表达式不能作为返回值(类似不能反悔一个局部变量的引用)
+	//含有引用捕获的lambda 表达式不能作为返回值(类似不能返回一个局部变量的引用)
 	int sz = words.size();  
-	stable_sort(words.begin(), words.end(),
+	stable_sort(words.begin(), words.end(),返回
 			[sz](const string &a, const string&b)
 			{return a.size() < b.size();});
 
