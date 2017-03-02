@@ -51,4 +51,7 @@ php的配置文件在`/etc/php5/apache2/phpi.in`.Apache2的根目录配置文件
          2. 在目录下执行 `sudo autoreconf -ivf`
          3. 重新configure和make就行
          
+##0x10
+date 发现系统时区不对, 使用 `tzselect` 选择时区,会生成一个修改配置文件的命令如`TZ='Asia/Shanghai'; export TZ` , 将它复制到~/.profile 文件中, 重新进入生效. 修改系统时钟使用`date -s 2005/08/08` 日期 `date -s 20:12:00` 时间..11分钟生效
+         
          
