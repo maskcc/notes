@@ -1,20 +1,42 @@
 ##[参考,分析云风makefile以及自动化makfile](http://www.cnblogs.com/thoryan/p/3630930.html)
-1. 在makefile中使用变量
 
-		obj = main.o xml.o net.o tst.o
+1. 基础规则
+    
+    target 目标文件 : 依赖文件
+        command(命令)
+        
+2. Makefile中的命令,都必须以`Tab`键开始, make -n 打印运行过程.
+3. Makefile文件名一般写为`makefile`或`Makefile`, 如果不是上述名称,需要使用类似
+
+		make -f Make_gate #或
+		make --file Make_gate
+        
+        
+
+4. 在makefile中使用变量
+
+		obj := main.o xml.o net.o tst.o
 		target : $(obj)
-        g++ -o target $(obj)
+            g++ -o target $(obj)
 
-2. make 的自动推导,只要make看到一个`.o`文件,那么`something.c`就是`something.o`的依赖文件.并且`cc -c something.c`也会被推导出来.
+2. make 的自动推导,只要make看到一个`.o`文件, 会自动推出`*.cc`文件,那么`something.c`就是`something.o`的依赖文件.并且`cc -c something.c`也会被推导出来.
 
-		obj = main.o xml.o net.o tst.o
-		target : $(obj)
-        g++ -o target $(obj)
+        target := test
+		obj := main.o xml.o net.o 
+		$(target) : $(obj)
+        g++ -o $(target) $(obj)
 
 		man.o def.h
 		xml.o def.h
 		net.o def.h
-		tst.o def.h
+		
+        make -n
+        生成过程
+        g++    -c -o main.o main.cc
+        g++    -c -o xml.o xml.cc
+        g++    -c -o net.o net.cc        
+        g++ -o main main.o xml.o net.o
+
 
 3. 清理
 
@@ -22,11 +44,8 @@
 		clean : 
 		-rm edit $(objects) #- 表示某系文件出现异常忽略,.PHONY表示clean是一个伪目标.一般clean放在最后.
 
-4. Makefile中的命令,都必须以`Tab`键开始.
-5. Makefile文件名一般写为`makefile`或`Makefile`, 如果不是上述名称,需要使用类似
 
-		make -f Make_gate #或
-		make --file Make_gate
+
 
 6. 引用其他Makefile
 
