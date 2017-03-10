@@ -31,12 +31,14 @@
 	[-n "$var"] 判断$var变量是否有值
 	["$sa" = "$sb"] 判断$sa和$sb是否相等
 	执行 man test 可以查看测试表达式,一般是比较文件等
+7.
 
-7. 逻辑操作符`&&` , `||`
+8. 逻辑操作符`&&` , `||`
 		
 		if [-f "/etc/shadow"] && echo "This pc use shadow passwd"
 		if [-f "/etc/shadow"] || {echo "good file"; exit 1;}
 		exit 1 退出
 		使用花括号作为匿名函数.
 
-8. $1 表示传递给脚本的第一个参数.
+9. $1 表示传递给脚本的第一个参数.
+10. 函数的使用
