@@ -78,7 +78,7 @@
     - GROUP BY 分组行,位于 WHERE 子句之后, ORDER BY 子句之前
     - HAVING 筛选分组, 限制了Group By 显示的分组数.它是在分组后才被应用
     - WHERE 子句从 FROM 和 JOIN 子句指定的运算结果中筛选, GROUP BY 子句对 WHERE  子句的输出进行分组, HAVING子句对分组后的结果进行筛选.
-4. 使用联结
+4. 使用联结[在MySQL中使用嵌套](http://www.blogjava.net/chenpengyi/archive/2005/09/25/14008.html)
     - 使用 AS 创建表的别名, 在 FROM 或 JOIN 子句中使用 table [AS] alias
     - 连接类型:
         - 交叉联结(CROSS), 第一个表的每一行和第二个表的所有行的组合
@@ -114,6 +114,25 @@
             HAVING
                 CODE = 'chn';
                 
+         MySQL 中嵌套查询与创建视图的例子 
+         CREATE VIEW au_test (au_id, au_name, title) AS (
+            SELECT
+                au.au_id,
+                au.au_name,
+                tts.title_name
+            FROM
+                (
+                    SELECT
+                        a.au_id,
+                        a.au_name,
+                        t.title_id
+                    FROM
+                        AUTHORS AS a
+                    INNER JOIN title_authors AS t ON a.au_id = t.au_id
+                ) AS au
+            INNER JOIN titles AS tts ON au.title_id = tts.title_id
+        )
+                
 5. 集合操作:
     - UNION 返回两个查询返回的所有行, 但会删掉重复的行, UNION ALL不去掉重复
     - INTERSECT 返回两个查询返回的所有共同行(MySQL 中并不支持该操作符)
@@ -136,3 +155,13 @@
         );
         
 8. 索引是排序的列表, 在这个列表中索引列的每个不同值和包含该值的行的硬盘地址存储在一起, DBMS无需检索真个表来定位行, 而仅需要扫描索引中的地址就能直接访问相应的行. DBMS在表插入, 更新或删除行之后必须更新索引.索引必须保证唯一性, 表索引中的列的值唯一.
+
+        CREATE [UNIQUE] INDEX index
+            ON table (index_columns);
+        DROP INDEX index
+        ON table;
+        DROP INDEX titles.pub_id_idx;
+        -- 无法删除DBMS 为主键约束和唯一约束自动创建的索引
+        
+9. 事务是一个或多个连接在一起作为一个逻辑单位运行的SQL 语句.DBMS 认为事务是不可分割的, 要么全部执行, 要么全不执行.
+        
