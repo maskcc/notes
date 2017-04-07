@@ -61,7 +61,9 @@
     - 当有大量字符串需要修改, 可以使用 System.Text.StringBuilder, 有 Append(), AppendFormat(), Remove(), Replace() 等方法, 会直接修改 StringBuilder 本身的数据.
 8. null 和 void, null 表明变量不引用任何有效的对象, void 表示没有类型或者没有任何值.
 9. C#3.0 增加了上下文关键字 `var` 来声明隐式类型的局部变量
-10. 为了声明可以存储null 的变量, 要使用可空修饰符 `?` , 常用在数据库编程.
+10. 为了声明可以存储null 的变量, 要使用可空修饰符 `?` , 常用在数据库编程. `??`空集合操作, 如果这个值为空, 使用另一个值, 有短路原则.
+
+        expression1 ?? expression2
 
         int? count = null;
         if( null != count ){
@@ -116,6 +118,7 @@
     - *, \, % 最高优先级
     - +, - 次之
     - =, 最低
+    - 位移操作符的优先级低于算术操作符 
     
 16. 线程安全的自增自减操作: System.Threading.Interlocked.Increment(), Decrement();
 17. foreach( char letter in email)
@@ -130,15 +133,193 @@
     goto identifier;
     goto case input;
     goto default;
+
+19. AND(&), OR(|), XOR(^), 按位取反(~), 位操作符
+20. foreach循环, foreach 循环期间禁止修改循环变量 variable
+
+        foreach( type variable in collection )
+            statement
     
+21. 预处理指令
+    - #if() #elif #else #endif
+    - #define DEBUG
+    - #undef DEBUG
+    - #error
+    - #warning      //编译器会提出警告
+    - #pragma warning disable(restore) 1030 //禁用(还原)#warning 指令
+    - #line org-line new-line #line default  //指定警告的行号 #line 113 "test.cs" #warning "warn happen" #line default
+    - #region pre-proc-msg code ... #endregion
+    - 在编译时使用define 选项 csc.exe /define:DEBUG test.cs
+
+22. 使用 `using namespace;` 的 using 指令来引用命名空间, 但是要使用命名空间的一个子命名空间, 如 System.Console 下的内容, 应该在
+    using System; 后添加 using System.Console; using 指令不会导入任何嵌套命名空间中的类型. 可以为命名空间指定一个别名`using sys = System;`
     
+23. 如果一个程序的两个类都有Main()方法, 可以使用 csc.exe 的 /m 开关指定包含入口的类.
+23. 参数默认是传值的. 如果要以传引用方式传值, 可以使用 func(ref argc1, ref argc2); 使用 out 修饰参数类型, 可以以传引用的方式传入一个未初始化的值. 如果要返回多个值, 可以返回 tuple 类型.
+24. 传入多个参数 static string Combine(params string[] paths);// 在方法申明的最后一个参数之前添加 params 关键字, 将最后一个参数声明为数组(方法最多只能有一个参数数组).
+25. 异常处理:
+    - 所有的异常类都派生自 System.Exception.
 
+        try{
+            int.Parse("32");
+        }
+        catch( FormatException ){
+            ...
+        }
+        catch( System.Exception ){
+            ...
+        }
+        catch{
+            //应该避免使用
+            //常规catch块, 等价于获取object数据类型的catch块
+        }
+        finally{
+            //finally 不论是否异常后肯定会执行的内容
+        }
+        
+    - 常见异常类型
+    
+        System.Exception 异常的基类
+        System.ArgumentExcetion 传给方法的参数无效
+        System.ArgumentNullExcepion 不应该为null的参数为null
+        System.ApplicationException 应避免使用这个异常, 初衷是实把系统异常和应用程序异常区分开, 实际行不通
+        System.FormatException 参数格式不符合调用的方法的参数规范
+        System.IndexoutOfRangeException 试图访问不存在的数元素或其他集合元素
+        System.InvalidCastException 因无效的类型转换引发的异常
+        System.NotImplementedException 找到方法的签名但是实现没找到
+        System.NullReferenceException 试图通过一个空的引用访问对象
+        System.AritheticException 发生无效的数学运算, 不包括被零除
+        System.ArrayTypeMismatchException 试图将类型有误的元素存储到数组
+        System.StackOverflowException 发生了非预期的深递归
+      
+    - 使用 throw 语句报告错误. `throw new Exception ( "not handled!" );`
+    
+26. 类的字段可以在声明时设置字段的初始值.在类的实例成员内部, 可以使用this 获取对这个内的引用.
+27. C#中属性的声明.
 
+        class Employee{
+            public string first_name{
+                get{
+                    return first_name_;
+                }
+                //可以给get和set指定访问修饰符, 
+                private set{
+                    first_name_ = value;//value 关键字引用赋值操作符的右侧部分
+                }
+            }
+            //虚字段, 根据value来设置first_name_ 和 last_name_
+            public string name {
+                get{
+                }
+                set{
+                }
+            }
+            public string last_name{ get; set; }
+            private string first_name_;
+            private string last_name_;
+        }
+28. 属性和方法调用不允许作为ref或out参数值使用.
+29. 可以使用对象初始化器对对象进行初始化.只是一种语法糖 如:
 
+        Employee ep1 = new Employee("Jack", "Cananda")
+        { Title = "Computer engneer", Salary = "not enough"};
+        
+        //集合初始化器 
+        List<Employee> eps = new List<Employee>(){
+            new Employee ("Mike", "Japan"),
+            new Employee ("Cike", "Nihong"),
+        };
+        
+30. 构造器链, 从一个构造器中调用同一个类的另一个构造器:
 
+        public Employee(string fname, string lname){
+            first_name_ = fname;
+            last_name_ = lname;
+                    
+        }
+        //使用this 调用构造器 
+        public Employee(int id, string fname, string lname):
+            this(fname, lname){
+            Id = id;
+        }
+        
+31. 未初始化的静态字段将获得默认值 default(T), 静态构造器用于对类进行初始化, 运行时在首词访问类时自动调用静态构造器.
 
+        static Employee{
+            Random randomGenerator = new Random();
+            NexId = randomGenerator.Next(101, 999);
+        }
+        //声明时对静态变量赋的值被移动到静态构造器的第一条语句前.可以考虑以内联的方式初始化静态字段.
+        
+32. 用static 关键字修饰类, 表明该类是个静态类, 只能通过类名来调用成员函数.不能有非静态的成员变量.被标记为 abstract 和 sealed.
+33. 扩展类, 为类添加实例方法, 即使是哪些不在同一个程序集的类. 第一个参数是要扩展或者要操作的类型(被扩展的类型), 在被扩展的类型名称前附加this修饰符, 要将方法作为一个扩展方法来访问. 如果扩展方法的签名已经和被扩展类型中的签名匹配, 则扩展方法不会被调用.
+    public static class DirectoryInfoExtension{
+        public static void CopyTo(
+            this DirectoryInfo sourceDir, string target, 
+            SsearchOption opt, string searchPattern){
+                ...
+            }
+    }
+    
+        DirectoryInfo dir = new DirctoryInfo(".\\source");
+        dir.CopyTo(".\\target", SearchOption.AllDirectories, "*");
+        
+34. 使用const 和 readonlye 将数据封装到类中.public 常量应该恒定不变, 其他地方引用的常量会在编译时写入到引用程序集中, 当常量改变而没有重新编译, 程序集将使用原始值而不是新值. 将来可能改变的值应该制定为readonly(只能应用于字段, 只能从构造器中更改或者声明时指定).readonly 应用于数组, 不会冻结数组的内容, 智慧冻结数组中的元素数量.
+35.  嵌套类能访问包容类的任何成员, 包容类不能访问嵌套类的私有成员.
+36. 除非明确指定了基类, 否则所有类都默认从object派生. 可以将派生类型的值直接赋给基类类型的变量.反之, CLR 会在运行时检测这个转换, 错误就抛出异常.
+37. C# 只有单继承, 不能同时继承两个基类
+39. 密封类, 避免非预期的派生 
 
+        public sealed class Cls{}
+        
+40. C#中需要重写的函数都需要加上virtual 关键字, 子类重写时要加上 override 关键词, 用 override 修饰的任何方法都自动成为虚方法. C# 总是调用派生得最远的虚成员.
 
+        public class PdaItem{
+            public virtual string Name{get; set;}
+        }
+        public class Contact : PdaItem{
+            public override string Name{get; set;}
+        }
+
+41. C# 在派生类中用new 修饰符实现的函数调用派生类的函数.
+42. sealed 修饰符禁止从该类继承, 虚成员也可以密封, 防止其子类重写该成员.
+
+        class Base{
+            public virtual void Method(){}
+        }
+        
+        class Der{
+            public override sealed void Method(){}
+        }
+        class SubDer{
+            //这里会报错, 密封后不能重写
+            public override void Method(){}
+        }
+    
+43. 使用 关键字 base 指代基类, 可以在派生类中调用基类函数.派生类的构造器可以使用关键字base 来明确指明基类应该调用的构造函数.
+
+        public class BaseClass{
+            public BaseClass(string name){}
+        }
+        public class Der : BaseClass{
+            public Der(string name):base(name){}
+        }
+
+44. 使用关键字  abstract 来标志抽象类. 
+    - 抽象类不可实例化
+    - 包含抽象成员
+    - 没有实现的方法或属性
+    - 其作用是强制所有的派生类提供实现
+    - 抽象成员不能声明为私有
+  
+45. 所有类都从System.Object派生, 都含有这些成员函数:
+    - public virtual bool Equals(object o)
+    - public virtual int GetHashCode()
+    - public Type GetType()
+    - public static bool ReferenceEquals(object a, object b) //如果两个参数引用同一个对象就返回true
+    - public virtual string ToString()
+    - public virtual void Finalize()  // 析构器的一个别名, 通知对象准备终结, C#禁止直接调用这个方法.
+    - protected object MemberwiseClone() //创建当前对象的浅表副本.引用会被复制, 但被引用类型中的数据不会被复制.
 
 
 
