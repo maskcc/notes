@@ -320,14 +320,88 @@
     - public virtual string ToString()
     - public virtual void Finalize()  // 析构器的一个别名, 通知对象准备终结, C#禁止直接调用这个方法.
     - protected object MemberwiseClone() //创建当前对象的浅表副本.引用会被复制, 但被引用类型中的数据不会被复制.
+   
+46. 使用is 操作符判断基础类型. 
 
+        string data;
+        if ( data is string ){
+            ...
+        }
 
+47. 使用 as 操作符进行转换, 当转换失败会返回null, as 不能成功判断基础类型, as能在继承链中向上或向下转型.
+48. 接口成员使用访问修饰符, 所有成员都自动定义为公共成员.
+49. 实现和使用接口:
 
+        interface IListable{
+            string[] ColumnValues{
+                get;
+            }
+        }
+        public abstract class PdaItem{
+            public PdaItem(string name){
+                name_ = name;
+            }
+            public virtual string name_{get; set;}
+        }
+        
+        //继承的基类写在前面, 接口写在后面, 可以实现多个接口, 但只能从一个基类派生.接口不能包含静态成员
+        class Contact : PdaItem, IListable{
+            public Contact(string argc1, string argc2) : base(null){
+                argc1_ = argrc1;
+                argc2_ = argrc2;
+            }
+            public string argc1_ {get; set}
+            public string argc2_ {get; set}
+            
+            public string[] ColumnValues{
+                get{
+                    return new string[]{
+                        argc1_,
+                        argc1_
+                    };
+                }
+                
+                
+            }
+        }
+        interface IShow{
+            void show(string s);
+        }
+        class JackShow : IShow
+        {
+            //接口的显式实现, 没有public前缀, 调用时要强制转换 ((IShow)obj).show(argc);
+            void IShow.show(string name){}
+        }
 
+50. 除了string 和 object 是引用类型, 所有C# 内建类型都是值类型. 定义值类型使用关键字 struct. 
+    - 一般使用值类型的良好规范是确保值类型是不可变的. 一旦实例化值类型就不能修改.
+    - 不能包含用户定义的默认参数构造器, 每个结构会自动获得一个无参构造器将所有字段初始化为默认值
+    - C# 禁止在声明时对结构的实例字段进行赋值.
+    - 可以使用有参数的构造器, 但是构造时要将所有属性初始化.否则编译器会报错.
+    - 将new 用于值类型时, 在临时存储池中创建对象新的实例, 并将所有字段初始化为默认值, 再调用构造器, 将临时存储位置作为ref变量以this传给构造器. 
 
+51. C#中 new 创建的值类型 任然是值类型.
 
+        int c1 = new int();
+        c1 = 9;
+        int c2 = c1;
+        c2 = 7;
+        print(c1, c2); // --> 9, 7  按值复制, 修改c2 不会影响c1
+       
+52. 所有值类型都是隐式密封, 除了枚举之外的所有值类型都派生自System.ValueType, 结构的继承链总是从object到System.ValueType到结构.
+53. 装箱, 将值类型转换成一个临时的引用类型, 拆箱, 将引用类型转换成值类型.每个装箱操作都涉及到内存分配和复制, 每个拆箱操作都设计类型检查和复制.
 
+        //一般是将一个值类型传给一个需要object 类型的函数
+        void add(object obj);
+        int c = 7;
+        add(c);
 
+        int number;
+        object thing;
+        doublie big_num;
+        
+        number = 42;
+        thing = number;
 
 
 
