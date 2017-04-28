@@ -403,12 +403,61 @@
         number = 42;
         thing = number;
 
+54. 枚举类型的定义方法, 其他类型转换成枚举要显示转换, 除了0, 0能隐式转换成任何枚举类型, 继承链从 System.ValueType 到 System.Enum 到枚举.
 
+		enum DAYS{
+			Monday = 0, //第一个默认等于0
+			Tuesday = 3,
+			Wednesday //这个为3+1 = 4
+		}
 
+55. 重写 `ToString()` 方法
 
+		public override string ToString(){
+			return string.Format("{0} : {1}", hour, second);
+		}
+56. 声明对象为弱引用, 使用前一般要先判断是否等于 null
 
+		public WeakReference Data;
 
+57. 终结期不能重载, 也不能显示调用, 调用它的只能是垃圾回收器.终结器不支持访问修饰符.基类中的终结器作为对象终结调用的一部分被自动调用. `~Destructor(){}`
 
+58. 委托的使用
+
+        //委托的声明
+        public delegate bool ComparisonHandler( int argc1, int argc2 );
+        //委托的实例化, 参数必须和签名的参数一致, 
+        void sort( int[] items, ComparisonHandler h);
+        public bool greater_than( int argc1, int argc2 ){ return argc1 > argc2; }
+        //从方法组向委托类型的转换会自动创建一个新的委托对象, 不必new 实例化 ComparisonHandler
+        sort( items, greater_than );
+        //Lambda 表达式的使用
+        sort( items, (int argc1, int argc2 ) => {
+            return argc1 > argc2;
+        });
+        //也能省略参数类型
+        sort( items, (argc1, argc2 ) => {
+            return argc1 > argc2;
+        });
+        //表达式 Lambda
+        sort( items, (argc1, argc2) => argc1 < argc2 );
+
+59. C#中多线程, 命名空间 `using System.Threading`, 启动一个无参数线程
+
+        using System.Threading;
+        //无参线程
+        public static void DoWork(){}
+        ThreadStart threadStart = DoWork;
+        Thread th = new Thread(threadStart);
+        th.Start();
+        th.Join();
+        
+        //有一个objcet参数的线程
+        public static void DoWork(object obj){}
+        ParameterizedThreadStart threadStart = DoWork;
+        Thread th = new Thread(threadStart);
+        th.Start( obj /*线程参数*/);
+        th.Join();
 
 
 
