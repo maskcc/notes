@@ -109,3 +109,9 @@
     3. ulimit -c 1024 限制core文件大小
     4.生成通过修改/proc/sys/kernel/core_uses_pid文件，可以将进程的pid作为作为扩展名，生成的core文件格式为core.xxx，其中xxx即为pid
     5.通过修改/proc/sys/kernel/core_pattern可以控制core文件保存位置和文件格式。例如：将所有的core文件生成到/corefile目录下，文件名的格式为core-命令名-pid-时间戳. echo "/corefile/core-%e-%p-%t" > /proc/sys/kernel/core_pattern
+    
+27. 当debug 时, 当有broken pipe 的signal 时, 会一直中断, 可以使用  [GDB 的handler功能](http://blog.csdn.net/tanqiuwei/article/details/39521611)
+        
+        handle SIGPIPE nostop print
+        //也不打印出错信息
+        handle SIGPIPE nostop noprint

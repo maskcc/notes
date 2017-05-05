@@ -84,3 +84,8 @@
 
 13. [Git warning:LF wil be replaced by CRLF的解决](http://blog.csdn.net/feng88724/article/details/11600375)
 14. [Git功能简介](http://nulls.cc/git-notes.html)
+15. 在git中忽略掉某个文件, 可以在版本库目录中添加 .gitignore 文件. 当有文件已经commit了, 再添加 .gitignore 是无效的. 需要先用下列命令删除缓存
+
+        git rm -r --cached file_or_dir_name(文件或目录名)
+        
+    另外 git 还提供了另一种 exclude 的方式来做同样的事情，不同的是 .gitignore 这个文件本身会提交到版本库中去。用来保存的是公共的需要排除的文件。而 .git/info/exclude 这里设置的则是你自己本地需要排除的文件。 他不会影响到其他人。也不会提交到版本库中去。
