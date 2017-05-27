@@ -122,3 +122,6 @@
 30. 当编译没问题, 运行时提示 `/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by ./r)`, 需要添加连接选项 `-static-libstdc++ -static-libgcc` [问题](http://stackoverflow.com/questions/19386651/how-to-fix-usr-lib-libstdc-so-6-version-glibcxx-3-4-15-not-found)
 [原因](http://stackoverflow.com/questions/13636513/linking-libstdc-statically-any-gotchas)
 [解决类似 /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found 的问题](http://itbilu.com/linux/management/NymXRUieg.html)
+
+31. 编译成64位程序与 Release 版本的配置方法[cnblogs](http://www.cnblogs.com/zyl910/archive/2012/08/14/gcc64_make.html)
+    [64位程序与32位程序需要注意的地方](http://blog.csdn.net/cjy1003/article/details/9225923)

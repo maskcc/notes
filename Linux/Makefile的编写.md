@@ -242,3 +242,4 @@
 
 [参考1](https://segmentfault.com/a/1190000000349917)  
 [参考2, 头文件](https://www.binss.me/blog/solving-make-doesn't-rebuild-when-headers-changed-problem/)
+[参考3, 多目录](http://www.cnblogs.com/lidabo/p/4521117.html)

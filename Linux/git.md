@@ -89,3 +89,7 @@
         git rm -r --cached file_or_dir_name(文件或目录名)
         
     另外 git 还提供了另一种 exclude 的方式来做同样的事情，不同的是 .gitignore 这个文件本身会提交到版本库中去。用来保存的是公共的需要排除的文件。而 .git/info/exclude 这里设置的则是你自己本地需要排除的文件。 他不会影响到其他人。也不会提交到版本库中去。
+    
+16. clone 指定ip指定端口号的项目
+
+        git clone  ssh://git@127.0.0.1:22/git/workspace/work.git
