@@ -458,6 +458,8 @@
         Thread th = new Thread(threadStart);
         th.Start( obj /*线程参数*/);
         th.Join();
+        
+60. [C#中特性的使用](http://www.cnblogs.com/liuxinxin/articles/2265672.html)
 
 
 
