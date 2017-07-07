@@ -46,6 +46,11 @@
 		#次类推，进行查找时，使用此设置会快速找到答案，当你找要匹配的单词
 		#时，别忘记回车
 		set incsearch
+        
+        #为操作的一行添加下划线
+        set cursorline
+        #自动缩进 
+        set autoindent 
 
 		# vim  中文无法显示
 		
@@ -93,5 +98,20 @@
     
     2. 参考 [安装vim方法](https://www.dwhd.org/20151004_133637.html)
     3. 注意, 要检查各种配置是否ok, 看 configure 输出, 发现lua配置有问题, 在 /usr/bin 中没找到lua, 实际上lua的安装目录可能是在 /usr/local/bin , 要修改 src/auto/configure 文件的 vi_cv_path_lua_pfx="/usr/"为 vi_cv_path_lua_pfx="/usr/local", 再按照其步骤设置
+    
+9. vim 退格键不能用
+
+        vim 退格键（backspace）不能用 
+        两个步骤：
+        1.去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限. set nocompatible 
+        2.backspace有几种工作方式，默认是vi兼容的。对新手来说很不习惯。对老vi 不那么熟悉的人也都挺困扰的。可以用
+        set backspace=indent,eol,start
+        来解决。
+        indent: 如果用了:set indent,:set ai 等自动缩进，想用退格键将字段缩进的删掉，必须设置这个选项。否则不响应。
+        eol:如果插入模式下在行开头，想通过退格键合并两行，需要设置eol。
+        start：要想删除此次插入前的输入，需设置这个。
+        将以上两个命令加到vim的系统配置文件里就可以了。
+    
+
 
    
