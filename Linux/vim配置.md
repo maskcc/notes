@@ -111,6 +111,10 @@
         eol:如果插入模式下在行开头，想通过退格键合并两行，需要设置eol。
         start：要想删除此次插入前的输入，需设置这个。
         将以上两个命令加到vim的系统配置文件里就可以了。
+        
+10. [vim 编码理解](http://blog.csdn.net/cainiao_2010/article/details/8142051)
+
+        set fileencodings=ucs-bom,utf-8,GB18030,gbk
     
 
 

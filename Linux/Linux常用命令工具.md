@@ -22,4 +22,4 @@
 15. nslookup twitter.com 8.8.8.8
 16. lsof
 17. netlog 库, nettimer, iperf 测量TCP 和UDP的网络性能
-18. 网络流量分析 nload, iftop, ifstat, nethogs, tcpdump
+18. 网络流量分析 nload, iftop, ifstat, nethogs, tcpdump [iftop参考](https://www.vpser.net/manage/iftop.html)
