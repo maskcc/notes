@@ -102,7 +102,7 @@
 22. `call` 或 `print` 直接调用函数执行
 23. `info frame` 显示函数堆栈帧信息
 24. `frame n`命令选择函数堆栈帧
-25. `break 10 if i==101` 条件断点
+25. `break 10 if i==101` 条件断点, 可以使用 condition 断点编号 条件 , 来给指定断点添加触发条件
 26. 生成core dump 文件方法:
     1. 查看, 输入ulimit -c 结果为0, 没有dump文件
     2. ulimit -c unlimited 开启core dump功能
@@ -115,3 +115,10 @@
         handle SIGPIPE nostop print
         //也不打印出错信息
         handle SIGPIPE nostop noprint
+        
+28. gcore `pidof tast` 生成正在运行的task的内核转储文件
+29. attach pid, detach pid, 调试正在运行的程序, 调试完后要分离
+30. gdb 时查看进程信息可以使用 info proc
+31. finish 执行完当前函数暂停
+32. clear 清除所有断点, disable 禁用断点, enable 重新启用断点, enable 断点 once 断点编号 , 执行一起后取消该编号
+33. start 暂停在main函数
