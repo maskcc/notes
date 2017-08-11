@@ -57,5 +57,14 @@ date 发现系统时区不对, 使用 `tzselect` 选择时区,会生成一个修
 ##0x11
 当运行程序时, 报错 /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.15' not found, 
 使用命令 strings libstdc++.so.6|grep GLIBC 查看当前 libstdc++ 包含的版本信息, 使用 locate libstdc++.so.6 找到xx版本, 将其ln -s 替换 libstdc++.so.6 
-         
+
+##0x12
+ 当在64位系统运行32位程序时, 提示 ` is currently only availably as 32 bit application please use a 32 bit compatibility library for your system`
+ 此时应该安装32位的库
+ 
+        Ubuntu:
+        sudo apt-get install ia32-libs
+        centos/redhat:
+        yum install -y glibc*i686
+             
          
