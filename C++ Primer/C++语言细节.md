@@ -192,6 +192,10 @@
     In C, the type of a character constant like 'a' is actually an int, with size of 4 (or some other implementation-dependent value). In C++, the type is char, with size of 1. This is one of many small differences between the two languages.
 28. [ISO C99 和 ISO c++ 的细微不同之处](http://david.tribble.com/text/cdiffs.htm#C99-char-literal)
 29. `memset` 是按字节赋值的... 所以对`int`型赋值`1` 会有奇怪的数值产生
+30. [long 和int 的区别](http://www.cnblogs.com/x_wukong/p/5675795.html)
+    指针在32位和64位机器上有差别, 32位机器上为4字节, 64位机器上为8字节
+    long 在32 位和64位机器上也有区别, 不过也的看编译器, 一般 在32位机器上为 4字节, 在64位机器上为8字节
+    long long 一般不论编译器都定义为8字节
 
 
 
