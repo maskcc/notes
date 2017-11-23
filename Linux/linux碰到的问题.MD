@@ -66,5 +66,9 @@ date 发现系统时区不对, 使用 `tzselect` 选择时区,会生成一个修
         sudo apt-get install ia32-libs
         centos/redhat:
         yum install -y glibc*i686
+        
+##0x13
+使用 GDB 调试程序时, 使用watch 观测变量时, 如果观测点如  (bool *) 0x7ffff7efc278 处, 此处变量为 bool值, 当运行程序时程序会变得非常慢, 因为观测时使用了
+强制转换, 可以直接观测  *0x7ffff7efc278 内存处.[stf](https://stackoverflow.com/questions/2446116/gdb-hardware-watchpoint-very-slow-why)
              
          

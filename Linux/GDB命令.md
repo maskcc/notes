@@ -42,6 +42,8 @@
 		rwatch 表达式, expr 被读时,停住程序
 		awatch 变量或表达式的值被读写时暂停
 		info watchpoints 列出所有观察点
+        注意:
+        使用 GDB 调试程序时, 使用watch 观测变量时, 如果观测点如  (bool *) 0x7ffff7efc278 处, 此处变量为 bool值, 当运行程序时程序会变得非常慢, 因为观测时使用了强制转换, 可以直接观测  *0x7ffff7efc278 内存处.
 
 10. 跳转执行
 
@@ -122,3 +124,6 @@
 31. finish 执行完当前函数暂停
 32. clear 清除所有断点, disable 禁用断点, enable 重新启用断点, enable 断点 once 断点编号 , 执行一起后取消该编号
 33. start 暂停在main函数
+34. x/w addr 以二进制方式输出指定地址处的4字节
+35. p/format var x: 16进制, d: 有符号整数, u:无符号整数 o:八进制数值 t|b 二进制数值  c: 字符 f: 浮点 a:16进制地址
+36. print *arr@len 输出数组arr的前len个成员
