@@ -311,3 +311,4 @@
 	select top 1 @_userid = userid from QPUserLobbyDB.dbo.juezhan_Lobby_UserTaskInfo where userid = @arg_userid and take_type = 3 order by taskid asc
     
 29. DATEPART(dw, GetDate() - 1) 获取今天星期几, 1 表示星期一
+30. 从数据库导出所有表和存储过程， 使用SQL Server Management 右键某数据库， 选择任务， 生成脚本， 保存到文件， 每个对象一个文件, 选择导出位置就行
