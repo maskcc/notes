@@ -1,5 +1,6 @@
-##[下使用yum完美搭建LNMP环境](http://www.jianshu.com/p/447e02d7951d)
 
+##[下使用yum完美搭建LNMP环境](http://www.jianshu.com/p/447e02d7951d)
+[CentOS 安装 MySQL 全指南](https://yq.aliyun.com/articles/47237)
 1. 安装第三方yum源
 
 		#安装下载工具
