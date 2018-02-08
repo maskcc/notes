@@ -1,0 +1,1 @@
+1. [C++ Programmer's Cookbook](http://www.cppblog.com/mzty/archive/2005/12/15/1770.html)
