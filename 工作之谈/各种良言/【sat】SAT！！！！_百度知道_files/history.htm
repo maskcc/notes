@@ -1,0 +1,39 @@
+
+<!-- saved from url=(0253)http://zhidao.baidu.com/html/map/history.html?url=s%2526addr%253D0%2526wd%253D%2525E7%25258E%2525AF%2525E7%252590%252583%2525E5%25258C%252597%2525E7%2525BE%25258E%2525E8%252580%252583%2525E8%2525AF%252595%2525E9%252599%2525A2%2526c%253D131%2526src%253D0 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+<script>
+var url = location.href.replace(/%25/gi,"%")
+//document.write(url+"<br>");
+var url=url.slice(url.indexOf("=")+1);
+//alert(parent.History.nowTpl+"\n"+url)
+//document.write("href:"+location.href+"<br>");
+//document.write("nowTpl:"+parent.History.nowTpl +"<br>url:"+url+"<br>unescape:"+unescape(url))
+
+//parent.document.title = url +"|"+ parent.History.nowTpl ;
+if(parent.History.nowTpl != url){
+	parent.History.nowTpl = url;
+	//parent.setTimeout("go(unescape('"+url+"'),History.tplOpts['"+url+"'])",20)
+
+	var opts = parent.History.tplOpts[url];
+	if(opts == null){opts ={}};
+	if(opts.cinfo == null){
+		opts.cinfo = {cityInit:1};
+	}
+	opts.history = true;
+
+	if(url.indexOf("isfullScreen")>-1){	//全屏
+		if(parent.map.fullScreenMode){
+			parent.fullScCtrl.returnFullSrc(true);
+		}else{
+			parent.fullScCtrl.toFullSrc(true);
+		}
+	}else{
+		parent.go(unescape(url), opts);		//正常前进后退
+	}
+
+}
+//parent.History.nowTpl = this.url;
+
+</script>
+
+<div id="shanbay_extension_result" class="shanbay_extension_result"><div id="shanbay_extension_result_shanbaydict" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_shanbaydict_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_shanbaydict_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_googletran" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_googletran_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_googletran_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikizh" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikizh_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikizh_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikien" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikien_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikien_content" class="shanbay_extension_result_content"></div></div></div></body></html>

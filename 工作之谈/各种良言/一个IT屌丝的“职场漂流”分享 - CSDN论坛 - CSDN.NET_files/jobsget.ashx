@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-11-18/2817540-MDCC2013-Smart-Hardware-Summit-Terry-Cheng-speech" target=_blank>前富士康CEO程天纵：创新来自长尾，创业源于创客！</a></li>');

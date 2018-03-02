@@ -1,0 +1,1 @@
+document.write('<li><a href="http://g.csdn.net/5243760" target=_blank>【招】应届生,入职年薪5-10万</a></li><li><a href="http://g.csdn.net/5250623" target=_blank>晒出LBS应用 赢取给力大奖</a></li><li><a href="http://g.csdn.net/5250649" target=_blank>下载最热手游开发工具集CocoStudio</a></li><li><a href="http://g.csdn.net/5253151" target=_blank>将家庭娱乐升级到移动时代</a></li>');

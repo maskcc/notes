@@ -1,0 +1,21 @@
+为学习 C++ 而从 STL 开始读，未免太那个了。。。
+
+建议去看看 PTypes ——我看的第一份源码  基于 #ifdef 的跨平台 IPC / 线程库，规模很有限，C++技巧也控制得很有限。
+PTypes 摆平之后，Win32 和 Linux 之一的 IPC 和 socket 估计你也会熟悉个差不多。再去看看 boost 里简单一些的东西，如 pool 和 smart_ptr 之类。
+真正平台无关的代码并不是那么多的，毕竟 C/C++ 还是比较 pragmatic 的东西
+
+
+http://www.research.att.com/~bs/    C++老巢
+http://www.research.att.com/~bs/C++.html    有关C++的一些有用连接
+http://www.sgi.com/tech/stl/    sgi的STL（上面连接中也有）
+http://www.stlchina.org/    STL 中文站
+
+
+
+请问拿到一个C项目源代码之后如何看？
+先了解业务，再看（从.h看下函数名，然后找main，把流程理一下，然后看细节）
+
+http://www.boost.org/
+www.kernel.org
+http://www.acejoy.com/forum-4-1.html
+c++在线项目团队

@@ -1,0 +1,1765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)http://msdn.microsoft.com/zh-cn/magazine/hh394147.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" style="" overflow:auto""=""><head id="ctl00_Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link id="ctl00_HeaderLink2" rel="stylesheet" type="text/css" href="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/Msdn10a-bn1651.css"><link id="ctl00_HeaderLink3" rel="stylesheet" type="text/css" href="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/Magazine2-bn1651.css"><link rel="alternate" type="application/rss+xml" title="MSDN Magazine - Current Issue" href="http://msdn.microsoft.com/magazine/rss/default.aspx?z=z&iss=1"><link rel="alternate" type="application/rss+xml" title="MSDN Magazine - Complete" href="http://msdn.microsoft.com/magazine/rss/default.aspx?z=z&all=1"><link rel="alternate" type="application/rss+xml" title="MSDN Magazine Blog" href="http://blogs.msdn.com/msdnmagazine/rss.xml"><meta name="NormalizedUrl" content="http://msdn.microsoft.com/zh-cn/magazine(d=default)/hh394147(l=zh-cn,v=MSDN.10).aspx"><meta name="VotingContextUrl" content="http://msdn.microsoft.com/zh-cn/magazine(d=default)/hh394147(l=zh-cn,v=MSDN.10).aspx"><meta name="ROBOTS" content="NOINDEX,NOFOLLOW"><meta name="MN" content="4B9B1F27-9:13:33 PM"><meta name="ms.locale" content="zh-cn"><meta name="Search.ShortId" content="hh394147">
+<!-- Looking for metadata? Use the robot view instead http://currentsite/currenturl(robot).aspx -->
+<link rel="stylesheet" type="text/css" href="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/mtps-bn1651.css"><link rel="alternate" media="print" href="http://msdn.microsoft.com/zh-cn/magazine/hh394147(printer).aspx">
+<title>
+	孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法
+</title><style type="text/css"></style><style type="text/css">/* Chili -- cs */
+.cs__mlcom { color: #4040c2; }
+.cs__com { color: green; }
+.cs__string { color: teal; }
+.cs__preproc { color: red; }
+.cs__number { color: red; }
+.cs__keyword { color: navy; font-weight: bold; }</style><link type="text/css" rel="stylesheet" href="chrome-extension://clcbnchcgjcjphmnpndoelbdhakdlfkk/stylesheets/style.css"><script type="text/javascript" async="" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/ms2.js"></script><script type="text/javascript" charset="UTF-8" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/logb01.js"></script><script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/hm.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://clcbnchcgjcjphmnpndoelbdhakdlfkk/javascripts/page_context.js"></script><style>undefined</style><style>undefined</style><script></script><script id="hp_same_"></script><script id="hp_done_"></script></head>
+<body id="ctl00_MTPS_Body" class="MsdnPageBody" dir="ltr" quick-markup_injected="true">
+    <form name="aspnetForm" method="post" action="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法.htm" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFImN0bDAwJE1hc3RoZWFkJFNlYXJjaCRTZWFyY2hCdXR0b27OPqtIQ599CB4whEuJ8K/jQHP+Jg==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var CurUserId="";var ClientURL="http%3a%2f%2fmsdn.microsoft.com%2fzh-cn%2fmagazine(d%3ddefault)%2fhh394147(l%3dzh-cn%2cv%3dMSDN.10).aspx";var maxRating=5;var RatingObjId="ctl00_tb1_Flyout_Rating1";var tbCommentsId="ctl00_tb1_Flyout_tbComments";var PageId="hh394147";var pageTag="contentRatinghh394147MSDN.10zh-cn";var sendBtnId="ctl00_tb1_Flyout_btnSend";var curRating="0";var contentRated=false;var RatingTooltipText="请单击星形符号并提供反馈";var RatedTooltipText="您已经为此内容评级。感谢您的反馈。";var userIPAddress="111.177.168.50";var MtpsPageDirection="ltr";var RatingFlyoutID="ctl00_tb1_Flyout";var Rating_Device="default";//]]>
+</script>
+
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/jquery-1.2.6-bn1651.js" type="text/javascript"></script>
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/Silverlight-bn1651.js" type="text/javascript"></script>
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/jquery.chili-2.2-bn1651.js" type="text/javascript"></script>
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/recipes-bn1651.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var wt_nvr_ru = "WT_NVR_RU";var wt_fpcdom = ".microsoft.com";var wt_domlist = "msdn.microsoft.com";var wt_pathlist = "";var wt_paramlist = "DCSext.mtps_devcenter";var wt_siteid = "MSDN";var gDomain="m.webtrends.com";
+var gDcsId="dcsmgru7m99k7mqmgrhudo0k8_8c6m";
+var gFpc="WT_FPC";
+/*<![CDATA[*/
+if(document.cookie.indexOf(gFpc+"=")==-1){document.write("<scr"+"ipt type='text/javascript' src='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'><\/scr"+"ipt>");}
+/*]]>*/
+var detectedLocale = 'zh-cn';
+var wtsp="_msdnmag_";
+var gTrackEvents = 1;
+var omni_guid='6e0f8403-37a7-4825-a83f-ce9afe9e1bba';//]]>
+</script><script type="text/javascript" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/wtid.js"></script>
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/omni_rsid_msdn-bn1651.js" type="text/javascript"></script><noscript>&lt;a href='http://www.omniture.com' title='Web Analytics'&gt;&lt;img src='http://msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0'  height='1' width='1' border='0' alt='' /&gt;&lt;/a&gt;</noscript>
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/compositejscript3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div id="ctl00_checkFlyer">
+
+</div>
+    
+    
+    <div id="BodyBackground">
+        <div id="ctl00_JelloSizer" class="JelloSizer">
+            <div id="JelloExpander">
+                <div id="ctl00_JelloWrapper" class="JelloWrapper">
+                    <div class="Clear"> </div>
+                    
+                        <div class="Clear"> </div>
+                        
+
+<div class="Masthead">
+    <div id="ctl00_Masthead_brandLogo" class="BrandLogo">
+        <a href="http://msdn.microsoft.com/zh-cn/magazine/default.aspx" id="ctl00_Masthead_brandlink" title="MSDN 杂志">MSDN 杂志</a>
+    </div>
+    <div class="Search">
+        <div id="ctl00_Masthead_Search_SearchBox" class="SearchBox">
+    <input name="ctl00$Masthead$Search$SearchTextBox" type="text" id="ctl00_Masthead_Search_SearchTextBox" title="使用 Bing 搜索 MSDN Magazine" class="TextBoxSearch" autocomplete="off" style="color: rgb(170, 170, 170); font-style: italic;">
+    <input type="image" name="ctl00$Masthead$Search$SearchButton" id="ctl00_Masthead_Search_SearchButton" title="使用 Bing 搜索 MSDN Magazine" class="SearchButton" alt="单击此处开始搜索" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/clear.gif" style="border-width:0px;">
+    <span class="Bing"></span>
+<script type="text/javascript" defer="defer" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/SearchBox.jss" id="mscom.srch.searchBox"></script><div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Arial; font-size: 13px;"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></div>
+    </div>
+    <div class="GlobalBar">
+        <div id="ctl00_Masthead_passportScarab" class="PassportScarab"> 
+            <a id="idPPScarab" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=11&ct=1384492414&rver=6.0.5276.0&wp=MCLBI&wlcxt=msdn%24msdn%24msdn&wreply=http%3a%2f%2fmsdn.microsoft.com%2fzh-cn%2fmagazine%2fhh394147.aspx&lc=2052&id=254354&mkt=zh-CN"><span id="idPPScarabSIT" class="MTPS_GlobalToolbarLinks_msdn">登录</span></a>
+<div id="idPPMWOverlay" style="display: none;"></div>
+        </div>
+        <div class="LocaleFlyout">
+            
+    <div id="MainDiv" onmouseover="FlyoutPopupShow()" onmouseout="FlyoutPopupHide()">
+        <div id="FlyoutTop">
+            <a id="ctl00_Masthead_LocaleManagement_linkCountryLanguage" class="LocaleManagementFlyoutStaticLink">中国 - 简体中文&nbsp;</a>
+            <img id="img_Arrow" class="LocaleManagementFlyoutPopArrow" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/clear.gif" alt="">
+        </div>
+        <div id="FlyoutPopup" class="LocaleManagementFlyoutPopup">
+            <table class="LocaleManagementFlyoutPopupTable">
+                <tbody><tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Arg" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Arg','')">
+                Argentina (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Bra" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Bra','')">
+                Brasil (Português)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_CanE" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_CanE','')">
+                Canada (English)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_CanF" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_CanF','')">
+                Canada (Français)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Chi" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Chi','')">
+                中国 (简体中文)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Col" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Col','')">
+                Colombia (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Deu" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Deu','')">
+                Deutschland (Deutsch)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Esp" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Esp','')">
+                España (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Fra" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Fra','')">
+                France (Français)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Ind" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Ind','')">
+                India (English)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Ita" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Ita','')">
+                Italia (Italiano)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Jpa" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Jpa','')">
+                日本 (日本語)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Kor" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Kor','')">
+                한국 (한국어)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Mex" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Mex','')">
+                México (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Per" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Per','')">
+                Perú (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Рос" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Рос','')">
+                Россия (Pусский)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Tai" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Tai','')">
+                台灣 (繁體中文)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_UK" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_UK','')">
+                United Kingdom (English)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_US" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_US','')">
+                United States (English)</a></td></tr>
+                <tr><td class="LocaleManagementFlyoutPopupHr"></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_More" href="http://msdn.microsoft.com/zh-cn/selectLocale">更多 </a></td></tr>
+            </tbody></table>
+        </div>
+    </div>
+
+
+        </div>
+        <div class="Clear"></div>
+        <div id="ctl00_Masthead_ProfileLink_UserName" class="UserName"></div>
+    </div>
+    <div class="Clear"></div>
+    <div id="ctl00_Masthead_networkTagLineArea" class="NetworkLogo">
+        <a href="http://msdn.microsoft.com/zh-cn/default.aspx" id="ctl00_Masthead_networkLink"><img title="microsoft developer network" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/brand_logo.png" style="border-width:0px;"></a>
+    </div>
+    
+
+<div class="leftcap"></div>
+    <div class="internav">
+	    <div id="ctl00_Masthead_tabs_manTabsHolder"><a id="ctl00_Masthead_tabs_ctl07" title="主页" class="active" href="http://msdn.microsoft.com/zh-cn/magazine/default.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl06|ctl00_Masthead_tabs_ctl07&#39;,this);">主页</a><a id="ctl00_Masthead_tabs_ctl09" title="主题" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/ee532082.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl08|ctl00_Masthead_tabs_ctl09&#39;,this);">主题</a><a id="ctl00_Masthead_tabs_ctl11" title="专栏" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/ee532401.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl10|ctl00_Masthead_tabs_ctl11&#39;,this);">专栏</a><a id="ctl00_Masthead_tabs_ctl13" title="下载" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/cc135867.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl12|ctl00_Masthead_tabs_ctl13&#39;,this);">下载</a><a id="ctl00_Masthead_tabs_ctl15" title="订阅" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/ee358702.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl14|ctl00_Masthead_tabs_ctl15&#39;,this);">订阅</a><a id="ctl00_Masthead_tabs_ctl17" title="RSS" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/cc194384.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl16|ctl00_Masthead_tabs_ctl17&#39;,this);">RSS</a></div>
+    </div>
+<div class="rightcap"></div>
+<div class="Clear"></div>
+<div id="ctl00_Masthead_tabs_LocalNavigation" class="LocalNavigation">
+    <div class="localleftcap"></div>
+        <div id="ctl00_Masthead_tabs_InThisSection" class="HeaderTabs"><div class="TabOff"><a id="ctl00_Masthead_tabs_ctl01" title="本期" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/default.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl00|ctl00_Masthead_tabs_ctl01&#39;,this);">本期</a></div><div class="TabOn"><a id="ctl00_Masthead_tabs_ctl03" title="所有期刊" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/ee310108.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl02|ctl00_Masthead_tabs_ctl03&#39;,this);">所有期刊</a></div><div class="TabOff"><a id="ctl00_Masthead_tabs_ctl05" title="HTML 帮助文件" class="normal" href="http://msdn.microsoft.com/zh-cn/magazine/ee412244.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl04|ctl00_Masthead_tabs_ctl05&#39;,this);">HTML 帮助文件</a></div></div>
+    <div class="localrightcap"></div>
+</div>   
+</div>
+                        <div class="Clear"> </div>
+                        <div class="topleftcorner"> </div>
+                        <div class="toprightcorner"> </div>
+                        <div class="alley">
+                            <div class="wrapper">
+                                <div class="inner">
+                                    
+                                    <div class="Clear"> </div>
+                                    <div id="ctl00_EyebrowMenu_EyebrowContainer" class="EyebrowContainer"><a id="ctl00_EyebrowMenu_ctl00" title="MSDN 杂志" class="EyebrowLink" href="http://msdn.microsoft.com/zh-cn/magazine/dd767791.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl00&#39;,this);">MSDN 杂志</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl01" title="主页" class="EyebrowLink" href="http://msdn.microsoft.com/zh-cn/magazine/dd767791.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl01&#39;,this);">主页</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl02" title="所有期刊" class="EyebrowLink" href="http://msdn.microsoft.com/zh-cn/magazine/ee310108.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl02&#39;,this);">所有期刊</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl03" title="2011" class="EyebrowLink" href="http://msdn.microsoft.com/zh-cn/magazine/gg547374.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl03&#39;,this);">2011</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl04" title="MSDN 杂志 九月 2011" class="EyebrowLink" href="http://msdn.microsoft.com/zh-cn/magazine/hh416747.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl04&#39;,this);">MSDN 杂志 九月 2011</a><span>&nbsp;&gt;&nbsp;</span><span class="EyebrowElement">&nbsp;孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法</span></div>
+                                    <div class="Clear"> </div>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; table-layout: fixed;">
+                                        <tbody><tr>
+                                            <td style="vertical-align: top; width: auto;" valign="top">
+                                                
+                                                <div id="MainContent" style="width: 100%">
+                                                    
+                                                            
+                                                            <div class="navpage">
+      <style type="text/css">.style0 { vertical-align:bottom; } .style1 { vertical-align:bottom; } .style2 { vertical-align:bottom; } .style3 { vertical-align:bottom; } .style4 { vertical-align:bottom; } .style5 { vertical-align:bottom; } .style6 { vertical-align:bottom; } .style7 { vertical-align:bottom; } .style8 { vertical-align:bottom; } .style9 { vertical-align:bottom; } .style10 { vertical-align:bottom; } .style11 { vertical-align:bottom; } .style12 { vertical-align:bottom; } .style13 { vertical-align:bottom; } .style14 { vertical-align:bottom; } .style15 { vertical-align:bottom; } .style16 { vertical-align:bottom; } .style17 { vertical-align:top; } .style18 { vertical-align:top; } .style19 { vertical-align:top; } .style20 { vertical-align:top; } .style21 { vertical-align:top; } .style22 { vertical-align:top; } .style23 { vertical-align:top; } .style24 { vertical-align:top; } .style25 { vertical-align:top; } .style26 { vertical-align:top; } .style27 { vertical-align:top; } .style28 { vertical-align:top; } .style29 { vertical-align:top; } .style30 { vertical-align:top; } .style31 { vertical-align:top; } .style32 { vertical-align:top; } .style33 { vertical-align:top; } .style34 { vertical-align:top; } .style35 { vertical-align:top; } .style36 { vertical-align:top; } .style37 { vertical-align:top; } .style38 { vertical-align:top; } .style39 { vertical-align:top; } .style40 { vertical-align:top; } .style41 { vertical-align:top; } .style42 { vertical-align:top; } .style43 { vertical-align:top; } .style44 { vertical-align:top; } .style45 { vertical-align:top; } .style46 { vertical-align:top; } .style47 { vertical-align:top; } .style48 { vertical-align:top; } .style49 { vertical-align:top; } .style50 { vertical-align:top; } .style51 { vertical-align:top; } .style52 { vertical-align:top; } .style53 { vertical-align:top; } .style54 { vertical-align:top; } .style55 { vertical-align:top; } .style56 { vertical-align:top; } .style57 { vertical-align:top; } .style58 { vertical-align:top; } .style59 { vertical-align:top; } .style60 { vertical-align:top; } .style61 { vertical-align:top; } .style62 { vertical-align:top; } .style63 { vertical-align:top; } .style64 { vertical-align:top; } .style65 { vertical-align:top; } .style66 { vertical-align:top; } .style67 { vertical-align:top; } .style68 { vertical-align:top; } .style69 { vertical-align:top; } .style70 { vertical-align:top; } .style71 { vertical-align:top; } .style72 { vertical-align:top; } .style73 { vertical-align:top; } .style74 { vertical-align:top; } .style75 { vertical-align:top; } .style76 { vertical-align:top; } .style77 { vertical-align:top; } .style78 { vertical-align:top; } .style79 { vertical-align:top; } .style80 { vertical-align:top; } .style81 { vertical-align:top; } .style82 { vertical-align:top; } .style83 { vertical-align:top; } .style84 { vertical-align:top; } .style85 { vertical-align:top; } .style86 { vertical-align:top; } .style87 { vertical-align:top; } .style88 { vertical-align:top; } .style89 { vertical-align:top; } .style90 { vertical-align:top; } .style91 { vertical-align:top; } .style92 { vertical-align:top; } .style93 { vertical-align:top; } .style94 { vertical-align:top; } .style95 { vertical-align:top; } .style96 { vertical-align:top; } .style97 { vertical-align:top; } .style98 { vertical-align:top; } .style99 { vertical-align:top; } .style100 { vertical-align:top; } .style101 { vertical-align:top; } .style102 { vertical-align:top; } .style103 { vertical-align:top; } .style104 { vertical-align:top; } .style105 { vertical-align:top; } .style106 { vertical-align:top; } .style107 { vertical-align:top; } .style108 { vertical-align:top; } .style109 { vertical-align:top; } .style110 { vertical-align:top; } .style111 { vertical-align:top; } .style112 { vertical-align:top; } .style113 { vertical-align:top; } .style114 { vertical-align:top; } .style115 { vertical-align:top; } .style116 { vertical-align:top; } .style117 { vertical-align:top; } .style118 { vertical-align:top; } .style119 { vertical-align:top; } .style120 { vertical-align:top; } .style121 { vertical-align:top; } .style122 { vertical-align:top; } .style123 { vertical-align:top; } .style124 { vertical-align:top; } .style125 { vertical-align:top; } .style126 { vertical-align:top; } .style127 { vertical-align:top; } .style128 { vertical-align:top; } .style129 { vertical-align:top; } .style130 { vertical-align:top; } .style131 { vertical-align:top; } .style132 { vertical-align:top; } .style133 { vertical-align:top; } .style134 { vertical-align:top; } .style135 { vertical-align:top; } .style136 { vertical-align:top; } .style137 { vertical-align:top; } .style138 { vertical-align:top; } .style139 { vertical-align:top; } .style140 { vertical-align:top; } .style141 { vertical-align:top; } .style142 { vertical-align:top; } .style143 { vertical-align:top; } .style144 { vertical-align:top; } .style145 { vertical-align:top; } .style146 { vertical-align:top; } .style147 { vertical-align:top; } .style148 { vertical-align:top; } .style149 { vertical-align:top; } .style150 { vertical-align:top; } .style151 { vertical-align:top; } .style152 { vertical-align:top; } .style153 { vertical-align:top; } .style154 { vertical-align:top; } .style155 { vertical-align:top; } .style156 { vertical-align:top; } .style157 { vertical-align:top; } .style158 { vertical-align:top; } .style159 { vertical-align:top; } .style160 { vertical-align:top; } .style161 { vertical-align:top; } .style162 { vertical-align:top; } .style163 { vertical-align:top; } .style164 { vertical-align:top; } .style165 { vertical-align:top; } .style166 { vertical-align:top; } .style167 { vertical-align:top; } .style168 { vertical-align:top; } .style169 { vertical-align:top; } .style170 { vertical-align:top; } .style171 { vertical-align:top; } .style172 { vertical-align:top; } .style173 { vertical-align:top; } .style174 { vertical-align:top; } .style175 { vertical-align:top; } .style176 { vertical-align:top; } .style177 { vertical-align:top; } .style178 { vertical-align:top; } .style179 { vertical-align:top; } .style180 { vertical-align:top; } .style181 { vertical-align:top; } .style182 { vertical-align:top; } .style183 { vertical-align:top; } .style184 { vertical-align:top; } .style185 { vertical-align:top; } .style186 { vertical-align:top; } .style187 { vertical-align:bottom; } .style188 { vertical-align:bottom; } .style189 { vertical-align:bottom; } .style190 { vertical-align:bottom; } .style191 { vertical-align:bottom; } .style192 { vertical-align:bottom; } .style193 { vertical-align:bottom; } .style194 { vertical-align:bottom; } .style195 { vertical-align:bottom; } .style196 { vertical-align:bottom; } .style197 { vertical-align:top; } .style198 { vertical-align:top; } .style199 { vertical-align:top; } .style200 { vertical-align:top; } .style201 { vertical-align:top; } .style202 { vertical-align:top; } .style203 { vertical-align:top; } .style204 { vertical-align:top; } .style205 { vertical-align:top; } .style206 { vertical-align:top; } .style207 { vertical-align:top; } .style208 { vertical-align:top; } .style209 { vertical-align:top; } .style210 { vertical-align:top; } .style211 { vertical-align:top; } .style212 { vertical-align:top; } .style213 { vertical-align:top; } .style214 { vertical-align:top; } .style215 { vertical-align:top; } .style216 { vertical-align:top; } .style217 { vertical-align:top; } .style218 { vertical-align:top; } .style219 { vertical-align:top; } .style220 { vertical-align:top; } .style221 { vertical-align:top; } .style222 { vertical-align:top; } .style223 { vertical-align:top; } .style224 { vertical-align:top; } .style225 { vertical-align:top; } .style226 { vertical-align:top; } .style227 { vertical-align:top; } .style228 { vertical-align:top; } .style229 { vertical-align:top; } .style230 { vertical-align:top; } .style231 { vertical-align:top; } .style232 { vertical-align:top; } .style233 { vertical-align:top; } .style234 { vertical-align:top; } .style235 { vertical-align:top; } .style236 { vertical-align:top; } .style237 { vertical-align:top; } .style238 { vertical-align:top; } .style239 { vertical-align:top; } .style240 { vertical-align:top; } .style241 { vertical-align:top; } .style242 { vertical-align:top; } .style243 { vertical-align:top; } .style244 { vertical-align:top; } .style245 { vertical-align:top; } .style246 { vertical-align:top; } .style247 { vertical-align:top; } .style248 { vertical-align:top; } .style249 { vertical-align:top; } .style250 { vertical-align:top; } .style251 { vertical-align:top; } .style252 { vertical-align:top; } .style253 { vertical-align:top; } .style254 { vertical-align:top; } .style255 { vertical-align:top; } .style256 { vertical-align:top; } .style257 { vertical-align:top; } .style258 { vertical-align:top; } .style259 { vertical-align:top; } .style260 { vertical-align:top; } .style261 { vertical-align:top; } .style262 { vertical-align:top; } .style263 { vertical-align:top; } .style264 { vertical-align:top; } .style265 { vertical-align:top; } .style266 { vertical-align:top; } .style267 { vertical-align:top; } .style268 { vertical-align:top; } .style269 { vertical-align:top; } .style270 { vertical-align:top; } .style271 { vertical-align:top; } .style272 { vertical-align:top; } .style273 { vertical-align:top; } .style274 { vertical-align:top; } .style275 { vertical-align:top; } .style276 { vertical-align:top; } .style277 { vertical-align:top; } .style278 { vertical-align:top; } .style279 { vertical-align:top; } .style280 { vertical-align:top; } .style281 { vertical-align:top; } .style282 { vertical-align:top; } .style283 { vertical-align:top; } .style284 { vertical-align:top; } .style285 { vertical-align:top; } .style286 { vertical-align:top; } .style287 { vertical-align:top; } .style288 { vertical-align:top; } .style289 { vertical-align:top; } .style290 { vertical-align:top; } .style291 { vertical-align:top; } .style292 { vertical-align:top; } .style293 { vertical-align:top; } .style294 { vertical-align:top; } .style295 { vertical-align:top; } .style296 { vertical-align:top; } .style297 { vertical-align:top; } .style298 { vertical-align:top; } .style299 { vertical-align:top; } .style300 { vertical-align:top; } .style301 { vertical-align:top; } .style302 { vertical-align:top; } .style303 { vertical-align:top; } .style304 { vertical-align:top; } .style305 { vertical-align:top; } .style306 { vertical-align:top; } .style307 { vertical-align:top; } .style308 { vertical-align:top; } .style309 { vertical-align:top; } .style310 { vertical-align:top; } .style311 { vertical-align:top; } .style312 { vertical-align:top; } .style313 { vertical-align:top; } .style314 { vertical-align:top; } .style315 { vertical-align:top; } .style316 { vertical-align:top; } .style317 { vertical-align:top; } .style318 { vertical-align:top; } .style319 { vertical-align:top; } .style320 { vertical-align:top; } .style321 { vertical-align:top; } .style322 { vertical-align:top; } .style323 { vertical-align:top; } .style324 { vertical-align:top; } .style325 { vertical-align:top; } .style326 { vertical-align:top; } .style327 { vertical-align:top; } .style328 { vertical-align:top; } .style329 { vertical-align:top; } .style330 { vertical-align:top; } .style331 { vertical-align:top; } .style332 { vertical-align:top; } .style333 { vertical-align:top; } .style334 { vertical-align:top; } .style335 { vertical-align:top; } .style336 { vertical-align:top; } .style337 { vertical-align:top; } .style338 { vertical-align:top; } .style339 { vertical-align:top; } .style340 { vertical-align:top; } .style341 { vertical-align:top; } .style342 { vertical-align:top; } .style343 { vertical-align:top; } .style344 { vertical-align:top; } .style345 { vertical-align:top; } .style346 { vertical-align:top; } .style347 { vertical-align:top; } .style348 { vertical-align:top; } .style349 { vertical-align:top; } .style350 { vertical-align:top; } .style351 { vertical-align:top; } .style352 { vertical-align:top; } .style353 { vertical-align:top; } .style354 { vertical-align:top; } .style355 { vertical-align:top; } .style356 { vertical-align:top; } .style357 { vertical-align:top; } .style358 { vertical-align:top; } .style359 { vertical-align:top; } .style360 { vertical-align:top; } .style361 { vertical-align:top; } .style362 { vertical-align:top; } .style363 { vertical-align:top; } .style364 { vertical-align:top; } .style365 { vertical-align:top; } .style366 { vertical-align:top; } .style367 { vertical-align:top; } .style368 { vertical-align:top; } .style369 { vertical-align:top; } .style370 { vertical-align:top; } .style371 { vertical-align:top; } .style372 { vertical-align:top; } .style373 { vertical-align:top; } .style374 { vertical-align:top; } .style375 { vertical-align:top; } .style376 { vertical-align:top; } .style377 { vertical-align:top; } .style378 { vertical-align:top; } .style379 { vertical-align:top; } .style380 { vertical-align:top; } .style381 { vertical-align:top; } .style382 { vertical-align:top; } .style383 { vertical-align:top; } .style384 { vertical-align:top; } .style385 { vertical-align:top; } .style386 { vertical-align:top; } .style387 { vertical-align:top; } .style388 { vertical-align:top; } .style389 { vertical-align:top; } .style390 { vertical-align:top; } .style391 { vertical-align:top; } .style392 { vertical-align:top; } .style393 { vertical-align:top; } .style394 { vertical-align:top; } .style395 { vertical-align:top; } .style396 { vertical-align:top; } </style>
+      <div class="MagazineStyle">
+        <div class="FeatureTitle">
+          <h2>
+            <span id="xn1_17683ca581b9b6bdda90ea931e9d20ee" class="sentence">孜孜不倦的程序员</span>
+          </h2>
+          <h1>
+            <span id="xn2_0880cb273f00be1ad989b8ab861e5d7c" class="sentence">多模式 .NET，第 10 部分：选择方法</span>
+          </h1>
+          <h3>
+            <a id="ctl00_MTContentSelector1_mainContentContainer_ctl02" href="http://msdn.microsoft.com/zh-cn/magazine/ee532098.aspx?sdmr=TedNeward&sdmi=authors" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl02&#39;,this);"><span id="xn3_905d83ee8501fea9ff713a3f6031072f" class="sentence">Ted Neward</span></a>
+            <br>
+          </h3>
+        </div>
+        <p>
+          <img alt="" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/hh394147.ted_neward_headshot(en-us,MSDN.10).jpg">
+          <span id="xn4_82a1b710c63e69e9bf2d048c29d1fa99" class="sentence">在<a id="ctl00_MTContentSelector1_mainContentContainer_ctl04" href="http://msdn.microsoft.com/zh-cn/magazine/hh288084.aspx" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_tgt4|ctl00_MTContentSelector1_mainContentContainer_ctl04&#39;,this);">上一个专栏中</a>（本系列文章的第 9 部分），我曾说过，如果系列文章的组成部分达到两位数，要么是作者相当自信，认为读者真的对文章主题感兴趣，愿意连篇累牍地读下去；要么就是作者江郎才尽无力开拓新的主题。</span>
+          <span id="xn5_e7f715ec0afd0b0253ace7a16d69f4f3" class="sentence">读者恐怕就是因为这两个原因而选择离开的。</span>
+        </p>
+        <p>
+          <span id="xn6_ca9e945b2d2b7b98733bf7b53f48e67e" class="sentence">但是，现实告诉我们，即使文章数量达到两位数存在风险，但还是需要一篇文章来介绍多模式化设计，尝试将各种分散的内容综合起来，以展示如何使用这些不同的模式，以及如何从中选择以解决实际问题。</span>
+          <span id="xn7_f498bbcdcc0601a5a9935587fced4a21" class="sentence">这里所说的“实际”表示其重要程度足以说明我们选择的方法对于解决问题的重要性，而这些问题也不像杂志文章中常用的那些问题一样简单。</span>
+        </p>
+        <p>
+          <span id="xn8_98816fbed672c3f6fb332a779b52a6e9" class="sentence">实际上要找出这样一个问题可没有想象中容易，要么是想法过于复杂，要制定相应的解决方案需要处理太多的因素；要么是想法过于简单，实施时变化的余地太小，无法说明不同模式对于不同问题的作用。</span>
+          <span id="xn9_e85fb6b5f4d1841010b7d97c5441c9d6" class="sentence">幸运的是，开始时我们可以借用一些现成的成果，就像 Dave Thomas 的“Code Katas”。</span>
+        </p>
+        <h2>
+          <span id="xn10_371017f4840d2083ef00921980cd1a91" class="sentence">Code Katas</span>
+        </h2>
+        <p>
+          <span id="xn11_145b291e75898768fc024e5dbb8ca5f1" class="sentence">在 Thomas 的网站 (<a id="ctl00_MTContentSelector1_mainContentContainer_ctl05" href="http://codekata.pragprog.com/" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_tgt11|ctl00_MTContentSelector1_mainContentContainer_ctl05&#39;,this);window.open(this.href);return false;">http://codekata.pragprog.com</a>) 上，他写道，他送儿子 Zachary 去练习空手道，却发现训练馆的家长观摩室已经没有空位了。</span>
+          <span id="xn12_9342c30de92fd1081046e8a966adc30e" class="sentence">这让他有了 45 分钟的独处时间，开始琢磨一些他曾不经意地考虑过性能意义的代码。</span>
+          <span id="xn13_d90704c39d596160bb1f53ad1ece17a1" class="sentence">他写道：</span>
+        </p>
+        <p>
+          <em>
+            <span id="xn14_4e1a4988370e95d7b22c07ffff7af6cb" class="sentence">我想处理一些代码，使用我从未用过的技术来做实验。</span>
+            <span id="xn15_c59b59b86424a6898dc24c988fe9505b" class="sentence">我在一个简单、有序的环境中进行实验，尝试了不同的变化（不止是我在这里列出的）。</span>
+            <span id="xn16_f1641e42f7b67cec28868ba3a77242db" class="sentence">而且还有其他一些工作要做…</span>
+          </em>
+        </p>
+        <p>
+          <em>
+            <span id="xn17_8bfd3ae167604ab912bd830624757ab9" class="sentence">如何实现这个实践过程呢？</span>
+            <span id="xn18_cfa3ac4b5d848e3dfcacddf27b3a2d91" class="sentence">嗯，我有一些时间可以独处而不被打扰。</span>
+            <span id="xn19_95b797c06ae865e20fe0828fd0f20cc6" class="sentence">我要尝试一件简单的事，而且尝试了很多次。</span>
+            <span id="xn20_df514ef20ae48b8389c5dce9f5fa336f" class="sentence">每次我都想得到反馈，这样才可以做出改进。</span>
+            <span id="xn21_bb561b293f26e74bfbe2b2ece7e924cf" class="sentence">没有压力：代码可以弃之不用。</span>
+            <span id="xn22_03eb703a16909456e8487cd0d12c6b7a" class="sentence">充满乐趣：我一点一点的推进，这样激励我继续下去。</span>
+            <span id="xn23_61840c35e8bc5fde690e2bd2e7fdec65" class="sentence">最后，我的成果超出预期。</span>
+          </em>
+        </p>
+        <p>
+          <em>
+            <span id="xn24_fa10f6052dca7a5981fd005dc6a8c32b" class="sentence">最终而言，需要有空闲时间让我进行练习。</span>
+          </em>
+          <em>
+            <span id="xn25_abff170541feba81dde66902a2c9a53f" class="sentence">如果有压力，即交付博客的搜索功能存在时限，那么现有的性能也是可以接受的，也就不会发生练习这回事儿了。</span>
+            <span id="xn26_1144938c7decfffb7782c0083b613f30" class="sentence">但是，那些毫无压力的 45 分钟时光让我可以尽情练习。</span>
+          </em>
+        </p>
+        <p>
+          <em>
+            <span id="xn27_84daab5f112c1ace473a3ebe4dc4dac0" class="sentence">因此我这一天中面临的挑战就是：看看能否拿出 45 到 60</span>
+          </em>
+          <em>
+            <span id="xn28_93d6f2b42191b994a4ba8976f1a22ff3" class="sentence">分钟的时间琢磨一小段代码。</span>
+            <span id="xn29_cdd971b45107da6d8b4712090909732e" class="sentence">你不必去关注性能，而可以去处理结构、内存使用情况或者界面。</span>
+            <span id="xn30_827366ada7f74e29508cde8829c12e7e" class="sentence">而到最后，这都没关系。</span>
+            <span id="xn31_e96260218c147d16566a19b283751196" class="sentence">我所做的就是实验、衡量、改进。</span>
+          </em>
+        </p>
+        <p>
+          <span id="xn32_21e44528e78e84dd24ee3778e6769fab" class="sentence">换句话说，Code Kata 是一个（相对）简单的问题，不难从概念上进行把握，但它提供了一个可供探索的框架。</span>
+          <span id="xn33_4b2194784549c6cd680b64bb81d59805" class="sentence">在我们的示例中，目标是进行设计。</span>
+          <span id="xn34_3c6962ce6b96128e2a17fcc9ab32fdb9" class="sentence">我们的研究探索基于 Thomas 的“Kata Four:Data Munging”（数据再加工）。</span>
+        </p>
+        <h2>
+          <span id="xn35_9a80cac79caf284e7e2b61b532bd07b8" class="sentence">Kata Four：Data Munging（数据再加工）</span>
+        </h2>
+        <p>
+          <span id="xn36_6dd717092a002624d32140261786fad1" class="sentence">这个示例中的 Code Kata 包含三个部分，我们会分步进行研究，在推进的同时进行设计并考虑在 C# 中可用的每个基准（尽管用 Visual Basic 编写解决方案也是同样可行的）。</span>
+        </p>
+        <h2>
+          <span id="xn37_bdc4b8bd83e5660d1c62908dc7a7c43a" class="sentence">第一步</span>
+        </h2>
+        <p>
+          <span id="xn38_15fcc4a361256fa2f06afae3d01b11e8" class="sentence">第一步如下所示：</span>
+        </p>
+        <p>
+          <em>
+            <span id="xn39_42e654631b4dbc266fec48de1cfe4fe4" class="sentence">在 weather.dat (</span>
+          </em>
+          <a id="ctl00_MTContentSelector1_mainContentContainer_ctl06" href="http://bit.ly/ksbVPs" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl06&#39;,this);window.open(this.href);return false;"><span id="xn40_9e581202bb0c35a0e7c341be4bbc861a" class="sentence">http://bit.ly/ksbVPs</span></a>
+          <em>
+            <span id="xn41_c020349da218d76b1c1687edb708db68" class="sentence">) 中包含的是 2002 年 6 月美国新泽西州</span>
+          </em>
+          <em>
+            <span id="xn42_d8a0608081e671f443f680bd09784c2d" class="sentence">莫里斯镇每天的天气数据。</span>
+            <span id="xn43_dc449b39445049a0ec242a173b799fc1" class="sentence">下载此文本文件，然后编写程序输出温差最小（最高温度在第二列，最低温度在第三列）的日期（第一列）。</span>
+          </em>
+        </p>
+        <p>
+          <span id="xn44_51ebf49bcd89fe2877d551538ddc18de" class="sentence">weather.dat 文件很像<strong>图 1</strong> 所示（区别是图 1 中并未列出所有 30 天的数据）。</span>
+        </p>
+        <p>
+          <strong>
+            <span id="xn45_316eea12e04936073f267a22157f01bc" class="sentence">图 1 Weather.dat 文本文件</span>
+          </strong>
+        </p>
+        <table class="charttable">
+          <tbody><tr>
+            <td class="style0">
+              <span id="xn46_d88f39d87ed4e4671573eff05d7b1a1f" class="sentence">MMU June 2002</span>
+            </td>
+            <td class="style1">&nbsp;</td>
+            <td class="style2">&nbsp;</td>
+            <td class="style3">&nbsp;</td>
+            <td class="style4">&nbsp;</td>
+            <td class="style5">&nbsp;</td>
+            <td class="style6">&nbsp;</td>
+            <td class="style7">&nbsp;</td>
+            <td class="style8">&nbsp;</td>
+            <td class="style9">&nbsp;</td>
+            <td class="style10">&nbsp;</td>
+            <td class="style11">&nbsp;</td>
+            <td class="style12">&nbsp;</td>
+            <td class="style13">&nbsp;</td>
+            <td class="style14">&nbsp;</td>
+            <td class="style15">&nbsp;</td>
+            <td class="style16">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="style17">
+              <span id="xn47_8e7dd5d3e76aa952e21999a5537dcffb" class="sentence">Dy</span>
+            </td>
+            <td class="style18">
+              <span id="xn48_8d73ce3712b114a6ca411303e19a231f" class="sentence">MxT</span>
+            </td>
+            <td class="style19">
+              <span id="xn49_9cd78390881d564d549c61bfa2dc2229" class="sentence">MnT</span>
+            </td>
+            <td class="style20">
+              <span id="xn50_235ba497c4dd101bcefce1a4f29a9e24" class="sentence">AvT</span>
+            </td>
+            <td class="style21">
+              <span id="xn51_cae68cb246295dfdc08284a22f54c3fb" class="sentence">HDDay</span>
+            </td>
+            <td class="style22">
+              <span id="xn52_84452e3092edade39bc01b226a05fb73" class="sentence">AvDP</span>
+            </td>
+            <td class="style23">
+              <span id="xn53_3a3f486e5ff98ab34b4fa28d6c65cf43" class="sentence">1HrP</span>
+            </td>
+            <td class="style24">
+              <span id="xn54_b3e07c24c6378d8bf9b0f34fe7daba35" class="sentence">TPcpn</span>
+            </td>
+            <td class="style25">
+              <span id="xn55_caa0af52182552af42426b4d08d5d6cb" class="sentence">WxType</span>
+            </td>
+            <td class="style26">
+              <span id="xn56_ec5806e328f98ba8c7bd6cd79e5888a7" class="sentence">PDir</span>
+            </td>
+            <td class="style27">
+              <span id="xn57_93e4612854908c374d33bfb5c979f540" class="sentence">AvSp</span>
+            </td>
+            <td class="style28">
+              <span id="xn58_736007832d2167baaae763fd3a3f3cf1" class="sentence">Dir</span>
+            </td>
+            <td class="style29">
+              <span id="xn59_510f47cf182cc6c796f93a0d00e532c2" class="sentence">MxS</span>
+            </td>
+            <td class="style30">
+              <span id="xn60_674620fe70c6a9ac1b6066fdc96f8a3f" class="sentence">SkyC</span>
+            </td>
+            <td class="style31">
+              <span id="xn61_dd0d1b950de2ebc40f048d289bb7ae92" class="sentence">MxR</span>
+            </td>
+            <td class="style32">
+              <span id="xn62_edc6f280ded497627b916535f4f6a587" class="sentence">MnR</span>
+            </td>
+            <td class="style33">
+              <span id="xn63_b7eff29b82a8ef79dddf0da654abda3a" class="sentence">AvSLP</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style34">
+              <span id="xn64_c4ca4238a0b923820dcc509a6f75849b" class="sentence">1</span>
+            </td>
+            <td class="style35">
+              <span id="xn65_2a38a4a9316c49e5a833517c45d31070" class="sentence">88</span>
+            </td>
+            <td class="style36">
+              <span id="xn66_093f65e080a295f8076b1c5722a46aa2" class="sentence">59</span>
+            </td>
+            <td class="style37">
+              <span id="xn67_ad61ab143223efbc24c7d2583be69251" class="sentence">74</span>
+            </td>
+            <td class="style38">&nbsp;</td>
+            <td class="style39">
+              <span id="xn68_6dbfbac5311c73d03687bd8157ce0cd3" class="sentence">53.8</span>
+            </td>
+            <td class="style40">&nbsp;</td>
+            <td class="style41">
+              <span id="xn69_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style42">
+              <span id="xn70_8fa14cdd754f91cc6554c9e71929cce7" class="sentence">F</span>
+            </td>
+            <td class="style43">
+              <span id="xn71_92c8c96e4c37100777c7190b76d28233" class="sentence">280</span>
+            </td>
+            <td class="style44">
+              <span id="xn72_eaf2f97729e8d5e4d205672da8afc9a5" class="sentence">9.6</span>
+            </td>
+            <td class="style45">
+              <span id="xn73_39059724f73a9969845dfe4146c5660e" class="sentence">270</span>
+            </td>
+            <td class="style46">
+              <span id="xn74_70efdf2ec9b086079795c442636b55fb" class="sentence">17</span>
+            </td>
+            <td class="style47">
+              <span id="xn75_4341447b6ad78bf4d7eb59ebb5a53d63" class="sentence">1.6</span>
+            </td>
+            <td class="style48">
+              <span id="xn76_98dce83da57b0395e163467c9dae521b" class="sentence">93</span>
+            </td>
+            <td class="style49">
+              <span id="xn77_37693cfc748049e45d87b8c7d8b9aacd" class="sentence">23</span>
+            </td>
+            <td class="style50">
+              <span id="xn78_18ab6394bd2937131fdf3e8975abd0be" class="sentence">1004.5</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style51">
+              <span id="xn79_c81e728d9d4c2f636f067f89cc14862c" class="sentence">2</span>
+            </td>
+            <td class="style52">
+              <span id="xn80_d1fe173d08e959397adf34b1d77e88d7" class="sentence">79</span>
+            </td>
+            <td class="style53">
+              <span id="xn81_03afdbd66e7929b125f8597834fa83a4" class="sentence">63</span>
+            </td>
+            <td class="style54">
+              <span id="xn82_e2c420d928d4bf8ce0ff2ec19b371514" class="sentence">71</span>
+            </td>
+            <td class="style55">&nbsp;</td>
+            <td class="style56">
+              <span id="xn83_7dd559560bb8651d65e9d50d5b41125e" class="sentence">46.5</span>
+            </td>
+            <td class="style57">&nbsp;</td>
+            <td class="style58">
+              <span id="xn84_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style59">&nbsp;</td>
+            <td class="style60">
+              <span id="xn85_fe73f687e5bc5280214e0486b273a5f9" class="sentence">330</span>
+            </td>
+            <td class="style61">
+              <span id="xn86_c7ed23f5281d7f5b606a1019ecd9fd97" class="sentence">8.7</span>
+            </td>
+            <td class="style62">
+              <span id="xn87_40008b9a5380fcacce3976bf7c08af5b" class="sentence">340</span>
+            </td>
+            <td class="style63">
+              <span id="xn88_37693cfc748049e45d87b8c7d8b9aacd" class="sentence">23</span>
+            </td>
+            <td class="style64">
+              <span id="xn89_bca66716b9ca2d13a4c28be69b276777" class="sentence">3.3</span>
+            </td>
+            <td class="style65">
+              <span id="xn90_7cbbc409ec990f19c78c75bd1e06f215" class="sentence">70</span>
+            </td>
+            <td class="style66">
+              <span id="xn91_33e75ff09dd601bbe69f351039152189" class="sentence">28</span>
+            </td>
+            <td class="style67">
+              <span id="xn92_18ab6394bd2937131fdf3e8975abd0be" class="sentence">1004.5</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style68">
+              <span id="xn93_eccbc87e4b5ce2fe28308fd9f2a7baf3" class="sentence">3</span>
+            </td>
+            <td class="style69">
+              <span id="xn94_28dd2c7955ce926456240b2ff0100bde" class="sentence">77</span>
+            </td>
+            <td class="style70">
+              <span id="xn95_b53b3a3d6ab90ce0268229151c9bde11" class="sentence">55</span>
+            </td>
+            <td class="style71">
+              <span id="xn96_3295c76acbf4caaed33c36b1b5fc2cb1" class="sentence">66</span>
+            </td>
+            <td class="style72">&nbsp;</td>
+            <td class="style73">
+              <span id="xn97_673f448e3f59815922a4af0450600b55" class="sentence">39.6</span>
+            </td>
+            <td class="style74">&nbsp;</td>
+            <td class="style75">
+              <span id="xn98_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style76">&nbsp;</td>
+            <td class="style77">
+              <span id="xn99_9de6d14fff9806d4bcd1ef555be766cd" class="sentence">350</span>
+            </td>
+            <td class="style78">
+              <span id="xn100_336669dbe720233ed5577ddf81b653d3" class="sentence">5.0</span>
+            </td>
+            <td class="style79">
+              <span id="xn101_9de6d14fff9806d4bcd1ef555be766cd" class="sentence">350</span>
+            </td>
+            <td class="style80">
+              <span id="xn102_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style81">
+              <span id="xn103_56b7a720568f7e7e89904d13b53584b6" class="sentence">2.8</span>
+            </td>
+            <td class="style82">
+              <span id="xn104_093f65e080a295f8076b1c5722a46aa2" class="sentence">59</span>
+            </td>
+            <td class="style83">
+              <span id="xn105_1ff1de774005f8da13f42943881c655f" class="sentence">24</span>
+            </td>
+            <td class="style84">
+              <span id="xn106_077f542e14d30051f6a72ece026c991a" class="sentence">1016.8</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style85">
+              <span id="xn107_a87ff679a2f3e71d9181a67b7542122c" class="sentence">4</span>
+            </td>
+            <td class="style86">
+              <span id="xn108_28dd2c7955ce926456240b2ff0100bde" class="sentence">77</span>
+            </td>
+            <td class="style87">
+              <span id="xn109_093f65e080a295f8076b1c5722a46aa2" class="sentence">59</span>
+            </td>
+            <td class="style88">
+              <span id="xn110_a3f390d88e4c41f2747bfa2f1b5f87db" class="sentence">68</span>
+            </td>
+            <td class="style89">&nbsp;</td>
+            <td class="style90">
+              <span id="xn111_af9694d0321814cc987fdd1cf77c417f" class="sentence">51.1</span>
+            </td>
+            <td class="style91">&nbsp;</td>
+            <td class="style92">
+              <span id="xn112_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style93">&nbsp;</td>
+            <td class="style94">
+              <span id="xn113_5f93f983524def3dca464469d2cf9f3e" class="sentence">110</span>
+            </td>
+            <td class="style95">
+              <span id="xn114_796d3a90e43ce105cbf37298c5065f7e" class="sentence">9.1</span>
+            </td>
+            <td class="style96">
+              <span id="xn115_9b8619251a19057cff70779273e95aa6" class="sentence">130</span>
+            </td>
+            <td class="style97">
+              <span id="xn116_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style98">
+              <span id="xn117_9b402891c0d38b9c654dcfa36df9d722" class="sentence">8.6</span>
+            </td>
+            <td class="style99">
+              <span id="xn118_44f683a84163b3523afe57c2e008bc8c" class="sentence">62</span>
+            </td>
+            <td class="style100">
+              <span id="xn119_d645920e395fedad7bbbed0eca3fe2e0" class="sentence">40</span>
+            </td>
+            <td class="style101">
+              <span id="xn120_47a399e1b199c73a99ac970a3b1592ae" class="sentence">1021.1</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style102">
+              <span id="xn121_5058f1af8388633f609cadb75a75dc9d" class="sentence">.</span>
+            </td>
+            <td class="style103">
+              <span id="xn122_58b9e70b65a77700ba66e9c64d6b9f89" class="sentence">..</span>
+            </td>
+            <td class="style104">&nbsp;</td>
+            <td class="style105">&nbsp;</td>
+            <td class="style106">&nbsp;</td>
+            <td class="style107">&nbsp;</td>
+            <td class="style108">&nbsp;</td>
+            <td class="style109">&nbsp;</td>
+            <td class="style110">&nbsp;</td>
+            <td class="style111">&nbsp;</td>
+            <td class="style112">&nbsp;</td>
+            <td class="style113">&nbsp;</td>
+            <td class="style114">&nbsp;</td>
+            <td class="style115">&nbsp;</td>
+            <td class="style116">&nbsp;</td>
+            <td class="style117">&nbsp;</td>
+            <td class="style118">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="style119">
+              <span id="xn123_33e75ff09dd601bbe69f351039152189" class="sentence">28</span>
+            </td>
+            <td class="style120">
+              <span id="xn124_68d30a9594728bc39aa24be94b319d21" class="sentence">84</span>
+            </td>
+            <td class="style121">
+              <span id="xn125_a3f390d88e4c41f2747bfa2f1b5f87db" class="sentence">68</span>
+            </td>
+            <td class="style122">
+              <span id="xn126_fbd7939d674997cdb4692d34de8633c4" class="sentence">76</span>
+            </td>
+            <td class="style123">&nbsp;</td>
+            <td class="style124">
+              <span id="xn127_dfe4ce7a5ae2e3d2574c4f98c9c0d61f" class="sentence">65.6</span>
+            </td>
+            <td class="style125">&nbsp;</td>
+            <td class="style126">
+              <span id="xn128_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style127">
+              <span id="xn129_636a3ed7d6587de935a0d1ceb348c05f" class="sentence">RTFH</span>
+            </td>
+            <td class="style128">
+              <span id="xn130_92c8c96e4c37100777c7190b76d28233" class="sentence">280</span>
+            </td>
+            <td class="style129">
+              <span id="xn131_5960276c0e365f7a81a90baab3a72051" class="sentence">7.6</span>
+            </td>
+            <td class="style130">
+              <span id="xn132_40008b9a5380fcacce3976bf7c08af5b" class="sentence">340</span>
+            </td>
+            <td class="style131">
+              <span id="xn133_c74d97b01eae257e44aa9d5bade97baf" class="sentence">16</span>
+            </td>
+            <td class="style132">
+              <span id="xn134_01deebfa87b938c89ecb3dcb4effcbe2" class="sentence">7.0</span>
+            </td>
+            <td class="style133">
+              <span id="xn135_f899139df5e1059396431415e770c6dd" class="sentence">100</span>
+            </td>
+            <td class="style134">
+              <span id="xn136_2838023a778dfaecdc212708f721b788" class="sentence">51</span>
+            </td>
+            <td class="style135">
+              <span id="xn137_552dc0ffe722e29bcb86d7b30ab2d20d" class="sentence">1011.0</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style136">
+              <span id="xn138_6ea9ab1baa0efb9e19094440c317e21b" class="sentence">29</span>
+            </td>
+            <td class="style137">
+              <span id="xn139_2a38a4a9316c49e5a833517c45d31070" class="sentence">88</span>
+            </td>
+            <td class="style138">
+              <span id="xn140_3295c76acbf4caaed33c36b1b5fc2cb1" class="sentence">66</span>
+            </td>
+            <td class="style139">
+              <span id="xn141_28dd2c7955ce926456240b2ff0100bde" class="sentence">77</span>
+            </td>
+            <td class="style140">&nbsp;</td>
+            <td class="style141">
+              <span id="xn142_9fdcc3f6bd9a289827a1615144928d50" class="sentence">59.7</span>
+            </td>
+            <td class="style142">&nbsp;</td>
+            <td class="style143">
+              <span id="xn143_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style144">&nbsp;</td>
+            <td class="style145">
+              <span id="xn144_21addf589817401ad295073cf611e4b9" class="sentence">040</span>
+            </td>
+            <td class="style146">
+              <span id="xn145_66aa0b173104355df724f8ed2101f575" class="sentence">5.4</span>
+            </td>
+            <td class="style147">
+              <span id="xn146_8f03ad02c6cad600d2c00a972a9bcce6" class="sentence">020</span>
+            </td>
+            <td class="style148">
+              <span id="xn147_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style149">
+              <span id="xn148_02e299f5ec237798b763a1565169ed12" class="sentence">5.3</span>
+            </td>
+            <td class="style150">
+              <span id="xn149_68d30a9594728bc39aa24be94b319d21" class="sentence">84</span>
+            </td>
+            <td class="style151">
+              <span id="xn150_182be0c5cdcd5072bb1864cdee4d3d6e" class="sentence">33</span>
+            </td>
+            <td class="style152">
+              <span id="xn151_44619bf63a73e58befef8b40f2b63f0c" class="sentence">1020.6</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style153">
+              <span id="xn152_34173cb38f07f89ddbebc2ac9128303f" class="sentence">30</span>
+            </td>
+            <td class="style154">
+              <span id="xn153_8613985ec49eb8f757ae6439e879bb2a" class="sentence">90</span>
+            </td>
+            <td class="style155">
+              <span id="xn154_6c8349cc7260ae62e3b1396831a8398f" class="sentence">45</span>
+            </td>
+            <td class="style156">
+              <span id="xn155_a3f390d88e4c41f2747bfa2f1b5f87db" class="sentence">68</span>
+            </td>
+            <td class="style157">&nbsp;</td>
+            <td class="style158">
+              <span id="xn156_95d82877c6171096caa78e0ba8937ff2" class="sentence">63.6</span>
+            </td>
+            <td class="style159">&nbsp;</td>
+            <td class="style160">
+              <span id="xn157_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style161">
+              <span id="xn158_2510c39011c5be704182423e3a695e91" class="sentence">H</span>
+            </td>
+            <td class="style162">
+              <span id="xn159_335f5352088d7d9bf74191e006d8e24c" class="sentence">240</span>
+            </td>
+            <td class="style163">
+              <span id="xn160_9f41f9f1c434718ae6e50ffba61152d0" class="sentence">6.0</span>
+            </td>
+            <td class="style164">
+              <span id="xn161_ec8ce6abb3e952a85b8551ba726a1227" class="sentence">220</span>
+            </td>
+            <td class="style165">
+              <span id="xn162_70efdf2ec9b086079795c442636b55fb" class="sentence">17</span>
+            </td>
+            <td class="style166">
+              <span id="xn163_4fb437564892944d73f87c822342e2bb" class="sentence">4.8</span>
+            </td>
+            <td class="style167">
+              <span id="xn164_3644a684f98ea8fe223c713b77189a77" class="sentence">200</span>
+            </td>
+            <td class="style168">
+              <span id="xn165_3416a75f4cea9109507cacd8e2f2aefc" class="sentence">41</span>
+            </td>
+            <td class="style169">
+              <span id="xn166_d211beb427a08becbc677a3fce5b0415" class="sentence">1022.7</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style170">
+              <span id="xn167_27c9d5187cd283f8d160ec1ed2b5ac89" class="sentence">mo</span>
+            </td>
+            <td class="style171">
+              <span id="xn168_0978ab26d0b2cde9190f888ab94640d4" class="sentence">82.9</span>
+            </td>
+            <td class="style172">
+              <span id="xn169_486830d795c4c3d7791ec3ba2171e0c7" class="sentence">60.5</span>
+            </td>
+            <td class="style173">
+              <span id="xn170_7ef46824ae306780e1076b8bab5c6140" class="sentence">71.7</span>
+            </td>
+            <td class="style174">
+              <span id="xn171_c74d97b01eae257e44aa9d5bade97baf" class="sentence">16</span>
+            </td>
+            <td class="style175">
+              <span id="xn172_1e34569335452ac0bf1002ac56db13ed" class="sentence">58.8</span>
+            </td>
+            <td class="style176">&nbsp;</td>
+            <td class="style177">
+              <span id="xn173_f7ddd489ab0a82567b241b05971cbdb3" class="sentence">0.00</span>
+            </td>
+            <td class="style178">&nbsp;</td>
+            <td class="style179">&nbsp;</td>
+            <td class="style180">
+              <span id="xn174_6e0728ebb67d668afa587a54f804e703" class="sentence">6.9</span>
+            </td>
+            <td class="style181">&nbsp;</td>
+            <td class="style182">&nbsp;</td>
+            <td class="style183">
+              <span id="xn175_02e299f5ec237798b763a1565169ed12" class="sentence">5.3</span>
+            </td>
+            <td class="style184">&nbsp;</td>
+            <td class="style185">&nbsp;</td>
+            <td class="style186">&nbsp;</td>
+          </tr>
+        </tbody></table>
+        <p>&nbsp;</p>
+        <p>
+          <span id="xn176_7c357bbc8b78f5f0e8318236b99e2526" class="sentence">很明显，这个文件不是逗号分隔格式的文件，但采用了位置分隔：“MxT”（最高温）列始终从同一位置开始，“MnT”（最低温）则从另一个固定位置开始。</span>
+          <span id="xn177_739164b5fc6267d770d40b580000315e" class="sentence">在 Visual Studio 中浏览这个文件会发现每行的长度都是 90 个字符；按行、按字符串解析这个文件将轻而易举，因为我们可以按换行符或 90 个字符的长度进行分割。</span>
+        </p>
+        <p>
+          <span id="xn178_73b71e1d7cd3b8da8ca8eba423332315" class="sentence">但是在那之后，事情变得复杂起来。</span>
+          <span id="xn179_073057c63b157a778de1b22fe8d34c50" class="sentence">尽管练习要求我们通过对位置值进行硬编码并对每行执行 String.Subset 来输出一个月中温差最小的日期，但离我们的目标稍有差距。</span>
+          <span id="xn180_42a5bb2a3832a2223854e78522a3df8d" class="sentence">因此让我们深入一步，提炼这个问题，以便还要求能够检查这个月中任意一天的任何数据元素。</span>
+        </p>
+        <p>
+          <span id="xn181_a5a6d03d91eaf3be12e7c8d488c17b30" class="sentence">请记住，多模式设计的核心是找出通用性/可变性基准。到目前为止，对于这个问题，通用性/可变性基准相当不明显，尽管很容易明白我们需要解析一个文本文件并查看结果。</span>
+          <span id="xn182_b37901a5a02d912014cc08db85ed3ebb" class="sentence">那些数据本质上是表格式的，但根据我们研究的模式，可以按若干不同的方式看待它们。</span>
+        </p>
+        <p>
+          <span id="xn183_68307b9a60aa0cfe94ed4dc1cb0ddb44" class="sentence">从过程角度看，数据结构就是每行的定义；而面向对象的解决方案并不能给予我们很多。</span>
+          <span id="xn184_1e0ba7a85608c21c16d599bd87e5c510" class="sentence">如果只是采用过程数据结构，并尝试用各种方法通过类来解析数据，则是相当简单的事。</span>
+          <span id="xn185_940840455f45c743dae2aa5da030dd05" class="sentence">就本质而言，我们又回到了“智能数据”（尽管它并不非常对象化）的路子上。</span>
+          <span id="xn186_13b5b5f592d8978351e194dfc94a9069" class="sentence">至少目前是这样的。</span>
+        </p>
+        <p>
+          <span id="xn187_18f647c610a36a7842c7547957ec1ebd" class="sentence">这里还看不出元编程策略（或动态编程）的实用价值，除了这种数据结构可能允许基于列名进行某些查询，因此 day1["MxT"] 可能返回“88”。函数式方法可能会很有趣，因为解析过程可以看作是一组函数，一个接一个运行，获取输入并返回字符串（或其他解析后的数据），而更多函数则解析文件的其余部分。</span>
+          <span id="xn188_f659e601b87624e5f4dcecce0e6de7b0" class="sentence">这样的技术称为“解析器组合”，但这个概念并不在本文的讨论范围内。</span>
+        </p>
+        <p>
+          <span id="xn189_18781f58723e6bb56497a242be8994b8" class="sentence">这些方法看起来用处都不大，仅就目前而言，最好的解决方案可能是过程方法，就如<strong>图 2</strong> 所示。</span>
+        </p>
+        <p>
+          <strong>
+            <span id="xn190_171f54fd44ca2be50f7a352752945a1f" class="sentence">图 2 采用过程方法</span>
+          </strong>
+        </p>
+        <div class="CodeHighlighter"><pre><code class="csharp"><ol><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">namespace</span>&nbsp;DataMunger</li><li style="">{</li><li style="">&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">struct</span>&nbsp;WeatherData</li><li style="">&nbsp;&nbsp;{</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;Day;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">float</span>&nbsp;MxT;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">float</span>&nbsp;MnT;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;More&nbsp;columns&nbsp;go&nbsp;here</span></li><li style="">&nbsp;&nbsp;}</li><li style="">&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;Program</li><li style="">&nbsp;&nbsp;{</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Main(<span class="cs__keyword">string</span>[]&nbsp;args)</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;{</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextReader&nbsp;reader&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamReader(<span class="cs__string">"weather.dat"</span>);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Read&nbsp;past&nbsp;first&nbsp;four&nbsp;lines</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reader.ReadLine();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reader.ReadLine();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reader.ReadLine();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reader.ReadLine();</li><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Start&nbsp;reading&nbsp;data</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;WeatherData&gt;&nbsp;weatherInfo&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;List&lt;WeatherData&gt;();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">while</span>&nbsp;(reader.Peek()&nbsp;&gt;&nbsp;<span class="cs__number">0</span>)</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;line&nbsp;=&nbsp;reader.ReadLine();</li><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Guard&nbsp;against&nbsp;"mo"&nbsp;summation&nbsp;line</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(line.Substring(<span class="cs__number">0</span>,&nbsp;<span class="cs__number">4</span>)&nbsp;==&nbsp;<span class="cs__string">"&nbsp;&nbsp;mo"</span>)</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">continue</span>;</li><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WeatherData&nbsp;wd&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;WeatherData();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wd.Day&nbsp;=&nbsp;Int32.Parse(line.Substring(<span class="cs__number">0</span>,&nbsp;<span class="cs__number">4</span>).Replace(<span class="cs__string">"*"</span>,&nbsp;<span class="cs__string">"&nbsp;"</span>));</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wd.MxT&nbsp;=&nbsp;Single.Parse(line.Substring(<span class="cs__number">5</span>,&nbsp;<span class="cs__number">6</span>).Replace(<span class="cs__string">"*"</span>,&nbsp;<span class="cs__string">"&nbsp;"</span>));</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wd.MnT&nbsp;=&nbsp;Single.Parse(line.Substring(<span class="cs__number">12</span>,&nbsp;<span class="cs__number">6</span>).Replace(<span class="cs__string">"*"</span>,&nbsp;<span class="cs__string">"&nbsp;"</span>));</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;More&nbsp;parsing&nbsp;goes&nbsp;here</span></li><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weatherInfo.Add(wd);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">"Max&nbsp;spread:&nbsp;"</span>&nbsp;+</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weatherInfo.Select((wd)&nbsp;=&gt;&nbsp;wd.MxT&nbsp;-&nbsp;wd.MnT).Max());</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;}</li><li style="">&nbsp;&nbsp;}</li><li style="">}</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script>
+        <p>
+          <span id="xn192_80f729d3ee5cf0d221d14cbe980c5434" class="sentence">请注意，这段代码已经提出一个问题：当解析到第 9 天时，MnT 列显示一个星号，表明这是这个月的“低温”，就像第 26 天是这个月的“高温”。</span>
+          <span id="xn193_1b7936eca14a0b9a2665bcdb3cfa1f21" class="sentence">这可以通过将“*”放在字符串之外来进行解决，但问题随之产生：过程基准关注的是建立数据结构并对数据结构进行操作，在本例中就是解析数据结构。</span>
+        </p>
+        <p>
+          <span id="xn194_446ce883b08ed8387241c240206f3662" class="sentence">另外，请注意这里用到了 List&lt;&gt;（我们使用过程方法来解析文件，并不意味着就不能利用 Base Class Library 中的有用类），</span>
+          <span id="xn195_e20b8d0f7611ef47ed0424bb52eeb7b1" class="sentence">这使得找出最小温差变得不怎么重要，一个 LINQ-to-Objects 查询就可以获得所需的结果。</span>
+          <span id="xn196_d421d5070ba40a3a98a3c90bd47066bf" class="sentence">（当然，我们应该获得出现这个温差的日期才算是解决问题，但这不过是返回并对除原始浮动值之外的某些内容执行 Max() 罢了；我将此留给读者作为练习。）</span>
+        </p>
+        <h2>
+          <span id="xn197_a7615524567cc1672fdeaebfd292de8d" class="sentence">第二步</span>
+        </h2>
+        <p>
+          <span id="xn198_a6b34f8ba5e2d54b40681b0a8c9a738a" class="sentence">我们可能要花很多时间来设想如何写出“可重用”的代码，但这就像预测未来；这段代码可以使用，所以我们进入 Kata 中的下一步：</span>
+        </p>
+        <p>
+          <em>
+            <span id="xn199_47d9408d2a184c5401750ae6b3a0ff0a" class="sentence">文件 football.dat (</span>
+          </em>
+          <a id="ctl00_MTContentSelector1_mainContentContainer_ctl08" href="http://bit.ly/lyNLya" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl08&#39;,this);window.open(this.href);return false;"><span id="xn200_ddf9e7d4c88033f9db5d891857c22673" class="sentence">http://bit.ly/lyNLya</span></a>
+          <em>
+            <span id="xn201_fc5570eca0daab094d7650ef4af7ca36" class="sentence">) 包含 2001/2002 赛季的英超联赛</span>
+          </em>
+          <em>
+            <span id="xn202_e86c196319d1c98ec5554207fb5b2c0b" class="sentence">战绩。</span>
+            <span id="xn203_85aeddb3d00032f27c576b66b614be53" class="sentence">“F”和“A”列分别包含该赛季每支队伍的总进球数和总失球数，例如 Arsenal（阿森纳）的进球数是 79 个，失球数是 36 个。</span>
+            <span id="xn204_05e53ecab6ac3b6308d6cb9e74fee31a" class="sentence">编写程序找出进球数和失球数差距最小的球队。</span>
+          </em>
+        </p>
+        <p>
+          <span id="xn205_a38e6e5866f66c0dcea46aae1ec85a5f" class="sentence">要进行更多的文本解析，</span>
+          <span id="xn206_58cea1bce5fad9a79a7a54c27ee24e07" class="sentence">很有意思。</span>
+          <span id="xn207_5157143a7287bb46d0f72e19848e08f0" class="sentence">football.dat 文件如<strong>图 3</strong> 所示，它很大程度上与 weather.dat（<strong>图 1</strong>）类似，但两者的区别也不少，足够采用不同的解析代码。</span>
+        </p>
+        <p>
+          <strong>
+            <span id="xn208_9d41fd26419076d23177c635998cb49f" class="sentence">图 3 Football.dat 文本文件</span>
+          </strong>
+        </p>
+        <table class="charttable">
+          <tbody><tr>
+            <td class="style187">&nbsp;</td>
+            <td class="style188">
+              <span id="xn209_f894427cc1c571f79da49605ef8b112f" class="sentence">球队</span>
+            </td>
+            <td class="style189">
+              <span id="xn210_83878c91171338902e0fe0fb97a8c47a" class="sentence">P</span>
+            </td>
+            <td class="style190">
+              <span id="xn211_f1290186a5d0b1ceab27f4e77c0c5d68" class="sentence">W</span>
+            </td>
+            <td class="style191">
+              <span id="xn212_2db95e8e1a9267b7a1188556b2013b33" class="sentence">L</span>
+            </td>
+            <td class="style192">
+              <span id="xn213_8277e0910d750195b448797616e091ad" class="sentence">D</span>
+            </td>
+            <td class="style193">
+              <span id="xn214_8fa14cdd754f91cc6554c9e71929cce7" class="sentence">F</span>
+            </td>
+            <td class="style194">&nbsp;</td>
+            <td class="style195">
+              <span id="xn215_0cc175b9c0f1b6a831c399e269772661" class="sentence">A</span>
+            </td>
+            <td class="style196">
+              <span id="xn216_8c9a70dc1e604715e475d87430ba602d" class="sentence">Pts</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style197">
+              <span id="xn217_1d41e6f55521cdba4fc73febd09d2eb4" class="sentence">1.</span>
+            </td>
+            <td class="style198">
+              <span id="xn218_1c5442c0461e5186126aaba26edd6857" class="sentence">Arsenal</span>
+            </td>
+            <td class="style199">
+              <span id="xn219_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style200">
+              <span id="xn220_4e732ced3463d06de0ca9a15b6153677" class="sentence">26</span>
+            </td>
+            <td class="style201">
+              <span id="xn221_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style202">
+              <span id="xn222_eccbc87e4b5ce2fe28308fd9f2a7baf3" class="sentence">3</span>
+            </td>
+            <td class="style203">
+              <span id="xn223_d1fe173d08e959397adf34b1d77e88d7" class="sentence">79</span>
+            </td>
+            <td class="style204">
+              <span id="xn224_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style205">
+              <span id="xn225_19ca14e7ea6328a42e0eb13d585e4c22" class="sentence">36</span>
+            </td>
+            <td class="style206">
+              <span id="xn226_c7e1249ffc03eb9ded908c236bd1996d" class="sentence">87</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style207">
+              <span id="xn227_3e35563210f995ee79a073fa882e1fd6" class="sentence">2.</span>
+            </td>
+            <td class="style208">
+              <span id="xn228_d177b4d1d9e6b6fa86521e4b3d00b029" class="sentence">Liverpool</span>
+            </td>
+            <td class="style209">
+              <span id="xn229_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style210">
+              <span id="xn230_1ff1de774005f8da13f42943881c655f" class="sentence">24</span>
+            </td>
+            <td class="style211">
+              <span id="xn231_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style212">
+              <span id="xn232_1679091c5a880faf6fb5e6087eb1b2dc" class="sentence">6</span>
+            </td>
+            <td class="style213">
+              <span id="xn233_735b90b4568125ed6c3f678819b6e058" class="sentence">67</span>
+            </td>
+            <td class="style214">
+              <span id="xn234_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style215">
+              <span id="xn235_34173cb38f07f89ddbebc2ac9128303f" class="sentence">30</span>
+            </td>
+            <td class="style216">
+              <span id="xn236_f033ab37c30201f73f142449d037028d" class="sentence">80</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style217">
+              <span id="xn237_d9cb741476305f454667e117d9e4f7ba" class="sentence">3.</span>
+            </td>
+            <td class="style218">
+              <span id="xn238_a9121b5ebc355387ce475b277410c593" class="sentence">Manchester_U</span>
+            </td>
+            <td class="style219">
+              <span id="xn239_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style220">
+              <span id="xn240_1ff1de774005f8da13f42943881c655f" class="sentence">24</span>
+            </td>
+            <td class="style221">
+              <span id="xn241_e4da3b7fbbce2345d7772b0674a318d5" class="sentence">5</span>
+            </td>
+            <td class="style222">
+              <span id="xn242_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style223">
+              <span id="xn243_c7e1249ffc03eb9ded908c236bd1996d" class="sentence">87</span>
+            </td>
+            <td class="style224">
+              <span id="xn244_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style225">
+              <span id="xn245_6c8349cc7260ae62e3b1396831a8398f" class="sentence">45</span>
+            </td>
+            <td class="style226">
+              <span id="xn246_28dd2c7955ce926456240b2ff0100bde" class="sentence">77</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style227">
+              <span id="xn247_ee2468a702bdc29871e84d63e851dd26" class="sentence">4.</span>
+            </td>
+            <td class="style228">
+              <span id="xn248_3226864efe2a9e12d7f03b4bdd8150dc" class="sentence">Newcastle</span>
+            </td>
+            <td class="style229">
+              <span id="xn249_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style230">
+              <span id="xn250_3c59dc048e8850243be8079a5c74d079" class="sentence">21</span>
+            </td>
+            <td class="style231">
+              <span id="xn251_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style232">
+              <span id="xn252_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style233">
+              <span id="xn253_ad61ab143223efbc24c7d2583be69251" class="sentence">74</span>
+            </td>
+            <td class="style234">
+              <span id="xn254_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style235">
+              <span id="xn255_9a1158154dfa42caddbd0694a4e9bdc8" class="sentence">52</span>
+            </td>
+            <td class="style236">
+              <span id="xn256_e2c420d928d4bf8ce0ff2ec19b371514" class="sentence">71</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style237">
+              <span id="xn257_a85803f14639bef7f4539bad631d088c" class="sentence">5.</span>
+            </td>
+            <td class="style238">
+              <span id="xn258_9b0b904e79446987c6669b130aac6ae2" class="sentence">Leeds</span>
+            </td>
+            <td class="style239">
+              <span id="xn259_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style240">
+              <span id="xn260_6f4922f45568161a8cdf4ad2299f6d23" class="sentence">18</span>
+            </td>
+            <td class="style241">
+              <span id="xn261_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style242">
+              <span id="xn262_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style243">
+              <span id="xn263_d82c8d1619ad8176d665453cfb2e55f0" class="sentence">53</span>
+            </td>
+            <td class="style244">
+              <span id="xn264_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style245">
+              <span id="xn265_a5bfc9e07964f8dddeb95fc584cd965d" class="sentence">37</span>
+            </td>
+            <td class="style246">
+              <span id="xn266_3295c76acbf4caaed33c36b1b5fc2cb1" class="sentence">66</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style247">
+              <span id="xn267_4363b12ae39947f045a4fb5fad740dc8" class="sentence">6.</span>
+            </td>
+            <td class="style248">
+              <span id="xn268_91cb315a6405bfcc30e2c4571ccfb8ce" class="sentence">Chelsea</span>
+            </td>
+            <td class="style249">
+              <span id="xn269_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style250">
+              <span id="xn270_70efdf2ec9b086079795c442636b55fb" class="sentence">17</span>
+            </td>
+            <td class="style251">
+              <span id="xn271_c51ce410c124a10e0db5e4b97fc2af39" class="sentence">13</span>
+            </td>
+            <td class="style252">
+              <span id="xn272_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style253">
+              <span id="xn273_3295c76acbf4caaed33c36b1b5fc2cb1" class="sentence">66</span>
+            </td>
+            <td class="style254">
+              <span id="xn274_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style255">
+              <span id="xn275_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style256">
+              <span id="xn276_ea5d2f1c4608232e07d3aa3d998e5135" class="sentence">64</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style257">
+              <span id="xn277_947ec8a6bed18b9c1a6fc73274ad4ac5" class="sentence">7.</span>
+            </td>
+            <td class="style258">
+              <span id="xn278_6f579b2fc0ebf2433829d9dab1428525" class="sentence">West_Ham</span>
+            </td>
+            <td class="style259">
+              <span id="xn279_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style260">
+              <span id="xn280_9bf31c7ff062936a96d3c8bd1f8f2ff3" class="sentence">15</span>
+            </td>
+            <td class="style261">
+              <span id="xn281_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style262">
+              <span id="xn282_9bf31c7ff062936a96d3c8bd1f8f2ff3" class="sentence">15</span>
+            </td>
+            <td class="style263">
+              <span id="xn283_642e92efb79421734881b53e1e1b18b6" class="sentence">48</span>
+            </td>
+            <td class="style264">
+              <span id="xn284_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style265">
+              <span id="xn285_72b32a1f754ba1c09b3695e0cb6cde7f" class="sentence">57</span>
+            </td>
+            <td class="style266">
+              <span id="xn286_d82c8d1619ad8176d665453cfb2e55f0" class="sentence">53</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style267">
+              <span id="xn287_25419da0c8dabdf8e3437f3cbbd94fd6" class="sentence">8.</span>
+            </td>
+            <td class="style268">
+              <span id="xn288_552aefce059e66c0c918a8c6c173d9c7" class="sentence">Aston_Villa</span>
+            </td>
+            <td class="style269">
+              <span id="xn289_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style270">
+              <span id="xn290_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style271">
+              <span id="xn291_aab3238922bcc25a6f606eb525ffdc56" class="sentence">14</span>
+            </td>
+            <td class="style272">
+              <span id="xn292_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style273">
+              <span id="xn293_d9d4f495e875a2e075a1a4a6e1b9770f" class="sentence">46</span>
+            </td>
+            <td class="style274">
+              <span id="xn294_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style275">
+              <span id="xn295_67c6a1e7ce56d3d6fa748ab6d9af3fd7" class="sentence">47</span>
+            </td>
+            <td class="style276">
+              <span id="xn296_c0c7c76d30bd3dcaefc96f40275bdc0a" class="sentence">50</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style277">
+              <span id="xn297_d39aeb060e81b0fc04267ae08255938a" class="sentence">9.</span>
+            </td>
+            <td class="style278">
+              <span id="xn298_5e0fb1614a5f8e9ee42ba106302bb045" class="sentence">Tottenham</span>
+            </td>
+            <td class="style279">
+              <span id="xn299_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style280">
+              <span id="xn300_aab3238922bcc25a6f606eb525ffdc56" class="sentence">14</span>
+            </td>
+            <td class="style281">
+              <span id="xn301_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style282">
+              <span id="xn302_c74d97b01eae257e44aa9d5bade97baf" class="sentence">16</span>
+            </td>
+            <td class="style283">
+              <span id="xn303_f457c545a9ded88f18ecee47145a72c0" class="sentence">49</span>
+            </td>
+            <td class="style284">
+              <span id="xn304_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style285">
+              <span id="xn305_d82c8d1619ad8176d665453cfb2e55f0" class="sentence">53</span>
+            </td>
+            <td class="style286">
+              <span id="xn306_c0c7c76d30bd3dcaefc96f40275bdc0a" class="sentence">50</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style287">
+              <span id="xn307_ecb555b7c7fa7a949794449bbd3357f7" class="sentence">10.</span>
+            </td>
+            <td class="style288">
+              <span id="xn308_10d17f83d9d742b39d692e2dbf516c54" class="sentence">Blackburn</span>
+            </td>
+            <td class="style289">
+              <span id="xn309_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style290">
+              <span id="xn310_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style291">
+              <span id="xn311_d3d9446802a44259755d38e6d163e820" class="sentence">10</span>
+            </td>
+            <td class="style292">
+              <span id="xn312_c74d97b01eae257e44aa9d5bade97baf" class="sentence">16</span>
+            </td>
+            <td class="style293">
+              <span id="xn313_b53b3a3d6ab90ce0268229151c9bde11" class="sentence">55</span>
+            </td>
+            <td class="style294">
+              <span id="xn314_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style295">
+              <span id="xn315_2838023a778dfaecdc212708f721b788" class="sentence">51</span>
+            </td>
+            <td class="style296">
+              <span id="xn316_d9d4f495e875a2e075a1a4a6e1b9770f" class="sentence">46</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style297">
+              <span id="xn317_5c6c9bea5cebc6bb3780d84a6c51be6a" class="sentence">11.</span>
+            </td>
+            <td class="style298">
+              <span id="xn318_9aaa9b076f30ee153108d703143e9d00" class="sentence">Southampton</span>
+            </td>
+            <td class="style299">
+              <span id="xn319_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style300">
+              <span id="xn320_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style301">
+              <span id="xn321_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style302">
+              <span id="xn322_70efdf2ec9b086079795c442636b55fb" class="sentence">17</span>
+            </td>
+            <td class="style303">
+              <span id="xn323_d9d4f495e875a2e075a1a4a6e1b9770f" class="sentence">46</span>
+            </td>
+            <td class="style304">
+              <span id="xn324_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style305">
+              <span id="xn325_a684eceee76fc522773286a895bc8436" class="sentence">54</span>
+            </td>
+            <td class="style306">
+              <span id="xn326_6c8349cc7260ae62e3b1396831a8398f" class="sentence">45</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style307">
+              <span id="xn327_76fde070b319d3b1f25909d6ed937b89" class="sentence">12.</span>
+            </td>
+            <td class="style308">
+              <span id="xn328_cbb945e6282a2fb0e92810bcd1e97ed0" class="sentence">Middlesbrough</span>
+            </td>
+            <td class="style309">
+              <span id="xn329_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style310">
+              <span id="xn330_c20ad4d76fe97759aa27a0c99bff6710" class="sentence">12</span>
+            </td>
+            <td class="style311">
+              <span id="xn331_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style312">
+              <span id="xn332_70efdf2ec9b086079795c442636b55fb" class="sentence">17</span>
+            </td>
+            <td class="style313">
+              <span id="xn333_1c383cd30b7c298ab50293adfecb7b18" class="sentence">35</span>
+            </td>
+            <td class="style314">
+              <span id="xn334_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style315">
+              <span id="xn335_67c6a1e7ce56d3d6fa748ab6d9af3fd7" class="sentence">47</span>
+            </td>
+            <td class="style316">
+              <span id="xn336_6c8349cc7260ae62e3b1396831a8398f" class="sentence">45</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style317">
+              <span id="xn337_68125b7a06283c69036d98fe17fc4dbd" class="sentence">13.</span>
+            </td>
+            <td class="style318">
+              <span id="xn338_e682d15ca334eecf75b1b013fbd521d0" class="sentence">Fulham</span>
+            </td>
+            <td class="style319">
+              <span id="xn339_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style320">
+              <span id="xn340_d3d9446802a44259755d38e6d163e820" class="sentence">10</span>
+            </td>
+            <td class="style321">
+              <span id="xn341_1ff1de774005f8da13f42943881c655f" class="sentence">24</span>
+            </td>
+            <td class="style322">
+              <span id="xn342_aab3238922bcc25a6f606eb525ffdc56" class="sentence">14</span>
+            </td>
+            <td class="style323">
+              <span id="xn343_19ca14e7ea6328a42e0eb13d585e4c22" class="sentence">36</span>
+            </td>
+            <td class="style324">
+              <span id="xn344_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style325">
+              <span id="xn345_f7177163c833dff4b38fc8d2872f1ec6" class="sentence">44</span>
+            </td>
+            <td class="style326">
+              <span id="xn346_f7177163c833dff4b38fc8d2872f1ec6" class="sentence">44</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style327">
+              <span id="xn347_5f516e9a831b1c7b7b97110c923e14b1" class="sentence">14.</span>
+            </td>
+            <td class="style328">
+              <span id="xn348_91d214908bfa39cb8d28ef4c30b2c651" class="sentence">Charlton</span>
+            </td>
+            <td class="style329">
+              <span id="xn349_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style330">
+              <span id="xn350_d3d9446802a44259755d38e6d163e820" class="sentence">10</span>
+            </td>
+            <td class="style331">
+              <span id="xn351_aab3238922bcc25a6f606eb525ffdc56" class="sentence">14</span>
+            </td>
+            <td class="style332">
+              <span id="xn352_aab3238922bcc25a6f606eb525ffdc56" class="sentence">14</span>
+            </td>
+            <td class="style333">
+              <span id="xn353_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style334">
+              <span id="xn354_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style335">
+              <span id="xn355_f457c545a9ded88f18ecee47145a72c0" class="sentence">49</span>
+            </td>
+            <td class="style336">
+              <span id="xn356_f7177163c833dff4b38fc8d2872f1ec6" class="sentence">44</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style337">
+              <span id="xn357_567df8ed23cd6f7da62b22589f8af589" class="sentence">15.</span>
+            </td>
+            <td class="style338">
+              <span id="xn358_c99868052fb8a76e4f4b9f2ee67d39fb" class="sentence">Everton</span>
+            </td>
+            <td class="style339">
+              <span id="xn359_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style340">
+              <span id="xn360_6512bd43d9caa6e02c990b0a82652dca" class="sentence">11</span>
+            </td>
+            <td class="style341">
+              <span id="xn361_d3d9446802a44259755d38e6d163e820" class="sentence">10</span>
+            </td>
+            <td class="style342">
+              <span id="xn362_70efdf2ec9b086079795c442636b55fb" class="sentence">17</span>
+            </td>
+            <td class="style343">
+              <span id="xn363_6c8349cc7260ae62e3b1396831a8398f" class="sentence">45</span>
+            </td>
+            <td class="style344">
+              <span id="xn364_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style345">
+              <span id="xn365_72b32a1f754ba1c09b3695e0cb6cde7f" class="sentence">57</span>
+            </td>
+            <td class="style346">
+              <span id="xn366_17e62166fc8586dfa4d1bc0e1742c08b" class="sentence">43</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style347">
+              <span id="xn367_b157d04f2dce59999a41076690eb56e6" class="sentence">16.</span>
+            </td>
+            <td class="style348">
+              <span id="xn368_c65d33237dc2ab50332e8791b4b885bb" class="sentence">Bolton</span>
+            </td>
+            <td class="style349">
+              <span id="xn369_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style350">
+              <span id="xn370_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style351">
+              <span id="xn371_c51ce410c124a10e0db5e4b97fc2af39" class="sentence">13</span>
+            </td>
+            <td class="style352">
+              <span id="xn372_c74d97b01eae257e44aa9d5bade97baf" class="sentence">16</span>
+            </td>
+            <td class="style353">
+              <span id="xn373_f7177163c833dff4b38fc8d2872f1ec6" class="sentence">44</span>
+            </td>
+            <td class="style354">
+              <span id="xn374_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style355">
+              <span id="xn375_44f683a84163b3523afe57c2e008bc8c" class="sentence">62</span>
+            </td>
+            <td class="style356">
+              <span id="xn376_d645920e395fedad7bbbed0eca3fe2e0" class="sentence">40</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style357">
+              <span id="xn377_26da66e7f52458058e6a8552ceea234f" class="sentence">17.</span>
+            </td>
+            <td class="style358">
+              <span id="xn378_254bd93dabf391e509581e8e19f4ca5d" class="sentence">Sunderland</span>
+            </td>
+            <td class="style359">
+              <span id="xn379_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style360">
+              <span id="xn380_d3d9446802a44259755d38e6d163e820" class="sentence">10</span>
+            </td>
+            <td class="style361">
+              <span id="xn381_d3d9446802a44259755d38e6d163e820" class="sentence">10</span>
+            </td>
+            <td class="style362">
+              <span id="xn382_6f4922f45568161a8cdf4ad2299f6d23" class="sentence">18</span>
+            </td>
+            <td class="style363">
+              <span id="xn383_6ea9ab1baa0efb9e19094440c317e21b" class="sentence">29</span>
+            </td>
+            <td class="style364">
+              <span id="xn384_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style365">
+              <span id="xn385_2838023a778dfaecdc212708f721b788" class="sentence">51</span>
+            </td>
+            <td class="style366">
+              <span id="xn386_d645920e395fedad7bbbed0eca3fe2e0" class="sentence">40</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style367">
+              <span id="xn387_ecd15ee3a7985b2440f3c41cdd5445ae" class="sentence">18.</span>
+            </td>
+            <td class="style368">
+              <span id="xn388_8fda26fcb47a26397b834733b811c98a" class="sentence">Ipswich</span>
+            </td>
+            <td class="style369">
+              <span id="xn389_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style370">
+              <span id="xn390_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style371">
+              <span id="xn391_45c48cce2e2d7fbdea1afc51c7c6ad26" class="sentence">9</span>
+            </td>
+            <td class="style372">
+              <span id="xn392_98f13708210194c475687be6106a3b84" class="sentence">20</span>
+            </td>
+            <td class="style373">
+              <span id="xn393_3416a75f4cea9109507cacd8e2f2aefc" class="sentence">41</span>
+            </td>
+            <td class="style374">
+              <span id="xn394_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style375">
+              <span id="xn395_ea5d2f1c4608232e07d3aa3d998e5135" class="sentence">64</span>
+            </td>
+            <td class="style376">
+              <span id="xn396_19ca14e7ea6328a42e0eb13d585e4c22" class="sentence">36</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style377">
+              <span id="xn397_3fbe59736dea478652b263f43af75f0f" class="sentence">19.</span>
+            </td>
+            <td class="style378">
+              <span id="xn398_c3f5e3cfb7b91629b3611836fcc97957" class="sentence">Derby</span>
+            </td>
+            <td class="style379">
+              <span id="xn399_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style380">
+              <span id="xn400_c9f0f895fb98ab9159f51fd0297e236d" class="sentence">8</span>
+            </td>
+            <td class="style381">
+              <span id="xn401_1679091c5a880faf6fb5e6087eb1b2dc" class="sentence">6</span>
+            </td>
+            <td class="style382">
+              <span id="xn402_1ff1de774005f8da13f42943881c655f" class="sentence">24</span>
+            </td>
+            <td class="style383">
+              <span id="xn403_182be0c5cdcd5072bb1864cdee4d3d6e" class="sentence">33</span>
+            </td>
+            <td class="style384">
+              <span id="xn404_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style385">
+              <span id="xn405_03afdbd66e7929b125f8597834fa83a4" class="sentence">63</span>
+            </td>
+            <td class="style386">
+              <span id="xn406_34173cb38f07f89ddbebc2ac9128303f" class="sentence">30</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="style387">
+              <span id="xn407_81eb1aafe187d1d6102537b21e3b3b4f" class="sentence">20.</span>
+            </td>
+            <td class="style388">
+              <span id="xn408_16ba4bec9c54a088c9762527601b355a" class="sentence">Leicester</span>
+            </td>
+            <td class="style389">
+              <span id="xn409_a5771bce93e200c36f7cd9dfd0e5deaa" class="sentence">38</span>
+            </td>
+            <td class="style390">
+              <span id="xn410_e4da3b7fbbce2345d7772b0674a318d5" class="sentence">5</span>
+            </td>
+            <td class="style391">
+              <span id="xn411_c51ce410c124a10e0db5e4b97fc2af39" class="sentence">13</span>
+            </td>
+            <td class="style392">
+              <span id="xn412_98f13708210194c475687be6106a3b84" class="sentence">20</span>
+            </td>
+            <td class="style393">
+              <span id="xn413_34173cb38f07f89ddbebc2ac9128303f" class="sentence">30</span>
+            </td>
+            <td class="style394">
+              <span id="xn414_336d5ebc5436534e61d16e63ddfca327" class="sentence">-</span>
+            </td>
+            <td class="style395">
+              <span id="xn415_ea5d2f1c4608232e07d3aa3d998e5135" class="sentence">64</span>
+            </td>
+            <td class="style396">
+              <span id="xn416_33e75ff09dd601bbe69f351039152189" class="sentence">28</span>
+            </td>
+          </tr>
+        </tbody></table>
+        <p>&nbsp;</p>
+        <p>
+          <span id="xn417_b9a765d8852158eefd14927d0f5b5f86" class="sentence">如果我们分别考虑这两个程序，很容易看出每个程序可以用几乎相同的方式解决，重复讨论这个足球练习没有多大意义。</span>
+        </p>
+        <h2>
+          <span id="xn418_12f3103bbba9d90e2a2b842ec1dd0eaa" class="sentence">第三步</span>
+        </h2>
+        <p>
+          <span id="xn419_27af4ef51f2b0038d9fa5e48e6c03419" class="sentence">但是，Kata 的最后一步让我们看到了练习的意义所在：</span>
+        </p>
+        <p>
+          <em>
+            <span id="xn420_c575e559f61bd78db9de0e7aaa3e0a96" class="sentence">拿出以前编写的两个程序，尽可能剔除共用的代码，您就会得到两个较小的程序，以及一些共同的功能。</span>
+          </em>
+        </p>
+        <p>
+          <span id="xn421_2e44ce85ebb82959250f806c97115b50" class="sentence">这是非常有趣的，也是通用性/可变性分析中所需的因素。</span>
+        </p>
+        <h2>
+          <span id="xn422_006641a675142ac07e09466fa227966c" class="sentence">通用性/可变性</span>
+        </h2>
+        <p>
+          <span id="xn423_7f250299357c152ccbc38dc173a10ca2" class="sentence">因为我们现在要考虑的问题不止一个（也就是说，是一系列的顾虑），所以要梳理出两个问题之间的通用性和可变性就变得容易起来。</span>
+          <span id="xn424_80ecb42cdd24313a1e74dfa299ec2e5f" class="sentence">从对文本文件的分析开始，分析过程揭示出练习其实可以归纳为两个步骤：将文件解析为原始数据的列表，然后用某种类型的计算或分析来检查这些数据。</span>
+        </p>
+        <p>
+          <span id="xn425_f17153a5201aff8d9f52e2705768ee47" class="sentence">这里是解析文本文件时需要考虑的一些问题：</span>
+        </p>
+        <ul>
+          <li>
+            <span id="xn426_bdade226a51fa19e4b7836d695174a11" class="sentence">两个文件的格式都包含需要忽略的“标题”。</span>
+          </li>
+          <li>
+            <span id="xn427_1ae2c2976eb2bda2cfff85dc6fd2e73d" class="sentence">两个文件的格式都是基于位置的。</span>
+          </li>
+          <li>
+            <span id="xn428_3912abc3b5f12e98e2879278b45afc64" class="sentence">两个文件的格式都包含需要忽略的行（weather.dat 文件中的“mo”总结行，football.dat 文件中的“------”标记）。</span>
+          </li>
+          <li>
+            <span id="xn429_68aead1b7566e480a89e72394a1157fa" class="sentence">Weather.dat 包含一些空列，football.dat 则没有。</span>
+          </li>
+          <li>
+            <span id="xn430_24820de35de8e93047943bae0684e4a1" class="sentence">两个文件的格式原则上都支持数字和字符串列（此外，weather.dat 还包含“*”值，需要用某种方法捕获）。</span>
+          </li>
+        </ul>
+        <p>
+          <span id="xn431_e5a1eae82f9def3951c87ed04841b9d2" class="sentence">计算结果主要取决于解析后的数据是什么样的，因此从那里入手是合理的。</span>
+          <span id="xn432_f0d9e8875e240862e8806dabee19ae1f" class="sentence">根据每种模式，我们有几种方法可以开始：</span>
+        </p>
+        <p>
+          <span id="xn433_bb9708d4a52feffc3034074113b853f8" class="sentence">
+            <strong>过程方法</strong> 这种基准主要捕获数据结构中的通用性。</span>
+          <span id="xn434_b76e39b34d76613d9a57a910724a73d9" class="sentence">但是，对于两种不同的文件格式，无疑我们需要捕获可变性，因此过程方法看起来并不合适。</span>
+          <span id="xn435_30a9aeebeff5e960b8560753e0718468" class="sentence">创建某种捕获两种文件格式的数据结构是可能的，但是与其他模式相比，效果并不好。</span>
+        </p>
+        <p>
+          <span id="xn436_f3571769f1d96e68101bddfe870c4911" class="sentence">
+            <strong>面向对象方法</strong> 两个文件之间的通用性表明可以使用抽象基类“TextParser”来提供基本的解析功能，包括跳行功能。</span>
+          <span id="xn437_6e333ade224ef4aabd285f479479bf22" class="sentence">可变性则在解析每行时产生，这意味着子类必须重写某种“ParseLine”方法才能执行实际的逐行解析。</span>
+          <span id="xn438_fb9661aaee326ac237445f41b80cf8f6" class="sentence">但是，如何从 TextParser 子类型检索得到解析后的值（以便进行最大/最小值比较）可能会有难度，因为列的类型也会改变。</span>
+          <span id="xn439_0840881123369153b369b71f4c2c56e6" class="sentence">以前，Microsoft .NET Framework 曾通过返回对象来解决这个问题（使用 SQL 数据集），如有必要我们可以使用这种方法。</span>
+          <span id="xn440_fd967f74383ec7ca2d5b1c7e151f8885" class="sentence">但是这种方法可能引入类型安全错误，因为对象需要向下转换才能使用，而这可能很危险。</span>
+        </p>
+        <p>
+          <span id="xn441_7cb51abc671d677003ffc5a4d07595fc" class="sentence">
+            <strong>元方法</strong> 几个不同的解决方案都涉及到元对象/元编程。</span>
+          <span id="xn442_fcd8ee64211a03c744e4d5d95eb056e6" class="sentence">属性方法表明 TextParser 类会接受“Record”类型，其中描述的每个列都具有起点/长度自定义属性，用来描述如何解析各行，如下所示：</span>
+        </p>
+        <div class="CodeHighlighter"><pre><code class="csharp"><ol><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">struct</span>&nbsp;WeatherData</li><li style="">{</li><li style="">&nbsp;&nbsp;[Parse(<span class="cs__number">0</span>,&nbsp;<span class="cs__number">4</span>)]</li><li style="">&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;Day;</li><li style="">&nbsp;&nbsp;[Parse(<span class="cs__number">5</span>,&nbsp;<span class="cs__number">6</span>)]</li><li style="">&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">float</span>&nbsp;MxT;</li><li style="">&nbsp;&nbsp;[Parse(<span class="cs__number">12</span>,&nbsp;<span class="cs__number">6</span>)]</li><li style="">&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">float</span>&nbsp;MnT;</li><li style="">}</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script>
+        <p>
+          <span id="xn444_54fc7c57812ccd280f4c15af0b38559b" class="sentence">然后，TextParser 可以进行参数化以接受 Record 类型 (TextParser&lt;RecordT&gt;)，并在运行时使用自定义属性来发现如何解析各行。</span>
+          <span id="xn445_e94604b0913c85dc9ab4866c957ccd76" class="sentence">这之后会返回 Records 列表 (List&lt;RecordT&gt;)，我们可以用这个列表进行上文所述的计算。</span>
+        </p>
+        <p>
+          <span id="xn446_9932a7202691828de99dc0457e26d94b" class="sentence">另外，生成式编程表明某种类型的源格式可以描述文本文件，针对每种文件的解析器是根据该源格式生成的。</span>
+        </p>
+        <p>
+          <span id="xn447_212611a0537a48d2aba1e2fe82407d31" class="sentence">
+            <strong>动态方法</strong> 采用动态方法稍有些奇怪，因为它是 .NET 领域中较新的方法。但是在这里，我们可以假设一个接受字符串的 TextParser 类，这个类描述如何解析每个文件。</span>
+          <span id="xn448_8cff9159b5278def3288ab74637b495c" class="sentence">就其自身而言，它几乎是一种无足轻重的编程语言，可能融入了正则表达式，或（在我们的示例中）只使用位置数据，因为这就是这个问题所需的全部：</span>
+        </p>
+        <div class="CodeHighlighter"><pre><code class="csharp"><ol><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;parseCommands&nbsp;=</li><li style="">&nbsp;&nbsp;<span class="cs__string">"Ignore;&nbsp;Ignore;&nbsp;Ignore;&nbsp;Ignore;&nbsp;Repeat(Day:0-4,&nbsp;MxT:5-6,&nbsp;MnT:12-6)"</span>;</li><li style="">TextParser&nbsp;parser&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;TextParser(parseCommands);</li><li style="">List&lt;<span class="cs__keyword">string</span>&gt;&nbsp;MxTData&nbsp;=&nbsp;parser[<span class="cs__string">"MxT"</span>];</li><li style="">List&lt;<span class="cs__keyword">string</span>&gt;&nbsp;MnTData&nbsp;=&nbsp;parser[<span class="cs__string">"MnT"</span>];</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script>
+        <p>
+          <span id="xn450_6bf348f321d7b26b6a731a8a6f86f7b9" class="sentence">这与元方法有着显著的区别，因为它缺乏元方法能够提供的类型安全。</span>
+          <span id="xn451_140725cad8f2fc25b97d5b334d76938b" class="sentence">但是，如果文件格式发生改变，元方法就需要在编译时更改，而动态方法由于处理的是基于名称的可变性，因此可以应付这种改变。</span>
+          <span id="xn452_2392e17a6798e8eff58b49c553764eb8" class="sentence">动态方法提供了更高的灵活性，代价是其内部的复杂性有所增加。</span>
+        </p>
+        <p>
+          <span id="xn453_4f57861b4bd180d0f62f5f616672125c" class="sentence">由生成式元方法使用的源格式可以在运行时传递，从而在运行时而不是在源代码时构建解析器。</span>
+        </p>
+        <p>
+          <span id="xn454_54b333f974ba41262bb336eee1ce5770" class="sentence">
+            <strong>函数式方法</strong> 从某些方面来说，函数式方法是最奇怪的，因为这种方法表明算法（解析）就是可变性之所在，所以 TextParser 类应该接受一个或多个描述如何解析文本的函数，而无论是逐行解析，还是逐列解析，或者两者兼具。</span>
+          <span id="xn455_8d167a271a28139ca0ff36020ef88a0a" class="sentence">例如，TextParser 需要了解的两点是如何忽略不可解析的行，以及如何将一行分解为各个组成部分。</span>
+          <span id="xn456_97ed9cfc17b2a660d8be763f97a1962a" class="sentence">这可以通过建立 TextParser 本身的函数实例来实现，或者通过构造函数传递，或者通过属性进行设置，如<strong>图 4</strong> 所示。</span>
+        </p>
+        <p>
+          <strong>
+            <span id="xn457_88cac828e8e57ebab6604442b1906845" class="sentence">图 4 函数式方法</span>
+          </strong>
+        </p>
+        <div class="CodeHighlighter"><pre><code class="csharp"><ol><li style="">&nbsp;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextParser&lt;WeatherData&gt;&nbsp;parser&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;TextParser&lt;WeatherData&gt;();</li><li style="">parser.LineParseVerifier&nbsp;=</li><li style="">&nbsp;&nbsp;(line)&nbsp;=&gt;</li><li style="">&nbsp;&nbsp;{</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(&nbsp;(line.Trim().Length&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;||&nbsp;<span class="cs__com">//&nbsp;Empty&nbsp;line</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(line.Contains(<span class="cs__string">"MMU"</span>))&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;First&nbsp;header&nbsp;line</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(line.Contains(<span class="cs__string">"Dy"</span>))&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Second&nbsp;header&nbsp;line</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(line.Contains(<span class="cs__string">"mo"</span>)))</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;<span class="cs__keyword">false</span>;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;<span class="cs__keyword">true</span>;</li><li style="">&nbsp;&nbsp;};</li><li style="">parser.ColumnExtracter&nbsp;=</li><li style="">&nbsp;&nbsp;(line)&nbsp;=&gt;</li><li style="">&nbsp;&nbsp;{</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;WeatherData&nbsp;wd&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;WeatherData();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;wd.Day&nbsp;=&nbsp;line.Substring(<span class="cs__number">0</span>,&nbsp;<span class="cs__number">4</span>);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;wd.MxT&nbsp;=&nbsp;line.Substring(<span class="cs__number">5</span>,&nbsp;<span class="cs__number">6</span>);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;wd.MnT&nbsp;=&nbsp;line.Substring(<span class="cs__number">12</span>,&nbsp;<span class="cs__number">6</span>);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;wd;</li><li style="">&nbsp;&nbsp;};</li><li style="">List&lt;WeatherData&gt;&nbsp;results&nbsp;=&nbsp;parser.Parse(<span class="cs__string">"weather.dat"</span>);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script>
+        <p>
+          <span id="xn459_d540ea4316777b7568b46283f8d9af15" class="sentence">TextParser 单独使用参数化的类型来捕获 WeatherData 类型，以获得更好的类型安全。如果需要或者更容易进行，可以让它返回泛型 System.Object。</span>
+        </p>
+        <p>
+          <strong>
+            <span id="xn460_8d209bddbf510fd33e5655bc186c5b0a" class="sentence">总结</span>
+          </strong>
+        </p>
+        <p>
+          <span id="xn461_2ccfa987b4ee80689f7f04194c0ed146" class="sentence">很明显，并没有一种“万能方法”能够真正完全解决问题，随着其他要求逐渐清晰，我们可以更好地理解可变性在哪里，也就能更好地理解需要捕获的通用性。</span>
+          <span id="xn462_34fe83c57141164bc70ba82c2b4c4caf" class="sentence">顺便说一句，这突显了重构的真正力量：因为我们无法预测未来，重构代码意味着我们的通用性/可变性解析可能是错的，但当这些问题暴露时，我们无需“推倒重来”。</span>
+        </p>
+        <p>
+          <span id="xn463_3b5dd31d36a9d3627e11f9294a235df4" class="sentence">多模式设计并不是容易掌握的课题，不可能毕其功于一役。</span>
+          <span id="xn464_6fa87c442ad067439b5d56ffe0b1386a" class="sentence">我写了 10 篇文章进行论述，如果加入您自己的思考，无疑这一系列的内容会更长。</span>
+          <span id="xn465_ec37aac02918820d9ac2ddf27c52ec2f" class="sentence">但随着时间的推移，对此的研究会让我们获得更灵活、更舒适的设计，甚至可以为一些棘手的问题提供解决方案，让其他开发人员对您拨开疑云看清本质的能力刮目相看。</span>
+          <span id="xn466_d7ae4227797cd806218b5cac6e9135c5" class="sentence">最后请注意，多模式方法开始于通用性和可变性，也结束于通用性和可变性 — 记住这一点，很多问题就能迎刃而解。</span>
+        </p>
+        <p>
+          <span id="xn467_3a329a6f42aef51fba5a8d12b7e40590" class="sentence">为此，我强烈建议读者看看“数据再加工”Kata，分别用五种不同的模式试着解决那两个文件解析练习，然后想办法将不同模式组合起来写出强大、可重用的代码。</span>
+          <span id="xn468_b21df70d83311531f73eaea59355ca1b" class="sentence">当面向对象模式与函数式或动态模式结合在一起时会产生什么结果？</span>
+          <span id="xn469_4d64715724ff3b060a7f37f6e179e580" class="sentence">解决方案是更简单了，还是更复杂了？</span>
+          <span id="xn470_161142679effb872df6c2fd9f846dd79" class="sentence">然后运用您得到的方法处理其他文件格式，例如对 CSV 文件格式的效果如何？</span>
+          <span id="xn471_1111f3cbd98c01702997e266cd60fe5b" class="sentence">更重要的是，您可以在项目会议或工作事务的间隙做这些事情，由此获得的经验会在您面临实际的工作压力时给予回报，帮助您处理好此类设计。</span>
+        </p>
+        <p>
+          <span id="xn472_38daf7b5a9817d0fc64f2f3cc630ba47" class="sentence">尽管我已经说过，但有必要重复：多模式语言已然存在，很常用，而且看起来它们会有更多进展。</span>
+          <span id="xn473_56a7a505dd5b57290ff09a2229af5423" class="sentence">各种 Visual Studio 2010 语言都或多或少地呈现以上某种模式。例如 C++ 就有一些参数化的元编程机制，这些机制在托管代码中不可能实现，而这要归功于 C++ 编译器的运行方式；而且就在最近（在最新的 C++0x 标准中），它又增加了 lambda 表达式。</span>
+          <span id="xn474_33794ae54b3a95360cac87e4d5c5556f" class="sentence">即使口碑不佳的 ECMAScript/JavaScript/JScript 语言也可以处理对象、过程、元编程、动态和函数式模式，实际上 JQuery 在很大程度上就是构建在这些理念之上的。</span>
+          <span id="xn475_4866ba5f8c96c1f3f490bbf09058bdad" class="sentence">这些理念越早在您的头脑中扎根，您就越早能够写出处理最棘手情况的代码。</span>
+        </p>
+        <p>
+          <span id="xn476_39faade533162fff2ad7c322145c3419" class="sentence">祝您工作愉快！</span>
+        </p>
+        <div class="solidLine">
+        </div>
+        <p>
+          <span id="xn477_ab47eccd79b77b61821fee325e73ee3b" class="sentence">
+            <strong>Ted Neward</strong>&nbsp;<em>是 Neward &amp; Associates 的负责人，这是一家专门研究 .NET Framework 企业系统和 Java 平台系统的独立公司。他曾写过 100 多篇文章，是 C# 领域的 MVP；他是 INETA 发言人；独自撰写或与人合著过十几本书，包括《Professional F# 2.0》（Wrox，2010 年）。他定期担任顾问和导师，如果您有兴趣请他参与您的团队工作，请通过 ted@tedneward.com 与他联系，或通过 <a id="ctl00_MTContentSelector1_mainContentContainer_ctl12" href="http://blogs.tedneward.com/" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_tgt477|ctl00_MTContentSelector1_mainContentContainer_ctl12&#39;,this);">http://blogs.tedneward.com</a> 访问其博客。</em></span>
+        </p>
+        <p>
+          <em>
+            <span id="xn478_b3563705a98caa591b94af20bd670435" class="sentence">衷心感谢以下技术专家对本文进行了审阅：<strong>Anthony D. Green</strong></span>
+          </em>
+        </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+                                                        
+                                                </div>
+                                                <div class="FeatureSmallHeadWithLogo">&nbsp;</div>
+                                            </td>
+                                            <td style="width: 303px; vertical-align: top; padding-left: 3px;" valign="top">
+                                                <div id="RightContent">
+                                                    <div id="ctl00_RightSideBox">
+	<p:primary pcat:primaryformat="Mtps.Xhtml" xmlns:asp="http://msdn2.microsoft.com/aspnet" xmlns:pcat="urn:mtpg-com:mtps/2004/1/primary/category" xmlns:p="urn:mtpg-com:mtps/2004/1/primary"><div class="navpage"><div style="margin-bottom:10px;"></div><div style="margin-bottom:10px;"></div><div style="border-width:5px;border-color:black;border-style:solid;"><div style="margin-left:5px; margin-right:5px;"><h3><a id="ctl00_ctl17" href="http://blogs.msdn.com/msdnmagazine/" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl17&#39;,this);">MSDN Magazine Blog</a></h3><p><!-- RSSURL : http://blogs.msdn.com/msdnmagazine/rss.xml | RSS GUID : 44CFFA5F-CCC2-14A2-2403-529DE793E787 --></p><div id="ctl00_ctl18_MtpsFeedViewerBasicPanelWebSlice" class="hslice">
+		
+	<p id="ctl00_ctl18_titlediv" class="entry-title"></p>
+	<div class="entry-content">
+			
+		<div id="ctl00_ctl18_MtpsFeedViewerBasicPanel" class="MtpsFeedViewerBasicRootPanelClass">
+				
+			<div id="ctl00_ctl18_MtpsFeedViewerBasicHeaderPanel" class="MtpsFeedViewerBasicHeaderStylePanel">
+					
+			
+				</div>
+		<div class="ColumnDiv">
+					<div id="ctl00_ctl18_ctl02" class="BasicHeadlinesItemPanelCssClass" style="width:99%;">
+						<a id="ctl00_ctl18_ctl03" title="November Issue of MSDN Magazine" class="BasicHeadlinesTitleBold" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/11/05/10463881.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl02|ctl00_ctl18_ctl03&#39;,this);">November Issue of MSDN Magazine</a><br><span class="BasicHeadlinesDescLabelCssClass">As I wrote earlier, the Government Special Issue of MSDN Magazine, currently live on our Web site, is worth checking out. The articles in the special... </span><a id="ctl00_ctl18_ctl06" title="November Issue of MSDN Magazine" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/11/05/10463881.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl02|ctl00_ctl18_ctl06&#39;,this);">More...</a><br><span class="FVBPubDateLabel">星期二, 11月 5</span>
+					</div>
+				</div><div class="ColumnDiv">
+					<div id="ctl00_ctl18_ctl10" class="BasicHeadlinesItemPanelCssClass" style="width:99%;">
+						<a id="ctl00_ctl18_ctl11" title="Government Special Issue of MSDN Magazine" class="BasicHeadlinesTitleBold" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/11/01/10462738.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl10|ctl00_ctl18_ctl11&#39;,this);">Government Special Issue of MSDN Magazine</a><br><span class="BasicHeadlinesDescLabelCssClass">Visit the MSDN Magazine Web site and you’ll see we’ve been a bit busier than usual of late. In addition to the regularly scheduled November issue, fea... </span><a id="ctl00_ctl18_ctl14" title="Government Special Issue of MSDN Magazine" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/11/01/10462738.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl10|ctl00_ctl18_ctl14&#39;,this);">More...</a><br><span class="FVBPubDateLabel">星期五, 11月 1</span>
+					</div>
+				</div><div class="EmptyPanel">
+
+				</div>
+			</div>
+	
+		</div>
+
+	</div><p></p><p><a id="ctl00_ctl19" href="http://blogs.msdn.com/msdnmagazine/" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl19&#39;,this);">More MSDN Magazine Blog entries &gt;</a></p></div><div style="margin-left:5px; margin-right:5px; background-color:#5b6871;height:12px"><!--PublishThis!: An empty tag was encountered. This comment was inserted to prevent a self-closing tag.--></div><div style="margin-left:5px; margin-right:5px;"><p><br></p><div style="text-align:left;font-family:Segoe UI;font-size:12pt;">Current Issue</div><div style="text-align:center;display:block;height:260px"><p><br><a id="ctl00_ctl20" href="http://msdn.microsoft.com/zh-cn/magazine/dn463766.aspx" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl20&#39;,this);"><img align="Middle" alt="November 2013" height="239" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/dn463766.cover_lrg(en-us,MSDN.10).jpg" title="November 2013" width="179"></a></p></div><div style="text-align:right;"><p><a id="ctl00_ctl21" href="http://msdn.microsoft.com/zh-cn/magazine/ee310108.aspx" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl21&#39;,this);">Browse All MSDN Magazines</a><br></p></div><div style="background-color:#5b6871;height:12px"><!--PublishThis!: An empty tag was encountered. This comment was inserted to prevent a self-closing tag.--></div></div><div style="margin-left:5px; margin-right:5px;"><div style="text-align:Right;font-family:Segoe UI;font-size:12pt;"><p><br><a id="ctl00_ctl22" href="http://msdn.microsoft.com/en-US/aa570311.aspx?ocid=msdn_magazine" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl22&#39;,this);"><img align="Left" alt="Subscribe to the MSDN Flash newsletter" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/dd799403.Question_opt(en-us,MSDN.10).png" title="Subscribe to the MSDN Flash newsletter"> Subscribe to MSDN Flash newsletter</a></p></div><div style="text-align:left;"><p><br>Receive the MSDN Flash e-mail newsletter every other week, with news and information personalized to your interests and areas of focus.</p></div></div></div></div></p:primary>
+</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <div id="ctl00_FooterAd" class="MsdnPage_ContentInclude" align="center"><div>
+	<div>
+		<div class="navpage"><p>&nbsp;</p><div></div></div>
+	</div>
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Clearbottom"> </div>
+                        <div class="bottomleftcorner"> </div>
+                        <div class="bottomrightcorner"> </div>
+                        <div id="Footer">
+                            
+
+<div class="FooterLinks">
+    <div id="ctl00_Footer1_SiteLinks">
+	<a id="ctl00_Footer1_LocalFooterLink0" title="个人信息中心" href="http://go.microsoft.com/?linkid=8786242&lcid=2052">个人信息中心</a><span class="Pipe">|</span><a id="ctl00_Footer1_LocalFooterLink1" title="法律信息" href="http://www.microsoft.com/legal/">法律信息</a><span class="Pipe">|</span><a id="ctl00_Footer1_LocalFooterLink2" title="MSDN Flash 中心" href="http://www.microsoft.com/china/msdn/newsletter/default.aspx">MSDN Flash 中心</a><span class="Pipe">|</span><a id="ctl00_Footer1_LocalFooterLink3" title="联系我们" href="https://support.microsoft.com/contactus/emailcontact.aspx?scid=sw;zh-sim;1208&ws=china">联系我们</a>
+</div>
+    <span id="ctl00_Footer1_Copyright" title="© 2013  Microsoft 版权所有。 " class="FooterCopyright">© 2013  Microsoft 版权所有。 </span>
+    <a id="ctl00_Footer1_Terms" title="保留所有权利" href="http://msdn.microsoft.com/zh-cn/cc300389.aspx">保留所有权利</a>
+    <span class="Pipe">|</span>
+    <a id="ctl00_Footer1_Trademarks" title="商标" href="http://www.microsoft.com/library/toolbar/3.0/trademarks/zh-cn.mspx">商标</a>
+    <span class="Pipe">|</span>
+    <a id="ctl00_Footer1_PrivacyStatement" title="隐私权声明" href="http://go.microsoft.com/fwlink/?LinkId=248681&clcid=0x804">隐私权声明</a>
+    
+    <a id="ctl00_Footer1_Feedback" rel="sitefeedback" target="_blank"></a>
+</div>
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none"><img src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/trans_pixel.asp" width="0" height="0" hspace="0" vspace="0" border="0" alt="Page view tracker"></div>
+    
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/webtrendsscript-bn1651.js" type="text/javascript"></script>
+<noscript>
+&lt;div&gt;&lt;img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;&lt;/div&gt;
+</noscript>
+    <script type="text/javascript" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/mtps-bn1651.js"></script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+ RegisterAutoSubmit('ctl00_tb1_Flyout_Rating1','ctl00_tb1_Flyout_btnSend','contentRatinghh394147MSDN.10zh-cn');
+
+//]]>
+</script>
+</form>
+
+
+<script language="javascript" type="text/javascript" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/broker.js"></script>
+
+<script src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/broker-config.js"></script><script type="text/javascript" async="" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/cnzz.js"></script><script type="text/javascript">var vglnk = {api_url: '//api.viglink.com/api', key: '084c74521c465af0d8f08b63422103cc'};</script><script type="text/javascript" async="" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/vglnk.js"></script><div id="shanbay_extension_result" class="shanbay_extension_result"><div id="shanbay_extension_result_shanbaydict" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_shanbaydict_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_shanbaydict_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_googletran" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_googletran_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_googletran_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikizh" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikizh_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikizh_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikien" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikien_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikien_content" class="shanbay_extension_result_content"></div></div></div><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="./孜孜不倦的程序员 - 多模式 .NET，第 10 部分：选择方法_files/saved_resource.htm" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>

@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-09-03/2816799-windows-8-rockets-to-7-41-market-share" target=_blank>Windows 8操作系统市场份额增至7.41% Windows 7仍最受欢迎</a></li><li><a href="http://www.csdn.net/article/2013-09-02/2816794-the-life-and-awesomeness-of-bill-gates" target=_blank>[回顾]比尔·盖茨传奇的前半生</a></li>');

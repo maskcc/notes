@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-11-15/2817515-apple-google-map" target=_blank>离了你地球照样转，谷歌地图并非苹果的必需品</a></li><li><a href="http://www.csdn.net/article/2013-11-15/2817518-sony-SmartWatch-2" target=_blank>New way of thinking：索尼SmartWatch 2应用开发马拉松大赛圆满结束</a></li>');

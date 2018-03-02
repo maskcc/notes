@@ -1,0 +1,189 @@
+
+.font12{ font-size:12px;}
+.font14{ font-size:14px;}
+.lan A:link {
+	COLOR: #2d609f; TEXT-DECORATION: none
+}
+.lan A:visited {
+	COLOR: #2d609f; TEXT-DECORATION: none
+}
+.lan A:hover {
+	COLOR: #2d609f; TEXT-DECORATION: underline;
+}
+.hui A:link {
+	COLOR: #696969; TEXT-DECORATION: none
+}
+.hui A:visited {
+	COLOR: #7a597a; TEXT-DECORATION: none
+}
+.hui A:hover {
+	COLOR: #2d609f; TEXT-DECORATION: none;
+}
+.hei A:link {
+	COLOR: #28353d; TEXT-DECORATION: none
+}
+.hei A:visited {
+	COLOR: #7a597a; TEXT-DECORATION: none
+}
+.hei A:hover {
+	COLOR: #2d609f; TEXT-DECORATION: none;
+}
+.name A:link {
+	COLOR: #588600; TEXT-DECORATION: none
+}
+.name A:visited {
+	COLOR: #588600; TEXT-DECORATION: none
+}
+.name A:hover {
+	COLOR: #588600; TEXT-DECORATION: underline;
+}
+
+.menulink A:link {
+	 COLOR: #5f5f5f;TEXT-DECORATION: none
+}
+.menulink A:visited {
+	COLOR: #5f5f5f; TEXT-DECORATION: none
+}
+.menulink A:hover {
+	 COLOR: #5f5f5f;TEXT-DECORATION: none;
+}
+
+.menulink1 A:link {
+	 COLOR: #fff;TEXT-DECORATION: none
+}
+.menulink1 A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.menulink1 A:hover {
+	 COLOR: #fff;TEXT-DECORATION: none;
+}
+.mainnav{height:48px;background-color:#f1f1f1;width:100%;min-width:1000px;}
+.mainnav1{margin:0px auto;width:1000px; text-align:left; }
+.navbj1{
+	background-image: url(http://pubimage.360doc.com/index/sy-5.gif);
+	background-repeat: no-repeat;
+	width:88px;
+	height:34px;
+	background-position: center;
+}
+.navbj2{
+	background-image: url(http://pubimage.360doc.com/index/sy-6.gif);
+	background-repeat: no-repeat; width:100px;height:34px;background-position: center;
+}
+.navbj3{
+	background-image: url(http://pubimage.360doc.com/index/sy-7.gif);
+	background-repeat: no-repeat; width:132px; height:34px;background-position: center;
+}
+.navwz{ font-size:16px; font-weight:bold; color:#fff; text-align:center; padding-top:4px;cursor:pointer;
+}
+.navwz1{ font-size:16px; font-weight:bold; color:#5f5f5f; text-align:center; padding-top:4px;cursor:pointer;
+}
+.mainnav{height:48px;background-color:#f1f1f1;}
+.navxt{
+	text-align: left;
+	border: none;
+	background-image: url(http://pubimage.360doc.com/index/sy-3.gif);
+	background-repeat: repeat-x;
+	 height:15px; border-top:1px solid #fff; width:100%; margin-top:-1px;min-width:1000px;
+}
+.navwz1 A:link {
+	COLOR: #5f5f5f; TEXT-DECORATION: none
+}
+.navwz1 A:visited {
+	COLOR: #5f5f5f; TEXT-DECORATION: none
+}
+.navwz1 A:hover {
+	COLOR: #588600; TEXT-DECORATION: none;
+}
+.navwz A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.navwz A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.navwz A:hover {
+	COLOR: #fff; TEXT-DECORATION: none;
+}
+
+.serch{
+	background-image: url(http://pubimage.360doc.com/index/sy-21.gif);
+	background-repeat: no-repeat; width:187px; height:25px;
+}
+.serchpt{text-align:left; height:16px;background-color: #ffffff;font-size:12px;line-height:16px; border:1px solid #fff; padding:2px 2px;width:173px; color:#b2b2b2; margin:1px 0px 0px 2px;}
+.ssuo{width:37px; height:25px; float:left;}
+.ssuo a:link,.ssuo a:visited{
+	display:block;
+	width:37px; height:25px;
+	background-image: url(http://pubimage.360doc.com/index/sy-23.gif);
+	background-repeat: no-repeat;
+}
+.ssuo a:hover{display:block;
+	width:37px; height:25px;
+	background-image: url(http://pubimage.360doc.com/index/sy-23a.gif);
+	background-repeat: no-repeat;}
+.denglbj{
+	background-image: url(http://pubimage.360doc.com/index/sy-30.gif);
+	background-repeat: no-repeat; width:131px; height:25px; line-height:25px; 
+
+float:right;
+}
+	.lan2 A:link {
+	COLOR: #2d609f; TEXT-DECORATION: none
+}
+.lan2 A:visited {
+	COLOR: #2d609f; TEXT-DECORATION: none
+}
+.lan2 A:hover {
+	COLOR: #2d609f; TEXT-DECORATION: none;
+}
+.denglbj2{
+	background-image: url(http://pubimage.360doc.com/index/sy-31.gif);
+	background-repeat: no-repeat; width:131px; height:25px; line-height:25px; 
+float:right;
+}
+.denglbj3{
+	background-image: url(http://pubimage.360doc.com/index/sy-32.gif);
+	background-repeat: no-repeat; width:131px; height:25px; line-height:25px; 
+float:right;
+}
+.boxwid{ width:45px;_width:44px; float:left; text-align: center;}
+.tipzhu{border:1px solid #d4d4d4; width:94px; height:108px; background-color:#fff; z-index:0; margin-top:-1px;}
+
+.tipzhu ul{ margin:0px; padding:0px;}
+.tipzhu li{  margin:0px; padding:0px;height:27px; line-height:27px; }
+.tugduo{ width:41px;z-index:100;position:relative;}
+.xinngdui{width:40px; padding-top:7px;*padding-top:2px;_ padding-top:7px;z-index:2000000; position:relative;}
+.tipzhu a:link,.tipzhu a:visited{display:block; width:81px; padding-left:13px; background:#fff;}
+.tipzhu a:hover{display:block; width:81px; background:#f2f2f2;padding-left:13px;}
+.zhhaocss{position: absolute; margin-left:104px; padding-top:27px; width:96px;}
+.zhhaobox{width:50px; height:26px; border:1px solid #d4d4d4; border-bottom:none; background-color:#fff;z-index:2000000; position:relative;}
+.zhhaobox1{width:50px; height:26px; border:1px solid #f1f1f1;border-bottom:none;}
+.hui2 li A:link {
+	COLOR: #666; TEXT-DECORATION: none
+}
+.hui2 li A:visited {
+	COLOR: #666; TEXT-DECORATION: none
+}
+.hui2 li A:hover {
+	COLOR: #666; TEXT-DECORATION: none;
+}
+
+.serchboxx{ border:1px solid #cacaca; border-top:none; width:185px; background-color:#fff; color:#666;}
+
+.paixucssright{padding-top:8px;padding-left:4px;float:left;}
+
+.bjyellow2{background-color:#fef9d1; line-height:26px; padding-left:6px; cursor:pointer;}
+.bjwhite2{background-color:#fffff7;line-height:26px;padding-left:6px;cursor:pointer;}
+.fotjj{padding-top:40px; height:100px;}
+.inputbor{text-align:left; height:20px;background-color: #ffffff;font-size:12px;line-height:20px; padding:4px 4px; border:1px solid #d6d6d6;  color:#b2b2b2;}
+
+
+.erjibt{
+	background-image: url(http://pubimage.360doc.com/myindexnew/er-4.gif);
+	background-repeat: no-repeat; width:64px; height:28px;color:#fff;cursor:pointer;
+}
+.btwz{text-align:center; line-height:28px; font-size:12px;}
+.erjibta{
+	background-image: url(http://pubimage.360doc.com/myindexnew/er-4a.gif);
+	background-repeat: no-repeat; width:64px; height:28px;color:#fff;cursor:pointer;
+}

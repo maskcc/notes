@@ -1,0 +1,1 @@
+document.write('<p><a href="http://h3cloud.csdn.net/?tid=3455&amp;extra=page%3D1&amp;qq-pf-to=pcqq.c2c" target="_blank"><font color="#000000"><strong>H3Cloud&mdash;领先的云计算整体解决方案</strong></font></a> </p>');

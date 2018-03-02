@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-09-02/2816794-the-life-and-awesomeness-of-bill-gates" target=_blank>[回顾]比尔·盖茨传奇的前半生</a></li>');

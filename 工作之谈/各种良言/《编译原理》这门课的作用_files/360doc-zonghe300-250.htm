@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)http://union.dezhi.com/template/zaopai/360doc-zonghe300-250.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>热门推荐</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<style type="text/css">
+
+body { font-size: 14px; font-family: 宋体;margin: 0px;}
+
+td { font-size: 14px; font-family: 宋体; line-height: 24px;}
+a {color: #464646; text-decoration: none}
+a:hover { color: #ff8c40; text-decoration: underline}
+.STYLE1 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.h20{
+	height:24px;
+    font-size: 14px;
+	
+	}
+img{
+border:none;
+}
+.messagewrap {
+  width:300px;
+  display:block;
+
+}
+
+ul#demo{
+overflow:hidden;
+	height:210px;
+	list-style:none;
+	margin:0;
+	padding:0px;
+	}
+ul#demo li {
+	height:210px;
+}
+ul#demo li span{display:block;}
+.bottomcover {
+	width: 500px;
+	height: 45px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	background: url(halftransp.png) left bottom no-repeat;
+	/*某从背景色向上渐变透明图片*/ _display: none;/*针对IE6体验降级*/
+}
+</style>
+
+
+<script>
+$(function(){
+	$("ul#demo").hover(function(){
+	$(this).attr("name","hovered"); //鼠标经过设置ul的name值为”hovered”
+	},function(){
+	$(this).removeAttr("name");
+	});
+	$("#cccc").click(function(){
+		msgmove();
+	})
+});
+function msgmove(){
+	var isIE=!!window.ActiveXObject;
+	var isIE6=isIE&&!window.XMLHttpRequest;
+	if($("ul#demo").attr("name") !="hovered"){
+		//判断ul的name属性是否为”hovered”，决定下面代码块是否运行，以实现鼠标经过暂停滚动。
+		var height = $("ul#demo li:last").height();
+		if(isIE6){
+		//判断IE6，jQuery的animate动画和opacity透明在一起使用在IE6中会出现中文重影现象，
+		//所以在ie6中实行透明的禁用。
+		$("ul#demo li:last").css({"height":0});
+		}else{ $("ul#demo li:last").css({"opacity":0,"height":0});
+		//列表最后的li透明和高度设置为0 }
+		$("ul#demo li:first").before($("ul#demo li:last"));
+		//把列表最后的li提升到顶部，实现有限列表项无限循环滚动显示
+		$("ul#demo li:first").animate({"height":height},300);
+		//列表顶部的li高度逐渐变高以把下面的li推下去 if(!isIE6){
+		$("ul#demo li:first").animate({"opacity":"1"},300);
+	//在非IE6浏览器中设置透明淡入效果
+	}
+}
+//设置5秒滚动一次
+}
+
+
+</script>
+</head>
+
+<body marginwidth="0" marginheight="0">
+
+<div style="display:none"><script src="stat.php" language="JavaScript"></script><script src="cnzz_core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=4781177" target="_blank" title="站长统计">站长统计</a></div>
+
+<span class="messagewrap">
+
+<table>
+<tbody><tr>
+<td width="70px;"><a align="left" href="http://union.dezhi.com/cpstransfer.php?unid=j1335&&urlto=http://kecheng.dezhi.com/mianfei" target="_blank"><span style="font-weight:bold;">热门推荐</span></a></td>
+<td width="80px;"></td>
+<td>
+  <span style="cursor:pointer; text-align:right; font-size:12px;  width:103px; height:20px; line-height:20px;">
+  <a style="" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1354&&urlto=http://kecheng.dezhi.com/mianfei"> </a></span>
+</td>
+
+</tr>
+</tbody></table>
+
+
+
+
+    <ul id="demo" style=" float:left; width:300px; padding:0px; display:block;">
+      <li>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1336&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">在这里想学习不好都难【有料有视频】 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1338&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">你的老师要是他们，清华北大不是问题！ </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1337&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">免费听高中课程任意学【高中生必看】 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1343&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">史上最全的高中免费课程【必看】 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1340&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">真是绝了，再也不用找家教了 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1339&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">劲爆：美女老师教英语的秘密</a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1341&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">中国人必看：这样的名师不看看可惜了 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1342&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">这些中学教学视频太牛了，受益终生啊！</a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1344&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">孩子一看学习就上瘾，不信试试看！ </a>
+        </span>
+      </li>
+      <li>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1345&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">中国人必看：这样的名师不看看可惜了 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1346&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">在这里想学习不好都难【有料有视频】 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1347&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">有了这些老师，考取国外大学都不是问题 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1348&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">从学习不好到名列前茅是怎么练成的？ </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1349&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">看了才恍然大悟，原来学习这么有意思！ </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1350&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">推荐：北京老师长什么样？ </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1351&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">冲动想换老师的看这里【各种名师任你挑】 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1352&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">罕见的学习方式，让我看到了未来的希望 </a>
+        </span>
+        <span class="h20">
+         <a style="color: rgb(59, 110, 167);" target="_blank" href="http://union.dezhi.com/cpstransfer.php?unid=j1353&&urlto=http://kecheng.dezhi.com/mianfei"><img width="12" hspace="6" height="15" src="adimg1357364604.gif">一网打尽免费教学视频【高手都在这里】 </a>
+        </span>
+      </li>
+    </ul>
+
+
+
+</span>
+
+
+
+<div id="shanbay_extension_result" class="shanbay_extension_result"><div id="shanbay_extension_result_shanbaydict" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_shanbaydict_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_shanbaydict_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_googletran" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_googletran_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_googletran_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikizh" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikizh_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikizh_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikien" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikien_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikien_content" class="shanbay_extension_result_content"></div></div></div></body></html>

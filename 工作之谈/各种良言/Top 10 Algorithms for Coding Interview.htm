@@ -1,0 +1,971 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0075)http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="wf-proximanova-i4-active wf-proximanova-i7-active wf-proximanova-n4-active wf-proximanova-n7-active wf-chaparralpro-n3-active wf-chaparralpro-n4-active wf-sourcecodepro-n4-active wf-sourcecodepro-n7-active wf-active"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<meta name="distribution" content="global">
+<meta name="robots" content="follow, all">
+<meta name="language" content="en, sv">
+<title>Top 10 Algorithms for Coding Interview</title>
+<meta name="distribution" content="global">
+<meta name="robots" content="follow, all">
+<meta name="language" content="en, sv">
+<meta name="generator" content="WordPress 3.6.1">
+
+
+<!-- <meta property="fb:admins" content="463774880299768" /> -->
+
+
+
+<meta name="verify-v1" content="eku39xbVyAqZRVnfCQB7rGSk7S567b6gw5ZZxV6HZrc=">
+<meta name="msvalidate.01" content="C80190E357C320626147430BA5BA9A69">
+
+<meta name="google-site-verification" content="qUNffY7hZLX1Gvj4EiuBShmtW33Nr8XaEtoxjeDvOpI">
+
+
+<!-- Favicon: Browser + iPhone Webclip -->
+<link rel="shortcut icon" href="http://www.programcreek.com/wp-content/themes/light/images/icon.ico">
+	
+
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.programcreek.com/feed/">
+<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.programcreek.com/feed/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.programcreek.com/feed/atom/">
+<link rel="pingback" href="http://www.programcreek.com/xmlrpc.php">
+
+
+
+<!-- important: css -->
+<style type="text/css" media="screen">
+		<!-- @import url( http://www.programcreek.com/wp-content/themes/light/style.css ); -->
+		</style>
+<link rel="alternate" type="application/rss+xml" title="programcreek.com » Top 10 Algorithms for Coding Interview Comments Feed" href="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/feed/">
+<link rel="stylesheet" id="tfg_style-css" href="./Top 10 Algorithms for Coding Interview_files/tfg_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="./Top 10 Algorithms for Coding Interview_files/wp-syntax.css" type="text/css" media="all">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.programcreek.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.programcreek.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="100 High-Quality Java Developers’ Blogs" href="http://www.programcreek.com/2012/11/top-100-java-developers-blogs/">
+<link rel="next" title="Quicksort Array in Java" href="http://www.programcreek.com/2012/11/quicksort-array-in-java/">
+<meta name="generator" content="WordPress 3.6.1">
+<link rel="shortlink" href="http://www.programcreek.com/?p=10378">
+<script src="./Top 10 Algorithms for Coding Interview_files/hm.js"></script><script type="text/javascript" charset="UTF-8" src="./Top 10 Algorithms for Coding Interview_files/logb02.js"></script><script src="./Top 10 Algorithms for Coding Interview_files/cb=gapi.loaded_1" async=""></script><script async="" src="./Top 10 Algorithms for Coding Interview_files/saved_resource"></script><script id="facebook-jssdk" src="./Top 10 Algorithms for Coding Interview_files/all.js"></script><script type="text/javascript" async="" src="./Top 10 Algorithms for Coding Interview_files/dc.js"></script><script src="./Top 10 Algorithms for Coding Interview_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Top 10 Algorithms for Coding Interview_files/plusone.js" gapi_processed="true"></script><script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement('script');
+po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+
+<!-- Facebook Like Thumbnail -->
+<link rel="image_src" href="./Top 10 Algorithms for Coding Interview_files/breath-first-search-300x284.png">
+<!-- End Facebook Like Thumbnail -->
+
+
+<!-- All in One SEO Pack 2.0.3.1 by Michael Torbert of Semper Fi Web Design[420,492] -->
+<style type="text/css"></style><link rel="author" href="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/112858025640199707956">
+<meta name="description" content="The following are top 10 algorithms related concepts in coding interview. I will try to illustrate those concepts though some simple examples. As understanding">
+
+<link rel="canonical" href="./Top 10 Algorithms for Coding Interview_files/Top 10 Algorithms for Coding Interview.htm">
+<!-- /all in one seo pack -->
+
+<!-- BEGIN Typekit Fonts for WordPress -->
+<script type="text/javascript" src="./Top 10 Algorithms for Coding Interview_files/azo4nlu.js"></script>
+<style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}.tk-source-code-pro{font-family:"source-code-pro",sans-serif;}.tk-chaparral-pro{font-family:"chaparral-pro",sans-serif;}</style><link rel="stylesheet" href="http://use.typekit.net/c/dbc243/chaparral-pro:n3:n4,proxima-nova:i4:i7:n4:n7,source-code-pro:n4:n7.XY0:N:2,XY8:N:2,W0W:N:2,W0Z:N:2,W0V:N:2,W0Y:N:2,Y1M:N:2,Y1P:N:2/d?3bb2a6e53c9684ffdc9a9afe1d5b2a6262b4be0bfc491ced4e51bae53d5f72d69fe94d4d9ec73147fc0bae160243718112adb733566743df068779252bc1bd97bc235b45fa58f1409f4307fb086138b1236ac0def8ceea"><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- END Typekit Fonts for WordPress -->
+
+
+ 
+<!-- jquery lib   -->
+<script src="./Top 10 Algorithms for Coding Interview_files/jquery.js" type="text/javascript"></script>
+
+
+
+<!-- javascript for menu -->
+<script type="text/javascript">
+var timeout    = 500;
+var closetimer = 0;
+var ddmenuitem = 0;
+
+function jsddm_open()
+{  jsddm_canceltimer();
+   jsddm_close();
+   ddmenuitem = $(this).find('ul').css('visibility', 'visible');}
+
+function jsddm_close()
+{  if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+function jsddm_timer()
+{  closetimer = window.setTimeout(jsddm_close, timeout);}
+
+function jsddm_canceltimer()
+{  if(closetimer)
+   {  window.clearTimeout(closetimer);
+      closetimer = null;}}
+
+$(document).ready(function()
+{  $('#menu-prim > li').bind('mouseover', jsddm_open)
+   $('#menu-prim > li').bind('mouseout',  jsddm_timer)});
+
+document.onclick = jsddm_close;
+</script>
+
+
+<script async="" type="text/javascript" src="./Top 10 Algorithms for Coding Interview_files/count.js"></script><script type="text/javascript" async="" src="./Top 10 Algorithms for Coding Interview_files/embed.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style><link type="text/css" rel="stylesheet" href="chrome-extension://clcbnchcgjcjphmnpndoelbdhakdlfkk/stylesheets/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://clcbnchcgjcjphmnpndoelbdhakdlfkk/javascripts/page_context.js"></script><style>undefined</style><style>undefined</style><script></script><script id="hp_same_"></script><script id="hp_done_"></script></head>
+
+
+<body id="home" quick-markup_injected="true">
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7639629-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Top 10 Algorithms for Coding Interview_files/saved_resource.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Top 10 Algorithms for Coding Interview_files/saved_resource.htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+<div id="menu">
+    <div class="wrappermiddlewide">
+      <div class="menu-prim-container"><ul id="menu-prim" class="menu"><li id="menu-item-7915" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7915"><a href="http://www.programcreek.com/">ProgramCreek.com</a></li>
+<li id="menu-item-7559" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7559"><a href="http://www.programcreek.com/java-tutorials/">Java</a>
+<ul class="sub-menu">
+	<li id="menu-item-6939" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6939"><a href="http://www.programcreek.com/java-tutorials/java-basics/">Java Basics</a></li>
+	<li id="menu-item-6551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6551"><a href="http://www.programcreek.com/java-object-oriented-programming/">Java Object Oriented Concepts</a></li>
+	<li id="menu-item-6559" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6559"><a href="http://www.programcreek.com/java-collections/">Java Collections &amp; Generics</a></li>
+	<li id="menu-item-6542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6542"><a href="http://www.programcreek.com/java-io/">Java File I/O</a></li>
+	<li id="menu-item-6571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6571"><a href="http://www.programcreek.com/java-database/">Java Database</a></li>
+	<li id="menu-item-6565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6565"><a href="http://www.programcreek.com/java-threads/">Java Multi-Threading</a></li>
+	<li id="menu-item-6957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6957"><a href="http://www.programcreek.com/java-xml-parsing/">Java XML Parsing</a></li>
+	<li id="menu-item-7512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7512"><a href="http://www.programcreek.com/advanced-topics/">Advanced Topics</a></li>
+</ul>
+</li>
+<li id="menu-item-6219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6219"><a href="http://www.programcreek.com/java-design-patterns-in-stories/">Design Patterns in Stories</a></li>
+<li id="menu-item-6047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6047"><a href="http://www.programcreek.com/best-eclipse-rcp-tutorials/">Eclipse</a>
+<ul class="sub-menu">
+	<li id="menu-item-6616" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6616"><a href="http://www.programcreek.com/eclipse-architecture-design/">Eclipse Architecture</a></li>
+	<li id="menu-item-6617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6617"><a href="http://www.programcreek.com/develop-plug-ins-using-rcp/">RCP Development</a></li>
+	<li id="menu-item-6618" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6618"><a href="http://www.programcreek.com/2011/01/best-java-development-tooling-jdt-and-astparser-tutorials/">JDT</a></li>
+</ul>
+</li>
+<li id="menu-item-7237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7237"><a href="http://www.programcreek.com/java-api-examples/">Java API Examples</a></li>
+<li id="menu-item-7872" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7872"><a href="http://www.programcreek.com/popular-java-web-frameworks/">Web Frameworks</a>
+<ul class="sub-menu">
+	<li id="menu-item-6019" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6019"><a href="http://www.programcreek.com/2010/05/the-best-free-struts-2-tutorial/">Struts 2</a></li>
+	<li id="menu-item-6457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6457"><a href="http://www.programcreek.com/gwt/">GWT</a></li>
+	<li id="menu-item-7984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7984"><a href="http://www.programcreek.com/spring/">Spring</a></li>
+</ul>
+</li>
+<li id="menu-item-10226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10226"><a href="http://www.programcreek.com/about/">Contact Us</a></li>
+</ul></div>    </div>
+
+<div id="searchfixed">
+<form action="http://www.programcreek.com/search/" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-5732630628268628:9523372015">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" value=" " id="search_field" size="25" style="border: 1px solid rgb(126, 157, 185); padding: 2px;">
+    <input type="image" src="./Top 10 Algorithms for Coding Interview_files/search.png" width="16px" name="sa" id="search_image" value="Search">
+  </div>
+<input name="siteurl" type="hidden" value="www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form>
+</div>
+
+<script type="text/javascript" src="./Top 10 Algorithms for Coding Interview_files/brand"></script>
+
+	<div class="clear"> </div>
+
+</div>
+
+
+
+
+
+			
+
+
+
+
+<div id="wrap">
+
+
+
+
+
+
+
+
+
+
+
+			
+				    	 
+<div class="wrappermiddle">
+
+
+<div id="rightfixed"> 
+<a href="http://plus.google.com/112858025640199707956/">
+<img src="./Top 10 Algorithms for Coding Interview_files/plus.png" width="40px"></a>
+</div>
+
+<div id="rightfixed2"> 
+<a href="https://twitter.com/ProgramCreek">
+<img src="./Top 10 Algorithms for Coding Interview_files/programcreektwitter.jpg" width="40px"></a>
+</div>
+
+<div id="content">
+
+
+
+
+    <div class="entry-single">
+  
+	 
+	
+	    <h1 class="entrytitle" id="post-10378"> <a href="./Top 10 Algorithms for Coding Interview_files/Top 10 Algorithms for Coding Interview.htm" rel="bookmark">
+	      Top 10 Algorithms for Coding Interview	      </a> 
+	    </h1>
+
+
+	    <div class="entrymeta">
+
+
+
+	   								
+	       
+	    </div>
+    
+	<!--    <div id="prev-next" style="float:left; color:#023554;">
+	    <a href="http://www.programcreek.com/2012/11/top-100-java-developers-blogs/" rel="prev"><span class="meta-nav">&larr;</span> 100 High-Quality Java Developers&#8217; Blogs</a>	    </div>
+	
+		<div id="prev-next" style="float:right; color:#023554;">
+		<a href="http://www.programcreek.com/2012/11/quicksort-array-in-java/" rel="next">Quicksort Array in Java <span class="meta-nav">&rarr;</span></a>		</div>-->
+
+	  
+	    <div class="entrybody">  
+		    
+
+	        <script type="text/javascript">
+    // <![CDATA[
+        var disqus_shortname = 'programcreek';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + 'disqus.com/forums/' + disqus_shortname + '/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    //]]>
+    </script>
+<div id="leftcontainerBox" style="background-color:#ffffff;position:fixed; top:14%; ">
+			<div class="buttons">
+			<iframe src="about:blank" scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:50px; height:65px;"></iframe>
+			</div>
+			<div class="buttons">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/" data-text="Top 10 Algorithms for Coding Interview" data-count="vertical" data-via="programcreek"></a>
+			</div>
+			<div class="buttons">
+			<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I0_1385544587530" name="I0_1385544587530" src="./Top 10 Algorithms for Coding Interview_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div>
+			</div></div><div style="clear:both"></div><p>The following are top 10 algorithms related concepts in coding interview. I will try to illustrate those concepts though some simple examples. As understanding those concepts requires much more efforts, this list only serves as an introduction. They are viewed from a Java perspective. The following concepts will be covered:</p>
+<ol>
+<li>String</li>
+<li>Linked List</li>
+<li>Tree</li>
+<li>Graph</li>
+<li>Sorting</li>
+<li>Recursion vs. Iteration</li>
+<li>Dynamic Programming</li>
+<li>Bit Manipulation</li>
+<li>Probability</li>
+<li>Combinations and Permutations</li>
+</ol>
+<p><strong>1. String</strong></p>
+<p>Without code auto-completion of any IDE, the following methods should be remembered.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;">toCharyArray<span style="color: #009900;">(</span><span style="color: #009900;">)</span> <span style="color: #666666; font-style: italic;">//get char array of a String</span>
+<span style="color: #003399;">Arrays</span>.<span style="color: #006633;">sort</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span>  <span style="color: #666666; font-style: italic;">//sort an array</span>
+<span style="color: #003399;">Arrays</span>.<span style="color: #006633;">toString</span><span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">char</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> a<span style="color: #009900;">)</span> <span style="color: #666666; font-style: italic;">//convert to string</span>
+charAt<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> x<span style="color: #009900;">)</span> <span style="color: #666666; font-style: italic;">//get a char at the specific index</span>
+length<span style="color: #009900;">(</span><span style="color: #009900;">)</span> <span style="color: #666666; font-style: italic;">//string length</span>
+length <span style="color: #666666; font-style: italic;">//array size</span></pre></td></tr></tbody></table></div>
+
+<p>Also in Java a String is not a char array. A String contains a char array and other fields and methods. </p>
+<p><strong>2. Linked List</strong></p>
+<p>The implementation of a linked list is pretty simple in Java. Each node has a value and a link to next node.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> Node <span style="color: #009900;">{</span>
+	<span style="color: #000066; font-weight: bold;">int</span> val<span style="color: #339933;">;</span>
+	Node next<span style="color: #339933;">;</span>
+&nbsp;
+	Node<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> x<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+		val <span style="color: #339933;">=</span> x<span style="color: #339933;">;</span>
+		next <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Two popular applications of linked list are stack and queue. </p>
+<p>Stack</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> <span style="color: #003399;">Stack</span><span style="color: #009900;">{</span>
+	Node top<span style="color: #339933;">;</span> 
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> Node peek<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>top <span style="color: #339933;">!=</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			<span style="color: #000000; font-weight: bold;">return</span> top<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>
+&nbsp;
+		<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> Node pop<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>top <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+			Node temp <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Node<span style="color: #009900;">(</span>top.<span style="color: #006633;">val</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			top <span style="color: #339933;">=</span> top.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+			<span style="color: #000000; font-weight: bold;">return</span> temp<span style="color: #339933;">;</span>	
+		<span style="color: #009900;">}</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">void</span> push<span style="color: #009900;">(</span>Node n<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n <span style="color: #339933;">!=</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			n.<span style="color: #006633;">next</span> <span style="color: #339933;">=</span> top<span style="color: #339933;">;</span>
+			top <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Queue</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> Queue<span style="color: #009900;">{</span>
+	Node first, last<span style="color: #339933;">;</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">void</span> enqueue<span style="color: #009900;">(</span>Node n<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>first <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			first <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+			last <span style="color: #339933;">=</span> first<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+			last.<span style="color: #006633;">next</span> <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+			last <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> Node dequeue<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>first <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+			Node temp <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Node<span style="color: #009900;">(</span>first.<span style="color: #006633;">val</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			first <span style="color: #339933;">=</span> first.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+			<span style="color: #000000; font-weight: bold;">return</span> temp<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>	
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p><strong>3. Tree</strong></p>
+<p>Tree here is normally binary tree. Each node contains a left node and right node like the following:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> <span style="color: #003399;">TreeNode</span><span style="color: #009900;">{</span>
+	<span style="color: #000066; font-weight: bold;">int</span> value<span style="color: #339933;">;</span>
+	<span style="color: #003399;">TreeNode</span> left<span style="color: #339933;">;</span>
+	<span style="color: #003399;">TreeNode</span> right<span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Here are some concepts related with trees:</p>
+<ol>
+<li><em>Binary Search Tree</em>: for all nodes, left children &lt;= current node &lt;= right children</li>
+<li><em>Balanced vs. Unbalanced</em>: In a balanced tree, the depth of the left and right subtrees of every node differ by 1 or less.</li>
+<li><em>Full Binary Tree</em>: every node other than the leaves has two children.</li>
+<li><em>Perfect Binary Tree</em>: a full binary tree in which all leaves are at the same depth or same level, and in which every parent has two children. </li>
+<li><em>Complete Binary Tree</em>: a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible</li>
+</ol>
+<p><strong>4. Graph</strong></p>
+<p>Graph related questions mainly focus on depth first search and breath first search. </p>
+<p>Below is a simple implementation of a graph and breath first search.</p>
+<p><img src="./Top 10 Algorithms for Coding Interview_files/breath-first-search-300x284.png" alt="breath-first-search" width="300" height="284" class="alignleft size-medium wp-image-10471"></p>
+<p>1) Define a GraphNode</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> GraphNode<span style="color: #009900;">{</span> 
+	<span style="color: #000066; font-weight: bold;">int</span> val<span style="color: #339933;">;</span>
+	GraphNode next<span style="color: #339933;">;</span>
+	GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span> neighbors<span style="color: #339933;">;</span>
+	<span style="color: #000066; font-weight: bold;">boolean</span> visited<span style="color: #339933;">;</span>
+&nbsp;
+	GraphNode<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> x<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+		val <span style="color: #339933;">=</span> x<span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	GraphNode<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> x, GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		val <span style="color: #339933;">=</span> x<span style="color: #339933;">;</span>
+		neighbors <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #003399;">String</span> toString<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #0000ff;">"value: "</span><span style="color: #339933;">+</span> <span style="color: #000000; font-weight: bold;">this</span>.<span style="color: #006633;">val</span><span style="color: #339933;">;</span> 
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>2) Define a Queue</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> Queue<span style="color: #009900;">{</span>
+	GraphNode first, last<span style="color: #339933;">;</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">void</span> enqueue<span style="color: #009900;">(</span>GraphNode n<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>first <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			first <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+			last <span style="color: #339933;">=</span> first<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+			last.<span style="color: #006633;">next</span> <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+			last <span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> GraphNode dequeue<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>first <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+			GraphNode temp <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">(</span>first.<span style="color: #006633;">val</span>, first.<span style="color: #006633;">neighbors</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			first <span style="color: #339933;">=</span> first.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+			<span style="color: #000000; font-weight: bold;">return</span> temp<span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>	
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>3) Breath First Search uses a Queue</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> GraphTest <span style="color: #009900;">{</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+		GraphNode n1 <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">(</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> 
+		GraphNode n2 <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">(</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> 
+		GraphNode n3 <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">(</span><span style="color: #cc66cc;">3</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> 
+		GraphNode n4 <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">(</span><span style="color: #cc66cc;">4</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> 
+		GraphNode n5 <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">(</span><span style="color: #cc66cc;">5</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> 
+&nbsp;
+		n1.<span style="color: #006633;">neighbors</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">{</span>n2,n3,n5<span style="color: #009900;">}</span><span style="color: #339933;">;</span>
+		n2.<span style="color: #006633;">neighbors</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">{</span>n1,n4<span style="color: #009900;">}</span><span style="color: #339933;">;</span>
+		n3.<span style="color: #006633;">neighbors</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">{</span>n1,n4,n5<span style="color: #009900;">}</span><span style="color: #339933;">;</span>
+		n4.<span style="color: #006633;">neighbors</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">{</span>n2,n3,n5<span style="color: #009900;">}</span><span style="color: #339933;">;</span>
+		n5.<span style="color: #006633;">neighbors</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GraphNode<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">{</span>n1,n3,n4<span style="color: #009900;">}</span><span style="color: #339933;">;</span>
+&nbsp;
+		breathFirstSearch<span style="color: #009900;">(</span>n1, <span style="color: #cc66cc;">5</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> breathFirstSearch<span style="color: #009900;">(</span>GraphNode root, <span style="color: #000066; font-weight: bold;">int</span> x<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>root.<span style="color: #006633;">val</span> <span style="color: #339933;">==</span> x<span style="color: #009900;">)</span>
+			<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"find in root"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+		Queue queue <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Queue<span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+		root.<span style="color: #006633;">visited</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span>
+		queue.<span style="color: #006633;">enqueue</span><span style="color: #009900;">(</span>root<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+		<span style="color: #000000; font-weight: bold;">while</span><span style="color: #009900;">(</span>queue.<span style="color: #006633;">first</span> <span style="color: #339933;">!=</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+			GraphNode c <span style="color: #339933;">=</span> <span style="color: #009900;">(</span>GraphNode<span style="color: #009900;">)</span> queue.<span style="color: #006633;">dequeue</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			<span style="color: #000000; font-weight: bold;">for</span><span style="color: #009900;">(</span>GraphNode n<span style="color: #339933;">:</span> c.<span style="color: #006633;">neighbors</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+&nbsp;
+				<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span><span style="color: #339933;">!</span>n.<span style="color: #006633;">visited</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+					<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">print</span><span style="color: #009900;">(</span>n <span style="color: #339933;">+</span> <span style="color: #0000ff;">" "</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+					n.<span style="color: #006633;">visited</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span>
+					<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n.<span style="color: #006633;">val</span> <span style="color: #339933;">==</span> x<span style="color: #009900;">)</span>
+						<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Find "</span><span style="color: #339933;">+</span>n<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+					queue.<span style="color: #006633;">enqueue</span><span style="color: #009900;">(</span>n<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+				<span style="color: #009900;">}</span>
+			<span style="color: #009900;">}</span>
+		<span style="color: #009900;">}</span>
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Output: </p>
+<div class="somecode">
+value: 2 value: 3 value: 5 Find value: 5<br>
+value: 4
+</div>
+<p><strong>5. Sorting</strong></p>
+<p>Time complexity of different sorting algorithms. You can go to wiki to see basic idea of them. </p>
+<table width="60%" border="1">
+<tbody>
+<tr>
+<td> Algorithm</td>
+<td> Average Time</td>
+<td> Worst Time</td>
+<td>Space</td>
+</tr>
+<tr>
+<td> Bubble sort</td>
+<td> n^2</td>
+<td> n^2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Selection sort</td>
+<td>n^2</td>
+<td>n^2</td>
+<td>1</td>
+</tr>
+<tr>
+<td> Counting Sort</td>
+<td> n+k</td>
+<td> n+k</td>
+<td>n+k</td>
+</tr>
+<tr>
+<td>Insertion sort</td>
+<td>n^2</td>
+<td>n^2</td>
+<td></td>
+</tr>
+<tr>
+<td>Quick sort</td>
+<td>n log(n)</td>
+<td>n^2</td>
+<td></td>
+</tr>
+<tr>
+<td>Merge sort</td>
+<td>n log(n)</td>
+<td>n log(n)</td>
+<td>depends</td>
+</tr>
+</tbody>
+</table>
+<p>In addition, here are some implementations/demos: <a href="http://www.cs.miami.edu/~burt/learning/Csc517.101/workbook/countingsort.html">Counting sort</a>, <a href="http://www.programcreek.com/2012/11/leetcode-solution-merge-sort-linkedlist-in-java/" title="LeetCode Solution – Merge Sort LinkedList in Java">Mergesort</a>, <a href="http://www.programcreek.com/2012/11/quicksort-array-in-java/" title="Quicksort Array in Java">Quicksort</a>, <a href="http://www.programcreek.com/2012/11/leetcode-solution-sort-a-linked-list-using-insertion-sort-in-java/" title="LeetCode Solution – Sort a linked list using insertion sort in Java">InsertionSort</a>. </p>
+<p><strong>6. Recursion vs. Iteration</strong></p>
+<p>Recursion should be a built-in thought for programmers. It can be demonstrated by a simple example. </p>
+<p>Question: there are n stairs, each time one can climb 1 or 2. How many different ways to climb the stairs. </p>
+<p><em>Step 1: Finding the relationship before n and n-1. </em></p>
+<p>To get n, there are only two ways, one 1-stair from n-1 or 2-stairs from n-2. If f(n) is the number of ways to climb to n, then f(n) = f(n-1) + f(n-2)</p>
+<p><em>Step 2: Make sure the start condition is correct. </em></p>
+<p>f(0) = 0;<br>
+f(1) = 1;</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span> f<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>n <span style="color: #339933;">&lt;=</span> <span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span> <span style="color: #000000; font-weight: bold;">return</span> n<span style="color: #339933;">;</span>
+	<span style="color: #000066; font-weight: bold;">int</span> x <span style="color: #339933;">=</span> f<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span> <span style="color: #339933;">+</span> f<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+	<span style="color: #000000; font-weight: bold;">return</span> x<span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>The time complexity of the recursive method is exponential to n. There are a lot of redundant computations. </p>
+<div class="somecode">
+f(5)<br>
+f(4) + f(3)<br>
+f(3) + f(2) + f(2) + f(1)<br>
+f(2) + f(1) + f(1) + f(0) + f(1) + f(0) + f(1)<br>
+f(1) + f(0) + f(1) + f(1) + f(0) + f(1) + f(0) + f(1)
+</div>
+<p>It should be straightforward to convert the recursion to iteration.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span> f<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">&lt;=</span> <span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">return</span> n<span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000066; font-weight: bold;">int</span> first <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span>, second <span style="color: #339933;">=</span> <span style="color: #cc66cc;">2</span><span style="color: #339933;">;</span>
+	<span style="color: #000066; font-weight: bold;">int</span> third <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">for</span> <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> i <span style="color: #339933;">=</span> <span style="color: #cc66cc;">3</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> n<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+		third <span style="color: #339933;">=</span> first <span style="color: #339933;">+</span> second<span style="color: #339933;">;</span>
+		first <span style="color: #339933;">=</span> second<span style="color: #339933;">;</span>
+		second <span style="color: #339933;">=</span> third<span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">return</span> third<span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>For this example, iteration takes less time. You may also want to check out <a href="http://www.programcreek.com/2012/10/iteration-vs-recursion-in-java/" title="Iteration vs. Recursion in Java">Recursion vs Iteration</a>. </p>
+<p><strong>7. Dynamic Programming</strong></p>
+<p>Dynamic programming is a technique for solving problems with the following properties:</p>
+<ol>
+<li>An instance is solved using the solutions for smaller instances.</li>
+<li>The solution for a smaller instance might be needed multiple times.</li>
+<li>The solutions to smaller instances are stored in a table, so that each smaller instance is solved only once.</li>
+<li>Additional space is used to save time.</li>
+</ol>
+<p><br>
+The problem of climbing steps perfectly fit those 4 properties. Therefore, it can be solve by using dynamic programming.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> A <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span><span style="color: #cc66cc;">100</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">int</span> f3<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+	<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">&lt;=</span> <span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span>
+		A<span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #339933;">=</span> n<span style="color: #339933;">;</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>A<span style="color: #009900;">[</span>n<span style="color: #009900;">]</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span>
+		<span style="color: #000000; font-weight: bold;">return</span> A<span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+	<span style="color: #000000; font-weight: bold;">else</span>
+		A<span style="color: #009900;">[</span>n<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> f3<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">)</span> <span style="color: #339933;">+</span> f3<span style="color: #009900;">(</span>n<span style="color: #339933;">-</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span><span style="color: #666666; font-style: italic;">//store results so only calculate once!</span>
+	<span style="color: #000000; font-weight: bold;">return</span> A<span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p><strong>8. Bit Manipulation</strong></p>
+<p>Bit operators:</p>
+<table border="1" width="100%">
+<tbody><tr>
+<td>OR (|)</td>
+<td>AND (&amp;)</td>
+<td>XOR (^)</td>
+<td>Left Shift (&lt;&lt;)</td>
+<td>Right Shift (&gt;&gt;)</td>
+<td>Not (~)</td>
+</tr>
+<tr>
+<td>1|0=1</td>
+<td>1&amp;0=0</td>
+<td>1^0=1</td>
+<td>0010&lt;&lt;2=1000</td>
+<td>1100&gt;&gt;2=0011</td>
+<td>~1=0</td>
+</tr>
+</tbody></table>
+<p>Get bit i for a give number n. (i count from 0 and starts from right)</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">boolean</span> getBit<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> num, <span style="color: #000066; font-weight: bold;">int</span> i<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+	<span style="color: #000066; font-weight: bold;">int</span> result <span style="color: #339933;">=</span> num <span style="color: #339933;">&amp;</span> <span style="color: #009900;">(</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">&lt;&lt;</span>i<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>result <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+		<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>For example, get second bit of number 10. </p>
+<div class="somecode">
+i=1, n=10<br>
+1&lt;&lt;1= 10<br>
+1010&amp;10=10<br>
+10 is not 0, so return true;
+</div>
+<p><strong>9. Probability</strong></p>
+<p>Solving probability related questions normally requires formatting the problem well. Here is just a simple example of such kind of problems. </p>
+<blockquote><p>There are 50 people in a room, what’s the probability that two people have the same birthday? (Ignoring the fact of leap year, i.e., 365 day every year)</p></blockquote>
+<p>Very often calculating probability of something can be converted to calculate the opposite. In this example, we can calculate the probability that all people have unique birthdays. That is: 365/365 + 364/365 + 363/365 + 365-n/365 + 365-49/365. And the probability that at least two people have the same birthday would be 1 – this value.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">double</span> caculateProbability<span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> n<span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+	<span style="color: #000066; font-weight: bold;">double</span> x <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> 
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">for</span><span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> i<span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> i<span style="color: #339933;">&lt;</span>n<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+		x <span style="color: #339933;">*=</span>  <span style="color: #009900;">(</span><span style="color: #cc66cc;">365.0</span><span style="color: #339933;">-</span>i<span style="color: #009900;">)</span><span style="color: #339933;">/</span><span style="color: #cc66cc;">365.0</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #000066; font-weight: bold;">double</span> pro <span style="color: #339933;">=</span> <span style="color: #003399;">Math</span>.<span style="color: #006633;">round</span><span style="color: #009900;">(</span><span style="color: #009900;">(</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">-</span>x<span style="color: #009900;">)</span> <span style="color: #339933;">*</span> <span style="color: #cc66cc;">100</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+	<span style="color: #000000; font-weight: bold;">return</span> pro<span style="color: #339933;">/</span><span style="color: #cc66cc;">100</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table></div>
+
+<p>calculateProbability(50) = 0.97</p>
+<p><strong>10. Combinations and Permutations</strong></p>
+<p>The difference between combination and permutation is whether order matters.</p>
+<p>Please leave your comment if you think any other problem should be here. </p>
+<p>References/Recommmended Materials:<br>
+1. <a href="http://en.wikipedia.org/wiki/Binary_tree">Binary tree</a><br>
+2. <a href="http://20bits.com/article/introduction-to-dynamic-programming">Introduction to Dynamic Programming</a><br>
+3. <a href="http://www.cs.utsa.edu/~bylander/cs3343/chapter8handout.pdf">UTSA Dynamic Programming slides</a><br>
+4. <a href="http://scientopia.org/blogs/goodmath/2013/11/18/the-birthday-paradox/">Birthday paradox</a><br>
+5. Cracking the Coding Interview: 150 Programming InterviewQuestions and Solutions, Gayle Laakmann McDowell</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:none;margin:0px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5732630628268628";
+/* t430s */
+google_ad_slot = "8707837619";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./Top 10 Algorithms for Coding Interview_files/show_ads.js">
+</script>
+</div>
+
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div><div class="yarpp-related">
+<h3>Related posts:</h3><ol>
+<li><a href="http://www.programcreek.com/2012/02/java-method-to-shuffle-an-int-array-with-random-order/" rel="bookmark" title="Java Method to Shuffle an Array">Java Method to Shuffle an Array</a></li>
+<li><a href="http://www.programcreek.com/2012/11/quicksort-array-in-java/" rel="bookmark" title="Quicksort Array in Java">Quicksort Array in Java</a></li>
+<li><a href="http://www.programcreek.com/2013/11/start-from-length-length-in-java/" rel="bookmark" title="Start from length &amp; length() in Java">Start from length &amp; length() in Java</a></li>
+<li><a href="http://www.programcreek.com/2012/12/java-convert-file-to-char-array/" rel="bookmark" title="Java: Convert File to Char Array">Java: Convert File to Char Array</a></li>
+</ol>
+<img src="./Top 10 Algorithms for Coding Interview_files/dcd2260f388f751e7d930169b6b49d41" alt="Yarpp">
+</div>
+	
+	    
+	
+	    
+	    
+			<div class="sociable"></div>
+	    </div>
+	    
+	    Category: <a href="http://www.programcreek.com/category/java-2/algorithms/" title="View all posts in Algorithms" rel="category tag">Algorithms</a>,<a href="http://www.programcreek.com/category/interview/" title="View all posts in Interview" rel="category tag">Interview</a> &nbsp; 
+	<rdf:rdf xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:description rdf:about="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/" dc:identifier="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/" dc:title="Top 10 Algorithms for Coding Interview" trackback:ping="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/trackback/">
+</rdf:description></rdf:rdf>
+	
+
+	
+		<!--single-bottom-ads-->	
+		
+		<!--<div style="width:100%; margin:10px 0 0 43px;">
+	
+		</div>-->
+
+	
+  </div>
+ 
+<div id="author">
+
+</div>
+
+
+  
+<div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" role="complementary" width="100%" src="./Top 10 Algorithms for Coding Interview_files/saved_resource(1).htm" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 714px !important;" scrolling="no" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="dsq-indicator-north" data-disqus-uid="indicator-north" allowtransparency="true" frameborder="0" role="alert" scrolling="no" style="width: 730px !important; border: none !important; overflow: hidden !important; top: 0px !important; position: fixed !important; height: 29px !important; display: none !important;"></iframe><iframe id="dsq-indicator-south" data-disqus-uid="indicator-south" allowtransparency="true" frameborder="0" role="alert" scrolling="no" style="width: 730px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; position: fixed !important; height: 29px !important; display: none !important;"></iframe></div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var disqus_url = 'http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/';
+    var disqus_identifier = '10378 http://www.programcreek.com/?p=10378';
+    var disqus_container_id = 'disqus_thread';
+    var disqus_domain = 'disqus.com';
+    var disqus_shortname = 'programcreek';
+    var disqus_title = "Top 10 Algorithms for Coding Interview";
+        var disqus_config = function () {
+        var config = this; // Access to the config object
+        config.language = '';
+
+        /*
+           All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+         */
+
+        config.callbacks.preData.push(function() {
+            // clear out the container (its filled for SEO/legacy purposes)
+            document.getElementById(disqus_container_id).innerHTML = '';
+        });
+                config.callbacks.onReady.push(function() {
+            // sync comments in the background so we don't block the page
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = '?cf_action=sync_comments&post_id=10378';
+
+            var firstScript = document.getElementsByTagName( "script" )[0];
+            firstScript.parentNode.insertBefore(script, firstScript);
+        });
+                    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var DsqLocal = {
+        'trackbacks': [
+        ],
+        'trackback_url': "http:\/\/www.programcreek.com\/2012\/11\/top-10-algorithms-for-coding-interview\/trackback\/"    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + 'disqus.com' + '/embed.js?pname=wordpress&pver=2.74';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+    <p>
+      </p>
+</div>
+<div style="clear:both;"></div>
+<div id="sidebar">
+
+
+<div class="sidebarsep"></div>
+
+
+<div class="sidebarsep"></div>
+
+
+
+
+
+</div></div>
+
+
+
+
+</div>
+
+
+<div id="footer">
+
+  <p> Copyright ©&nbsp;2008 - 2013 
+  <a rel="author" href="https://plus.google.com/112858025640199707956">
+  programcreek.com  </a>
+ 
+</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js?ver=3.6.1"></script>
+<script type="text/javascript" src="./Top 10 Algorithms for Coding Interview_files/plusone(1).js" gapi_processed="true"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" async="" src="./Top 10 Algorithms for Coding Interview_files/cnzz.js"></script><iframe name="oauth2relay853181832" id="oauth2relay853181832" src="./Top 10 Algorithms for Coding Interview_files/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><script type="text/javascript">var vglnk = {api_url: '//api.viglink.com/api', key: '084c74521c465af0d8f08b63422103cc'};</script><script type="text/javascript" async="" src="./Top 10 Algorithms for Coding Interview_files/vglnk.js"></script><div id="shanbay_extension_result" class="shanbay_extension_result"><div id="shanbay_extension_result_shanbaydict" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_shanbaydict_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_shanbaydict_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_googletran" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_googletran_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_googletran_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikizh" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikizh_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikizh_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikien" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikien_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikien_content" class="shanbay_extension_result_content"></div></div></div></body></html>

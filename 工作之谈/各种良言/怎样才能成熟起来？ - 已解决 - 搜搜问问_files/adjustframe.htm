@@ -1,0 +1,30 @@
+
+<!-- saved from url=(0061)http://rh.soso.com/adjustframe.html#w=0&h=0&div=div_273543162 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"></head>
+  <body>
+    <script type="text/javascript">
+      var dm = document.domain;
+	  if (dm.indexOf("qq")>=0) { document.domain= "qq.com";} else {document.domain="soso.com";}
+
+      var l, hs, w, h;
+      if("undefined" != typeof window.location.hash) {
+        hs = window.location.hash;
+      } else {
+        l = window.location.href;
+        hs = -1==l.indexOf('#') ? '' : l.substr(l.indexOf('#'));
+      }
+
+      if(hs) { // B页面可能没有算出高宽来，故没有在url中带hash
+        w = hs.replace(/^.*w=(\d+).*$/,'$1');
+        h = hs.replace(/^.*h=(\d+).*$/,'$1');
+        d = hs.replace(/^.*div=([a-z_0-9]+).*$/i,'$1');
+
+        try {
+          var theTop = window.top.document.getElementById(d);
+          theTop && (theTop.style.display = 'none');
+        } catch(e) {  }
+      }
+    </script>
+  
+
+<div id="shanbay_extension_result" class="shanbay_extension_result"><div id="shanbay_extension_result_shanbaydict" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_shanbaydict_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_shanbaydict_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_googletran" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_googletran_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_googletran_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikizh" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikizh_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikizh_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikien" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikien_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikien_content" class="shanbay_extension_result_content"></div></div></div></body></html>

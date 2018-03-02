@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-08-30/2816772" target=_blank>一周消息树：十一款被时间遗忘的操作系统 别了，鲍尔默</a></li><li><a href="http://www.csdn.net/article/2013-08-30/2816766" target=_blank>移动应用全球市场现状：美国优势越来越小</a></li>');

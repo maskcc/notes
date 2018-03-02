@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-11-20/2817564-speech-ballmer-at-the-company’s-annual-shareholder-meeting" target=_blank>微软CEO鲍尔默卸职前在股东会上的最后演讲</a></li><li><a href="http://www.csdn.net/article/2013-11-19/2817552-office-remote-help-you-to-control-ppt-word-excel" target=_blank>造就Office新用法：微软推WP应用 可遥控Office文件</a></li>');

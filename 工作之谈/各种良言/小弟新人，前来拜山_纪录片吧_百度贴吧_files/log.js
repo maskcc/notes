@@ -1,0 +1,3 @@
+/*! Copyright 2013 Baidu Inc. All Rights Reserved. */
+(function(){function e(d,b){var a=b||{};a.type=d;a.url=f.URL;a.host=c.location.hostname;c.BAIDU_CLB_sendLog(a)}var c=window,f=document,g=c.BAIDU_CLB_SLOTS_MAP||{};try{(function(){setTimeout(function(){for(var d in g){var b=d,a=g[d];if("object"!==typeof a)e("loadFail",{id:b});else if(!0!==a._done)e("renderFail",{id:b,qid:a._qid,error:a._done||"NotFilled",empty:!!a._html});else{var c=f.getElementById("baidu_clb_slot_iframe_"+b);if(c)try{var h=c.contentWindow.document.body;(!h||!h.firstChild)&&e("renderEmpty",
+{id:b,qid:a._qid,stype:a._stype})}catch(i){}}}},0)})()}catch(i){}})();

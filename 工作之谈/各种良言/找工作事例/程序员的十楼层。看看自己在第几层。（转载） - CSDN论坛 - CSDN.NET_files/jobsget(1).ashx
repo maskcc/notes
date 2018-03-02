@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-09-02/2816794-the-life-and-awesomeness-of-bill-gates" target=_blank>[回顾]比尔·盖茨传奇的前半生</a></li><li><a href="http://www.csdn.net/article/2013-08-31/2816783-sdcc-it" target=_blank>IT基础设施与运维论坛：IT基础设施及运维经验分享</a></li>');

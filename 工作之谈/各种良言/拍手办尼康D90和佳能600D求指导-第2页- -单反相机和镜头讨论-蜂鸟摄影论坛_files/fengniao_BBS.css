@@ -1,0 +1,9 @@
+a.bfd_img_logo{float:right;display:inline-block;width:101px;height:13px;margin:0px 4px 4px 0; background:url(http://static.baifendian.com/themes/logo/bfd_logo_ch.png) no-repeat;_background:url(http://static.baifendian.com/themes/logo/bfd_logo_ch.gif) no-repeat;overflow:hidden;}
+
+a.bfd_img_logo:hover{background:url(http://static.baifendian.com/themes/logo/bfd_logo_ch.png) no-repeat 0 -14px;_background:url(http://static.baifendian.com/themes/logo/bfd_logo_ch.gif) no-repeat 0 -14px;}
+.bfd_clear{zoom:1;}
+.bfd_clear:after{content:''; display:block; clear:both;}
+#bfd_vav{display:none; margin-top:10px;}
+
+
+

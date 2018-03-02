@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-09-01/2816784-startup" target=_blank>创业建议泛滥成灾 专注产品才是正途</a></li>');

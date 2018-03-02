@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-08-30/2816776-Coding-For-Fun-Summary" target=_blank>新平台，新惊喜：记第二届Coding For Fun</a></li>');

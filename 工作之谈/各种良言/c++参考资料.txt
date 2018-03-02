@@ -1,0 +1,31 @@
+当读者有一定c/c++基础
+推荐的阅读顺序:
+level 1
+从<<essential c++>>开始，短小精悍，可以对c++能进一步了解其特性
+以<<c++ primer>>作字典和课外读物，因为太厚不可能一口气看完
+
+level 2
+然后从<<effective c++>>开始转职，这是圣经，请遵守10诫，要经常看，没事就拿来翻翻
+接着是<<exceptional c++>>，个人认为Herb Sutter主席大人的语言表达能力不及Scott Meyers总是在教育第一线的好
+顺下来就是<<more effective c++>>和<<more exceptional c++>>，请熟读并牢记各条款
+当你读到这里，应该会有一股升级的冲动了
+
+level 3
+<<insied the c++ object model>>看过后如一缕清风扫去一直以来你对语言的疑惑，你终于能明白compiler到底都背着你做了些什么了，这本书要细细回味，比较难啃，最好反复看几遍，加深印象
+看完上一本之后，这本<<The design and evolution of c++>>会重演一次当年C++他爹在设计整个语言过程中的历程
+
+level 4
+<<the c++ standard library>>是stl的字典，要什么都可以查得到
+学c++不能不学stl，那么首先是<<effective stl>>，它和圣经一样是你日常行为的规范
+<<generic programming and the stl>>让你从oo向gp转变
+光用不行，我们还有必要了解stl的工作原理，那么<<stl源码剖析>>会解决你所有的困惑
+
+level 5
+对于c++无非是oo和gp，想进一步提升oo，<<exeptional c++ style>>是一本主席这么多年的经验之谈，是很长esp的
+一位stl高手是不能不去了解template的，<<c++ template>>是一本百科全书，足够你看完后对于gp游刃有余
+<<modern c++ design>>是太过聪明的人写给明眼人看的
+
+好书有很多，不能一一列举
+以上我的读书经历，供各位参考。接下来的无非就是打怪练级，多听多写多看；boost、stl、loki这些都是利器，斩妖除魔，奉劝各位别再土法练钢了。
+
+at last，无他，唯手熟尔。

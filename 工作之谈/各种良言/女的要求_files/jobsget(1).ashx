@@ -1,0 +1,1 @@
+document.write('<li><a href="http://www.csdn.net/article/2013-10-22/2817257" target=_blank>你相信苹果会在明后年推出13寸屏iPad吗？我信！</a></li><li><a href="http://www.csdn.net/article/2013-10-22/2817252-google-motorola-losses-moto-x" target=_blank>为什么谷歌要一直为摩托罗拉烧钱？</a></li>');

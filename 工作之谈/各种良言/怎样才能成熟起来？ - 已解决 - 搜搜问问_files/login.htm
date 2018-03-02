@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0286)http://ui.ptlogin2.soso.com/cgi-bin/login?link_target=blank&appid=6000201&f_url=loginerroralert&hide_uin_tip=1&target=parent&hide_title_bar=1&s_url=http%3A%2F%2Fwenwen.soso.com%2Fz%2Fq139248756.htm&css=http%3A%2F%2Fimgcache.qq.com%2Fptcss%2Fteg%2Fsoso%2F6000201%2Fwenwen_inner_login.css -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">var g_begTime=new Date();</script>
+
+<link href="wenwen_inner_login.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+u{text-decoration:none;white-space:nowrap;}
+
+
+</style>
+<script type="text/javascript">
+//错误上报
+
+(function(){
+	window.onerror = function(msg,url,line){
+		//https不上报
+		if(/^https/.test(window.location)){
+			return;
+		}
+		var t = document.createElement('img');
+		var e_info=encodeURIComponent(msg+'|_|'+url+'|_|'+line+'|_|'+window.navigator.userAgent);
+		t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=110&mid=195279&msg='+e_info+'&v='+Math.random();
+		t=null;
+	}
+})();
+////////////////////////////
+var str_uintip = "QQ号码/手机/邮箱";
+var str_passtip = "密码";
+var str_codetip = "验证码";
+var str_no_uin = "您还没有输入帐号！";
+var str_no_pwd = "您还没有输入密码！";
+var str_no_vcode = "您还没有输入验证码！";
+var str_inv_uin = "请输入正确的QQ帐号！";
+var str_inv_vcode = "请输入完整的验证码！";
+var str_correct_vcode = "请输入正确的验证码！";
+var str_net_error = "网络或服务器出错，请稍后再试！";
+var str_input_error = "您的输入有误，请稍后重试！";
+var str_switch_qlogin = "切换到快速登录模式";
+var str_switch_normal = "使用其他号码登录";
+var str_qlogin_no_uin = "系统检测到您机器上QQ未启动或已被锁定。请您先登录QQ或解锁后再使用本功能。";
+var str_qlogin_other_err  = "快速登录失败，请您返回重试或切换到普通登录模式。";
+var str_qlogin_select_offline = "您所选择号码对应的QQ已经失效，请检查该号码对应的QQ是否已经被关闭。";
+var str_qlogining = "正在登录中，请稍候……";
+var str_yjfk = "意见反馈";
+//参数只能为数字的
+var g_version=encodeURIComponent("201310100931");
+var g_pt_version=encodeURIComponent("10049");//发布版本号
+var g_qtarget=encodeURIComponent("-1");
+var isLoadVC = false;
+var g_appid =encodeURIComponent("6000201");
+var g_uin = 0;
+var g_domain = encodeURIComponent("soso.com");
+var g_target = encodeURIComponent("_parent");
+var g_https = false;
+var g_low_login=encodeURIComponent("0");
+var g_login_sig=encodeURIComponent("oX8nRHUbFXLUk6HuHAnU1pQy3wYHZr4uPs7YHVTezVgDQi1LdN1IRp-7yaVXtXhC"); //安全参数
+var g_daid=encodeURIComponent("");//业务隔离id
+var g_regmaster=encodeURIComponent("");//双登录态
+var g_forget="http://ptlogin2.qq.com/ptui_forgetpwd";
+
+var g_href="http\x3A\x2F\x2Fui.ptlogin2.soso.com\x2Fcgi-bin\x2Flogin\x3Flink_target\x3Dblank\x26appid\x3D6000201\x26f_url\x3Dloginerroralert\x26hide_uin_tip\x3D1\x26target\x3Dparent\x26hide_title_bar\x3D1\x26s_url\x3Dhttp\x253A\x252F\x252Fwenwen.soso.com\x252Fz\x252Fq139248756.htm\x26css\x3Dhttp\x253A\x252F\x252Fimgcache.qq.com\x252Fptcss\x252Fteg\x252Fsoso\x252F6000201\x252Fwenwen_inner_login.css";
+var g_param = "";
+var g_css = encodeURIComponent("http\x3A\x2F\x2Fimgcache.qq.com\x2Fptcss\x2Fteg\x2Fsoso\x2F6000201\x2Fwenwen_inner_login.css");
+var g_ptcss = encodeURIComponent("");
+var g_jumpname = encodeURIComponent("");
+var g_mibao_css=encodeURIComponent("");//密保页面css
+var g_style=encodeURIComponent("0");//模版类型 (传到iframe参数)
+
+
+document.domain="soso.com";
+var g_t="QQ号码/手机/邮箱";
+var g_lang="2052";
+
+
+function $(A){return document.getElementById(A)}var preload={needSize:"",isIpad:false,init:function(){var A=navigator.userAgent.toLowerCase();preload.isIpad=/ipad/i.test(A);preload.needSize=preload.getQuery("ptsize")},getQuery:function(B){var A=window.location.search.match(new RegExp("(?:/?|&)"+B+"=([^&]*)(?:&|$)"));return !A?"":unescape(A[1])}};preload.init();var isAbleSubmit=false;function ptui_notifySize(D){try{obj=$(D);if(obj){width=1;height=1;if(obj.offsetWidth>0){width=obj.offsetWidth}if(obj.offsetHeight>0){height=obj.offsetHeight}var B=window.location.hostname.replace(/ui\.ptlogin2\./i,"");var A=new Date();A.setTime(A.getTime()+5*1000);if(preload.needSize){document.cookie="pt_size="+width+"-"+height+";domain="+B+";path=/;expires="+A.toGMTString()}try{if(typeof window.postMessage!="undefined"){window.parent.postMessage("pt_size="+width+"-"+height,"*")}}catch(C){}if(parent.ptlogin2_onResize){parent.ptlogin2_onResize(width,height);window.scroll(0,10)}else{frameElement.width=width;frameElement.style.width=width+"px";frameElement.height=height;frameElement.style.height=height+"px";frameElement.style.visibility="hidden";frameElement.style.visibility="visible"}}}catch(C){}}var g_time={};var g_connectTime=0;var g_responseStartTime=0;var g_responseEndTime=0;(function(){try{if(performance.timing.connectStart&&performance.timing.connectStart!=0){g_connectTime=performance.timing.connectStart}if(performance.timing.responseStart&&performance.timing.responseStart!=0){g_responseStartTime=performance.timing.responseStart}if(performance.timing.responseEnd&&performance.timing.responseEnd!=0){g_responseEndTime=performance.timing.responseEnd}}catch(A){g_connectTime=0;g_responseStartTime=0;g_responseEndTime=0}})();g_time.time0=g_connectTime;g_time.time1=g_responseStartTime;g_time.time2=g_responseEndTime;g_time.time3=g_begTime;var np_clock=0;var nptxsso=null;var has_checkNPPlugin=false;function checkNPPlugin(){var A=10;np_clock=window.setInterval(function(){if(typeof nptxsso.InitPVANoST=="function"||A==0){window.clearInterval(np_clock);if(typeof nptxsso.InitPVANoST=="function"){onSelectLoad()}}else{A--}},200)}function ptui_check_qlogin(){try{g_time.time20=new Date();var E=0;if(window.ActiveXObject){var D=new ActiveXObject("SSOAxCtrlForPTLogin.SSOForPTLogin2");var G=D.CreateTXSSOData();D.InitSSOFPTCtrl(0,G);var F=D.CreateTXSSOData();var A=D.DoOperation(2,F);var B=A.GetArray("PTALIST");E=B.GetSize()}else{if(navigator.mimeTypes["application/nptxsso"]){if(!nptxsso){nptxsso=document.createElement("embed");nptxsso.type="application/nptxsso";nptxsso.style.width="0px";nptxsso.style.height="0px";document.body.appendChild(nptxsso)}if(typeof nptxsso.InitPVANoST!="function"){if(!has_checkNPPlugin){checkNPPlugin();has_checkNPPlugin=true}}var C=nptxsso.InitPVANoST();if(C){E=nptxsso.GetPVACount()}}}g_time.time21=new Date()}catch(H){return 0}return E}var xuiFrame=false;var curXui=false;var reloadweb=false;var q_clock;function qlogin_check(){q_clock=setInterval(B,200);var A=50;document.cookie="ptui_qstatus=1;domain=ptlogin2."+g_domain+"path=/";function B(){if(A==0){switchpage()}if(document.cookie.indexOf("ptui_qstatus=2")>-1){clearInterval(q_clock);if(!g_time.time23){g_time.time23=new Date();var C={};C["5"]=g_time.time21-g_time.time20;C["6"]=g_time.time23-g_time.time22;if(typeof (ptui_speedReport)=="function"){ptui_speedReport(C)}}}if(document.cookie.indexOf("ptui_qstatus=3")>-1){clearInterval(q_clock);switchpage()}A--}}function loadxui(H){if(xuiFrame){$("qlogin").style.display="block";return }else{var B=1;if(g_jumpname!=""){if(g_qtarget!=-1){B=parseInt(g_qtarget)}}else{switch(g_target){case"_self":B=0;break;case"_top":B=1;break;case"_parent":B=2;break;default:B=1}}var G=(g_jumpname==""||g_jumpname=="jump")?encodeURIComponent("u1="+encodeURIComponent(document.forms[0].u1.value)):"";var C=window.g_daid;var E=window.g_regmaster;var A=(/^(https)+/g.test(window.location)?"https":"http")+"://xui.ptlogin2."+g_domain+"/cgi-bin/q"+g_href.substring(g_href.indexOf("/cgi-bin/")+9,g_href.indexOf("?"))+"?domain="+g_domain+"&lang="+g_lang+"&qtarget="+B+"&jumpname="+g_jumpname+"&ptcss="+g_ptcss+"&param="+encodeURIComponent((g_param?encodeURIComponent(g_param):G))+"&css="+g_css+"&mibao_css="+window.g_mibao_css+"&low_login="+window.g_low_login+"&ptui_version="+window.g_pt_version+(C?"&daid="+C:"")+(E?"&regmaster="+E:"");var F=$("qlogin");var D=156+28*((H>5?5:H)-1);if(preload.getQuery("low_login")==1){D+=20}g_time.time22=new Date();F.innerHTML='<iframe id="xui" name="xui" allowtransparency="true" scrolling="no" frameborder="0" width="100%" height="'+D+'" src="'+A+'">';F.style.display="block";$("web_login").style.display="none";curXui=true;xuiFrame=true;qlogin_check()}}function switchpage(){var A=$("err_m");A?A.style.display="none":"";if(curXui){$("web_login").style.display="block";$("qlogin").style.display="none";$("switch").innerHTML='<a style="cursor:pointer;" onclick="switchpage();">'+str_switch_qlogin+"</a>";ptui_notifySize("login");if(typeof (ptui_initFocus)!="undefined"){ptui_initFocus(document.forms[0])}curXui=false;clearInterval(q_clock)}else{$("qlogin").style.display="block";$("web_login").style.display="none";$("switch").innerHTML='<a style="cursor:pointer;" onclick="switchpage();">'+str_switch_normal+"</a>";curXui=true;qlogin_check();ptui_notifySize("login")}$("err_m").style.display="none"}function ptui_onUserFocus(C,A){if(preload.isIpad){return }var B=$(C);if(str_uintip==B.value){B.value=""}B.style.color=A}function ptui_onUserBlue(C,A){if(preload.isIpad){return }var B=$(C);if(""==B.value){B.value=str_uintip;B.style.color=A}};
+function loadweblogin(){
+	if(typeof(ptui_setUinColor)=='undefined'){
+		reloadweb = true;
+		return;
+	}
+	ptui_setUinColor('u', '#000000', '#cccccc');
+	$("loginform").verifycode.value="";
+}
+function onSelectLoad(){
+	var uNum=0;
+	if (document.cookie.toLowerCase().indexOf("pt_qlogincode=5")>-1||(window.location.href).toLowerCase().indexOf("enable_qlogin=0")>-1||window.template==6){uNum=0;}else{uNum = ptui_check_qlogin();}
+	if (uNum > 0) {
+		loadxui(uNum);
+		$('label_unable_tips').innerHTML = '';
+		$('switch').innerHTML = '<a style="cursor:pointer;" onclick="switchpage();">使用其他号码登录</a>';
+		$('switch').style.display = 'block';
+		return;
+	}else{
+		loadweblogin();
+		$('label_unable_tips').innerHTML = '';
+		$('switch').style.display = 'none';			
+	}
+
+	ptui_notifySize("login");	
+}
+function onPrePageLoad(){
+	var login_form = $("loginform");
+		
+	$("login_button").disabled=false;
+	ptui_setDefUin(login_form, "");
+	g_time.time5=new Date();
+	webLoginReport();	
+	ptui_notifySize("login");
+	if(!curXui){ptui_initFocus(login_form);}
+}
+</script>
+
+</head>
+<body>
+<div class="main" id="login" style="border:0px;">
+    
+
+    <div id="normal_login">
+
+		<div id="qlogin" style="display:none;"></div>
+        <div id="web_login">
+           <form id="loginform" autocomplete="off" name="loginform" action="http://ptlogin2.soso.com/login" method="post" onsubmit="if(!isAbleSubmit){return false;};return ptui_onLoginEx(loginform, &#39;soso.com&#39;)" onreset="return onFormReset(loginform)" target="_self" style="margin:0px;">
+            <ul id="g_list">
+                <li id="err_m" class="err_m"></li>
+                <li id="g_u">
+					<span><u id="label_uin">QQ帐号：</u></span><input type="text" class="inputstyle" id="u" name="u" value="" style="color: rgb(0, 0, 0);" tabindex="1"> <label><a target="_blank" href="http://zc.qq.com/?from=pt" tabindex="7" id="label_newreg">注册新帐号</a></label>
+                </li> 
+                <li id="g_p">
+					<span><u id="label_pwd">QQ密码：</u></span><input type="password" class="inputstyle" id="p" name="p" value="" maxlength="16" tabindex="2" onfocus="check();"> <label><a target="_blank" tabindex="8" href="http://ptlogin2.qq.com/ptui_forgetpwd" onclick="onClickForgetPwd()" id="label_forget_pwd">忘了密码？</a></label>
+                </li>
+                <li id="verifyinput" style="display:none;">
+					<span for="code"><u id="label_vcode">验证码：</u></span><input name="verifycode" type="text" style="ime-mode:disabled" class="inputstyle" id="verifycode" value="" maxlength="5" tabindex="3">
+                </li>
+                <li id="verifytip" style="display:none;">
+					<span>&nbsp;</span><u id="label_vcode_tip">请输入图中的字符不区分大小写</u>
+                </li>
+                <li id="verifyshow" style="display:none;">
+					<span for="pic">&nbsp;</span><img id="imgVerify" width="130" height="53" onload="imgLoadReport()"><label><a id="changeimg_link" tabindex="6" href="javascript:ptui_changeImg('soso.com', 6000201, true);">看不清，换一张</a></label>
+                </li> 
+                   
+            </ul> 
+        <div class="login_button">
+            <input type="submit" tabindex="5" value="登 录" class="btn" id="login_button">
+            
+
+            
+        </div>
+        <div class="lineright" id="label_unable_tips"></div>
+        <input type="hidden" name="aid" value="6000201">
+<input type="hidden" name="u1" value="http://wenwen.soso.com/z/q139248756.htm">
+<input type="hidden" name="fp" value="loginerroralert">
+<input type="hidden" name="h" value="1">
+<input type="hidden" name="ptredirect" value="2">
+<input type="hidden" name="ptlang" value="2052">
+
+        <input type="hidden" name="from_ui" value="1">
+        <input type="hidden" name="dumy" value="">
+    </form>
+    </div>
+        
+       <!--二维码登录区域入口 user_needqrlogin -->
+        
+        <!--二维码登录区域入口结束 user_needqrlogin -->
+        <div id="switch" class="lineright" style="display: none;"><a onclick=""></a></div>
+        <div style="clear:both"></div>
+    </div>
+    <!--二维码登录区域 user_needqrlogin -->
+     
+    <!--二维码登录区域 end -->
+</div>
+
+<script type="text/javascript">
+var g_f=$("loginform");
+if((g_appid==46000101)&&(g_f.u.value=="QQ号码/手机/邮箱")){
+	g_f.u.value="支持微博帐号/QQ号码/邮箱地址";
+	var wb_tips=document.createElement("li");
+	wb_tips.style.paddingTop="0";
+	wb_tips.style.color="gray";
+	wb_tips.id="wb_tips";
+	wb_tips.innerHTML="<span> </span> "+"未登录QQ或者浏览器不支持快速登录";
+	$("u").value="";
+	$("u").color="";
+	$("g_list").insertBefore(wb_tips,$("g_p"));
+}
+g_time.time4=new Date();
+</script>
+<!--0-->
+
+<script>onSelectLoad();</script><embed type="application/nptxsso" style="width: 0px; height: 0px;">
+<script type="text/javascript" src="comm.js"></script>
+<script type="text/javascript">
+function cleanCache(f){
+	var t=document.createElement("iframe");
+	if(f.split("#").length == 3) f = f.substring(0,f.lastIndexOf("#"));
+	t.src = f;
+	t.style.display = "none";
+	document.body.appendChild(t);
+}
+function loadScript(src,callback) {   
+	var tag = document.createElement("script");
+	tag.onload = tag.onreadystatechange = function() {
+	if ( !this.readyState ||this.readyState === "loaded" || this.readyState === "complete") {
+			if(typeof callback=="function"){
+					callback();
+			}
+		tag.onload = tag.onreadystatechange = null;
+	}
+	};
+	tag.onerror=function(){
+		tag.onerror=null;
+		callback();
+	}			
+	tag.src = src;
+	document.getElementsByTagName("head")[0].appendChild(tag);
+};
+//comm.js拉去失败
+if(typeof(ptuiCB)=="undefined"){
+	var imgAttr2 = new Image();
+	imgAttr2.src = location.protocol+"//ui.ptlogin2.qq.com/cgi-bin/report?id=85289&union=256039";
+	var serverJsPath="../js/"+window.g_pt_version+"/comm.js?max_age=604800&ptui_identifier=000D956EA875DE2978EDCB1C0F2EE68AD8C6D89C318B59D4BC9BB2A8";
+	loadScript(serverJsPath,function(){
+		if(typeof(ptuiCB)=="undefined"){
+			var button=document.getElementById("login_button");
+			button&&(button.disabled=true);
+			imgAttr2.src = location.protocol+"//ui.ptlogin2.qq.com/cgi-bin/report?id=299500";
+		}			    
+	});
+}
+
+onPrePageLoad();
+if(reloadweb){
+	loadweblogin();
+}
+function onPageClose(){ptui_notifyClose();}
+function ptuiV(v){
+	if (v!=window.g_pt_version){
+		cleanCache("/clearcache.html#"+location.href);	
+	}
+}
+function checkVersion(){
+	var t = document.createElement("script");
+	t.src = "/ptui_ver.js?v="+Math.random();
+	document.body.appendChild(t);
+}
+setTimeout(checkVersion,1500);
+</script>
+
+
+<div id="shanbay_extension_result" class="shanbay_extension_result"><div id="shanbay_extension_result_shanbaydict" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_shanbaydict_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_shanbaydict_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_googletran" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_googletran_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_googletran_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikizh" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikizh_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikizh_content" class="shanbay_extension_result_content"></div></div><div id="shanbay_extension_result_wikien" class="shanbay_extension_result_engine"><div id="shanbay_extension_result_wikien_caption" class="shanbay_extension_result_caption"></div><div id="shanbay_extension_result_wikien_content" class="shanbay_extension_result_content"></div></div></div><script src="ptui_ver.js"></script></body></html>

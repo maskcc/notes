@@ -1,0 +1,1 @@
+document.write('<p><a href="http://surveies.csdn.net/survey/comein/612" target="_blank"><font color="#000000"><strong>WebApp实时开源开发框架百度Clouda深入评测</strong></font></a> </p>');

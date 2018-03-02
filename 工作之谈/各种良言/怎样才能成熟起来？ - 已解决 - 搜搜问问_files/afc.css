@@ -1,0 +1,18 @@
+*{margin:0; padding:0;}
+body{ font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+em,cite{ font-style:normal; font-weight:normal;}
+a:link, a:visited, a:hover{color: #005599;}
+a em{ text-decoration:underline;}
+a img{ border:0;}
+.adPic1{ width:248px; border:1px solid #e7e7e7;}
+.ad1 {background: none repeat scroll 0 0 #FFFFFF;border: 1px solid #dddddd;font-size: 13px;padding: 5px 14px 3px;}
+.ad1 h2 {color: #999999;font-size: 12px;font-weight: normal;padding: 3px 0 0;text-align: right;}
+.ad1 em {color: #CC0033;}
+.ad1 li {padding: 5px 0 3px;list-style:outside none}
+.ad1 h3 {font-size: 16px;font-weight: normal;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width: 100%;}
+.ad1 p {padding: 5px 0 1px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap; width: 100%;}
+.ad1 p a:link, .ad1 p a:visited, .ad1 p a:hover {color: #000000;font-size: 13px;font-weight: normal;text-decoration: none;}
+.ad1 p a em {text-decoration: none;}
+.ad1 cite a:link, .ad1 cite a:visited, .ad1 cite a:hover {font-family:Arial;color: #008000;text-decoration: none;}
+.w220{ width:220px }
+.w690{ width:690px }

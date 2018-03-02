@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,a,img,strong,li,ol,ul, form,label,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;}
+body{font:normal normal normal 12px/1.5em Tahoma,Helvetica,Arial,Sans-Serif;text-align:center;height:100%;word-break:break-all;background:#fff;}
+div{text-align:left;}
+a{text-decoration:none;color:#059;}
+a:hover{text-decoration:underline;}
+a:active{outline:none;}
+u{text-decoration:none;white-space:nowrap;}
+li{list-style-type:none;}
+img{border-style:none;}
+fieldset{border-style:none;}
+label,button{cursor:pointer;}
+select,input,textarea{font-size:12px;line-height:1.2em;}
+table{border-collapse:collapse;border-style:none;}
+td{padding:0;border:0;font-size:12px;line-height:1.5em;}
+.main{background-color:#fff;}
+#web_login ul{padding:10px 0 0;}
+#web_login br{font-size:0;line-height:0;height:1px;overflow:hidden;}
+#web_login li{padding:5px 0;position:relative;}
+#web_login li span{font-size:12px;color:#000;text-align:right;display:-moz-inline-stack;display:inline-block;width:69px;}
+#web_login li input{color:#999;font-size:14px;font-family:Simsun;vertical-align:2px;*vertical-align:-5px;width:155px;height:18px;padding:0 3px 4px 3px;border:1px solid #ABABAB;}
+#web_login li input:focus{ color: #000;}
+#web_login li label #label_newreg,#web_login li label #label_forget_pwd{display:none;}
+#web_login #verifytip{color:#999;padding:0 0 0 53px;}
+#web_login #verifyshow{padding:7px 0 3px;}
+#changeimg_link{ display: block; margin-left: 68px;}
+#web_login #login_button,#qlogin_select .btn_select,.btn_gray{border:0;color:#000; width:109px;height:32px;cursor:pointer;background:url(http://cache.soso.com/wenwen/i/wenwen_inner_login.png) no-repeat; font-weight: normal; font-size: 12px;}
+#web_login #login_button:hover,#qlogin_select .btn_select:hover{ background-position: 0 -32px;}
+#web_login .login_button{margin-left:70px;padding:9px 0 18px;}
+#qlogin_select .btn_select,.btn_gray{ margin-left: 38px;}
+input[type=button]::-moz-focus-inner{outline:0;}
+.bind_accout{ display: none;}
+.lineright{ text-align: center; }
+.linecenter{text-align:center;padding:8px 12px 8px 8px;}
+.inputstyle{padding-top:4px!important;height:14px!important;font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;}
+.linemid{padding-top:10px;color:#125a96; text-align: center;}
+.btn_select,.btn_gray{border:0;color:#2473A2;}
+.btn_gray{background:url(http://imgcache.qq.com/ptlogin/v4/style/0/images/icons.gif) no-repeat -102px -225px;}
+#login #list_uin img{padding:7px;background:url(http://imgcache.qq.com/ptlogin/v4/style/0/images/icons.gif) no-repeat 0 -329px;}
+#list_uin li{list-style-type:none;margin:0; margin-bottom: 10px;}
+#list_uin span{margin-left:4px;}
+#login p{padding:17px 0 11px; text-align: center; margin:0;font-size:12px;color:#535353;}
+#list_uin{ padding-left: 48px; }
+.list_name{padding-left:0;}
+#web_login li.err_m{ text-align: center; color:#f00;display:none;}
+#web_login .err_m a{ display: none;}               
