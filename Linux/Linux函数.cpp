@@ -176,6 +176,52 @@ SIGPIPE //对已经关闭写半部的连接进行写操作,或产生SIGPIPE信�
 
 
 
+/***
+*  Socket pair , 产生一对 socket
+*  头文件 #include <sys/socket.h>
+*  成功返回值等于 0, 其他 -1
+***/
+int socketpair(int *domain, int type, int protocol, int socket_vector[2]);
+#define _XOPEN_SOURCE_EXTENDED 1
+int32_t fd[2];
+int32_t ret = socketpair(AF_UNIX, SOCK_STREAM, 0, fd);
+
+/***
+*   select 
+*   头文件  #include <sys/select.h>
+*   #include <sys/time.h>
+*   #include <sys/types.h>
+*   #include <unistd.h>
+*   成功返回表示已经准备好的 fd 数量, 其他 -1
+* 注意
+*   1. 每次 select 返回后都会修改其参数内容， 需要重新对参数赋值
+*   2. nfds 为观察的最大 fd + 1	, 应该找到最大的  fd 并将其 +1 赋值给 nfds
+*   3. fd 为 0 的参数是命令行输入fd
+*   4. select 一般不要去用 timeout, 当没数据来时服务器阻塞在那就行.
+*   5. 当 select 返回后， 要检查所有关注的 fd 是否 FD_ISSET
+*   6. 经典例子 http://man7.org/linux/man-pages/man2/select_tut.2.html
+***/
+ struct timeval {
+                      time_t tv_sec;    /* seconds */
+                      long tv_usec;     /* microseconds */
+                  };
+int select(int nfds, fd_set *readfds, fd_set *writefds,
+                  fd_set *exceptfds, struct timeval *utimeout);
+
+void FD_CLR(int fd, fd_set *set);
+int  FD_ISSET(int fd, fd_set *set);
+void FD_SET(int fd, fd_set *set);
+void FD_ZERO(fd_set *set);
+
+// 例子
+int32_t fd[128];
+fd_set readset;
+FD_ZERO(&readset);
+FD_SET(fd[0], &readset);
+FD_SET(fd[1], &readset);// 每个都要加入
+select(fd[1]+1,&readset,nullptr, nullptr, 0);
+FD_ISSET(fd_[1], &readset); // 判断是否是这个消息
+
 
 
 /* --------------EPOLL
