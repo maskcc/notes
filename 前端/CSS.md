@@ -252,5 +252,8 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 - 隐藏style="display:none"
 - 背景图body {background-image: url(/i/eg_bg_04.gif);}
 - 元素靠右 float:right 后面一般加个`<br />`如果后面元素需要换行.
+- border-collapse: collapse; 将 表格的两边框合并为一条
+- vertical-align: center; 设置垂直方向的位置
+- 设置文本在图片下面居中， 需要设置图片`display:inline-block`, 再将其上层设置为  `text-align: center`
 
 
