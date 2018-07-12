@@ -107,7 +107,10 @@
 	- tr, 一列数据
 		- th 表格头, 表示表头
 		- td 表格数据
-		- 有一个 scope 属性， 设置为  col 表示列表头， 设置为 row  表示为行表头
+		- th有一个 scope 属性， 设置为  col 表示列表头， 设置为 row  表示为行表头, 主要是为了方便 ScreenReader for blind
+			- scope="colgroup", scope="col". 对于上面有大分类的表头， 如 人， 设置属性为 scope="colgroup", 下面的 列男人， 
+			女人设置为 scope="col" 表示从属关系 
+		- colspan  和 rowspan 设置跨越 row 和  col 的宽度
 	- thead， `<thread></thread>`,  表示表头内容, 方便css 设置格式
 	- tbody, `<tbody></tbody>`, content 内容 
 	- tfoot， `<tfoot></tfoot>`, 脚注	
@@ -117,13 +120,16 @@
 	- disabled, 禁用
 	- form, 关联的 form id
 	- formaction, 处理这个按钮的网页
+	- method="post"
 	- formmethod, 为 post 或 get
 	- type, submit 提交内容, reset 将form 内容设置为默认, button 操作本地js
 	- value, 默认信息， 当表单没填信息时
 - form 表格， 
 	- action， 可以被 input或 button 的 formaction覆盖掉
 	- target, 网页结果展示目标
-	- name 参数是key， value 是提交的属性, 一个页面只有一个提交， type = submit 就是提交按钮
+	- name 参数是key， value 是提交的属性, 一个页面只有一个提交， type = submit 就是提交按钮, 一定要对name 属性赋值才会提交数据
+	- filedset 标签描述下面标签的用途, 可以在下面的组下用  legend 分组, legend标签内部为描述内容
+	- enctype="multipart/form-data" 传送文件, application/x-www-form-urlencoded 这是已编码为URL参数的表单数据
 - input 输入框,
 	- type, 输入类型
 		- button 按钮, 没有默认操作 <input type=button value=submit>
@@ -132,17 +138,20 @@
 		- checkbox 选择框 <input type=checkbox>
 		- color 字体颜色 <input type=color>
 		- file 选择文件 <input type=file>, accept 设置可接收的类型, audio/* video/* image/* 
-		- image, 图片， 可以设置 src, title, alt, height, width 属性
+		- image, 图片， 可以设置 src, title, alt, height, width 属性, 会提交点击的坐标， name.x, name.y
 		- password 密码 maxlength, minlength  最大最小长度
 		- date 输入一个日期 <input type=date>
 		- datetime-local 无时区， 本地时间
 		- email  <input type=email>		
 		- hidden 隐藏， 但是可以被提交到服务器		
 		- month 输入月份
-		- number 输入数字 
-		- range 进度条
+		- number 输入数字,有 max, min, step 属性，  step 是设置改变的步长的
+		- range 进度条,滑块
 		- reset 设置为默认内容
 		- submit 提交表单
+		- ratio 单选框, 如果它们的name属性共享相同的值，那么它们将被认为属于同一组的按钮
+	- list 属性， 绑定一个 datalist 的id， 会自动填充匹配内容
+	- name, __一定要对name 属性赋值才会提交数据__
 	- autocomplete 是否能被浏览器自动填充, "off", "on", 还有许多常见默认属性 
 	- autofocus  自动聚焦， 加载完页面后
 	- checked 是否被选中 
@@ -156,6 +165,9 @@
 	- required  必须填写, optional 选填
 	- size 默认长度是20 
 	- value 默认值
+	- required 不能为空， css 中 input:valid 样式表示内容有误时的显示
+	- pattern="banana|cherry" 表单验证中的正则表达式
+	- maxlength 最大字数, minlength 最小
 - textarea 文本输入框
 	- form
 	- cols 行数, rows	
@@ -226,7 +238,7 @@
 		  alt="An awesome picture">	
 		  <figcaption>MDN Logo</figcaption>
 		</figure>
-
+- meter, 仪表盘 `<meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>`
 ## 列表
 - ul　--> li 无序列表
 - ol --> li 有序列表　　
@@ -297,6 +309,7 @@
 		   download="firefox-latest-64bit-installer.exe">
 		  Download Latest Firefox for Windows (64-bit) (English, US)
 		</a>
+- white-space:nowrap 设置文档不换行
 
 ##样式标签
 <style>定义样式</style>
@@ -319,3 +332,4 @@
 - [Introduce to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
 - [HTML5参考](https://html.spec.whatwg.org/multipage/indices.html#element-content-categories)
 - [标签列表](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
+- [[html module1]](https://html5up.net/) [[module2]](https://freehtml5.co/)
