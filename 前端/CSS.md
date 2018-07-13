@@ -1,3 +1,5 @@
+[@CSS参考文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
+[@CSS 指南 ](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS)
 ##简介
 CSS全称`层叠样式表(Cascading Style Sheets)`,主要用于定义HTML内容在浏览器内的显示样式(文字大小,颜色,加粗等).通过定义某个样式让不同网页位置的文字有__统一的字体,字号,颜色等__.
 
@@ -252,7 +254,19 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 		  left: 17;		  
 		}
 		
+
+##@规则和嵌套语句
+任何不是规则集或@-规则或嵌套语句的 CSS 语句都是无效的，并会因此被忽略。
 		
+## 常见简写
+可以在一行设置多个属性.
+  
+- font
+- background `background: red url(bg-graphic.png) 10px 10px repeat-x fixed;`
+- padding `padding: 10px 15px 15px 5px;`
+- border
+- margin
+
 ##常见style
 - 隐藏style="display:none"
 - 背景图body {background-image: url(/i/eg_bg_04.gif);}
