@@ -29,7 +29,7 @@ CSS全称`层叠样式表(Cascading Style Sheets)`,主要用于定义HTML内容�
 		</style>
 		<span class="stress">圆神</span>
 
-###CSS中的选择器
+###CSS中的选择器,[参考页面](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 - ID选择器, 设置标签时为`id="ID"名称`.ID选择符的前面是`#`,如下:
 		
 		#setGreen{
@@ -37,7 +37,24 @@ CSS全称`层叠样式表(Cascading Style Sheets)`,主要用于定义HTML内容�
 		}
 		<span id="setGreen">公开课</span>
 
-- ID选择器在一个Html文档中只__能使用一次__,类选择器可以使用列表方法为同一个原色设置多个样式,而ID选择器并不能.如`<span class="setGreen bigSize">data</span>`.
+- ID选择器在一个Html文档中只__能使用一次__,类选择器可以使用列表方法为同一个元素设置多个样式,而ID选择器并不能.如`<span class="setGreen bigSize">data</span>`.
+- 属性选择器, [attr], 选择包含 	attr 属性的所有元素, [attr=val] 选择  attr 属性为  val 的所有元素， [attr~=val], val 值是 attr 属性包含的被空格分隔的一个属性时. 如下， `data-vegetable` 是一个属性 
+
+	<style>
+	[data-vegetable] {
+	  color: green
+	}</style>
+	<ul>
+	  <li data-quantity="1kg" data-vegetable>Tomatoes</li>
+	  <li data-quantity="3" data-vegetable>Onions</li>	  
+	</ul>
+	
+- 子串值属性选择器,
+
+	- [attr|=val] : 选择attr属性的值是 val 或值以 val- 开头的元素（注意，这里的 “-” 不是一个错误，这是用来处理语言编码的）。
+	- [attr^=val] : 选择attr属性的值以 val 开头（包括 val）的元素。
+	- [attr$=val] : 选择attr属性的值以 val 结尾（包括 val）的元素。
+	- [attr*=val] : 选择attr属性的值中包含子字符串 val 的元素（一个子字符串就是一个字符串的一部分而已，例如，”cat“ 是 字符串 ”caterpillar“ 的子字符串）。 
 - 子选择器,会渲染标签的所有子元素,在大于号`>`的右侧添加选择的内容如:
   
 		<style type="text/css"> 
@@ -60,7 +77,7 @@ CSS全称`层叠样式表(Cascading Style Sheets)`,主要用于定义HTML内容�
 		        </ul>
 		    </li>
 		</ul>
-- 包含(后代)选择器,加入空格,用于选择自定标签元素下的后辈元素.即所有元素`> 作用域第一代后代,空格作用于元素的所有后代`.如:
+- 包含(后代)选择器,加入空格,如 `A B`, B是A的后代节点或者子节点的子节点,用于选择自定标签元素下的后辈元素.即所有元素`> 作用域第一代后代，直接子节点,空格作用于元素的所有后代`. `A+B`B是A的下一个兄弟节点， AB有相同父节点， 且B紧跟在A后, `A~B` B是A的兄弟节点后的任意一个.p:nth-child(1), 选定段落的特定行. 如:
 
 		<style type="text/css">
 			.first span{color:red;}
@@ -68,11 +85,40 @@ CSS全称`层叠样式表(Cascading Style Sheets)`,主要用于定义HTML内容�
 		<p class="first">三年级时，我还是一个<span>胆小如鼠</span>的小女孩<span>他们都好傻啊</sapn></p>
 
 - 通用选择器会用一个`*`指定,会将匹配html中的所有标签元素.`* {color:red}`所有html标签颜色指定为红色.
-- 伪类选择符,在CSS3中它允许给html不存在的标签设置样式,如鼠标滑过状态:`a:hover{color:red;}`, `p:hover{color:red;}`.但是由于兼容问题,常用`a:hover的组合`.
+- 伪类选择符,在CSS3中它允许给html不存在的标签设置样式,如鼠标滑过状态:`a:hover{color:red;}`, `p:hover{color:red;}`.但是由于兼容问题,常用`a:hover的组合`. [属性参考.](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements)
+- 伪元素, 前缀是两个冒号, 添加到选择器后面选择某个元素的某个部分.
+
+	- ::after
+	- ::before
+	- ::first-letter
+	- ::first-line
+	- ::selection
+	- ::backdrop
+
+	/* 所有含有"href"属性并且值以"http"开始的元素，
+	将会在其内容后增加一个箭头（去表明它是外部链接）
+	*/
+	<style>
+	[href^=http]::after {
+	  content: '⤴';
+	}
+	</style>
+
+	<a href="http://www.baidu.com">google</a>
 - 分组选择标签,一次为多个标签设置样式,便签间使用逗号隔开如:`h1, span{color:red;}`
 
 ###CSS的继承,层叠和特殊性
-- css__某些样式__有继承性,如p标签下设置红色属性,其下面的span标签也会继承该红色属性
+- css__某些样式__有继承性,如p标签下设置红色属性,其下面的span标签也会继承该红色属性， 而  margin, padding, 和 border 等不会继承, [具体参考文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
+- inherit属性， 可以继承父类属性, initial 如果没设置就继承自浏览器， 否则是 inherit, unset 不继承， 为其自然属性, rever 如果没设置属性就被设置成用户代理的默认样式(浏览器样式)
+
+		body {
+		  color: green;
+		}		
+		span a {
+		  color: inherit;
+		}
+		blockquote { all: inherit; }
+
 - 特殊性,如果对同一个元素设置了不同的css样式代码,会根据权值来设置.权值规则:
 
 		标签权值为1, 类选择符权值为10, ID选择符权值最高位100,继承权值0.1最低
@@ -140,12 +186,22 @@ css中块级元素都从新的一行开始,并且气候的元素也得另起一�
 		border-left:1px solid red;
 
 ###和模型的宽度和高度
-css内定义的宽和高指的是填充以内的内容范围.盒子的实际宽度=左边界 + 左边框 + 内容宽度 + 右边框 + 右边界.高度同理.块状元素的特点之一：在不设置宽度的情况下，显示为父容器的100%.元素与其他元素间的距离用margin设置.padding在框里面,margin在框外面.
+- css内定义的宽和高指的是填充以内的内容范围, 就是 width 和  height， 也可以设置为min-width、max-width、min-height 和 max-height。  
+- 盒子的实际宽度=左边界 + 左边框 + 内容宽度 + 右边框 + 右边界.高度同理.
+- 块状元素的特点之一：在不设置宽度的情况下，显示为父容器的100%.元素与其他元素间的距离用margin设置.padding在框里面,margin在框外面.
+- marin 当两个外边框彼此接触时外边距取最大的一个
+- 可以使用 box-sizing:border-box, content-box(默认值, 设置 Content 的大小), 用来设置 width 和 height 的表现方式, 当设置为 border-box 时会以外边框来作为长宽.
+- 当文字超出界限时， 设置三种溢流属性
+	- overflow: auto;   // 使用滑块
+	- overflow: hidden; //被遮挡
+	- overflow: visible;// 会溢出框外
 
+		// border 填充可以是更具体的内容， 如 border-top, border-right, border-bottom, border-left，
+		// border-width, border-style, border-color，  border-top-width, border-top-style, border-top-color 等 
 		div{
 			width:200px;
 			padding:20px;/*内边边距*/
-			border:1px solid red;
+			border:1px solid red;/*也能设置 border-left 等具体位置信息*/			
 			margin:10px;/*外边距*/
 		填充
 		div{
@@ -265,6 +321,7 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 - background `background: red url(bg-graphic.png) 10px 10px repeat-x fixed;`
 - padding `padding: 10px 15px 15px 5px;`
 - border
+- border-width: 0 0 0 5px; 指定边框宽度
 - margin
 
 ##常见style
@@ -272,7 +329,9 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 - 背景图body {background-image: url(/i/eg_bg_04.gif);}
 - 元素靠右 float:right 后面一般加个`<br />`如果后面元素需要换行.
 - border-collapse: collapse; 将 表格的两边框合并为一条
+- boder: none; boder 可以设置为 none 来不显示边框 
 - vertical-align: center; 设置垂直方向的位置
 - 设置文本在图片下面居中， 需要设置图片`display:inline-block`, 再将其上层设置为  `text-align: center`
+- opacity: 不透明度, 指定其所有元素以及其所有孩子元素的不透明度
 
 
