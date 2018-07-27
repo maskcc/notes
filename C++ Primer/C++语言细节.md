@@ -196,7 +196,20 @@
     指针在32位和64位机器上有差别, 32位机器上为4字节, 64位机器上为8字节
     long 在32 位和64位机器上也有区别, 不过也的看编译器, 一般 在32位机器上为 4字节, 在64位机器上为8字节
     long long 一般不论编译器都定义为8字节
+31. c++ 中，  One of the guidelines for C++ compilers, in order to resolve code ambiguities, is: when something can be a function declaration, it is a function declaration.
+	(编译器总是倾向于将一些歧义的语句解释为申明。[stackoverflow参考](https://stackoverflow.com/questions/5116541/difference-between-creating-object-with-or-without)). 
+	[编译器参考文档2](https://caligari.dartmouth.edu/doc/ibmcxx/en_US/doc/language/ref/rnrslvng.htm)如下代码
 
+		class Foo{
+		public:
+			Foo(){
+				cout << "constructed" << endl;
+			}
+		}
+		int main(){
+			Foo f(); // 是一个函数声明， 一个返回 Foo 的函数 f, 
+			Foo k;   // 是 foo 的一个对象
+		}
 
 
 			

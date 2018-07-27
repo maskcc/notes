@@ -333,5 +333,17 @@ line-height 属性设置行间的间距(行高).其值可以为百分比或者�
 - vertical-align: center; 设置垂直方向的位置
 - 设置文本在图片下面居中， 需要设置图片`display:inline-block`, 再将其上层设置为  `text-align: center`
 - opacity: 不透明度, 指定其所有元素以及其所有孩子元素的不透明度
+- 背景图设置:
+	- background-size    : 140px;
+  	- background-position: center;
+  	- background-image   : url('https://mdn.mozillademos.org/files/11947/ff-logo.png');
+  	- background-color   : gold;
+
+- 背景图区域设置
+	- background-clip: border-box;
+	- background-clip: padding-box;
+	- background-clip: content-box;
+- outline, 轮廓, 边框外围的一圈
+	-  outline-style, outline-width 和 outline-color
 
 
