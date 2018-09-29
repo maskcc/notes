@@ -3,3 +3,5 @@
 3. [EPOLL的ET和LT模式](http://blog.csdn.net/apengjiang/article/details/8850053)
 4. [ulimit 来修改系统性能](https://www.ibm.com/developerworks/cn/linux/l-cn-ulimit/index.html)
 5. [初学linux 常见命令及列子](https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/06_monitor.html)
+6. [Linux IO 优化](https://www.cnblogs.com/shengs/p/5085980.html)
+7. [Linux 内存地址空间分配 ](http://www.cnblogs.com/clover-toeic/p/3754433.html)
