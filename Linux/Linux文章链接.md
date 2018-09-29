@@ -2,3 +2,4 @@
 2. [Linux后台进程管理fg等命令](http://blog.csdn.net/fengyifei11228/article/details/5737371)
 3. [EPOLL的ET和LT模式](http://blog.csdn.net/apengjiang/article/details/8850053)
 4. [ulimit 来修改系统性能](https://www.ibm.com/developerworks/cn/linux/l-cn-ulimit/index.html)
+5. [初学linux 常见命令及列子](https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/06_monitor.html)

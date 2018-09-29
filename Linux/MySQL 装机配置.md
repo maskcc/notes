@@ -173,3 +173,6 @@
 		set global net_buffer_length=1000000;
 - 执行后要将这些选项设置成默认的， 特别是`autocommit`, `unique_checks`, `unique_checks`
 - 执行 `service mysql restart`
+
+### 导出数据
+mysqldump --opt -uroot -p123 test > test.dump # 加上 --opt 会添加如果表存在先 drop 的操作, --no-data 只备份表结构
