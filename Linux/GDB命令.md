@@ -127,3 +127,18 @@
 34. x/w addr 以二进制方式输出指定地址处的4字节
 35. p/format var x: 16进制, d: 有符号整数, u:无符号整数 o:八进制数值 t|b 二进制数值  c: 字符 f: 浮点 a:16进制地址
 36. print *arr@len 输出数组arr的前len个成员
+37. c++ 中打印  stl 数据结构使用 python 脚本,[GDB 参考](https://sourceware.org/gdb/wiki/STLSupport)
+	
+	1. Check-out the latest Python libstdc++ printers to a place on your machine. In a local directory, do:
+
+
+			svn co svn://gcc.gnu.org/svn/gcc/trunk/libstdc++-v3/python
+
+	2. Add the following to your ~/.gdbinit. The path needs to match where the python module above was checked-out. So if checked out to: /home/maude/gdb_printers/, the path would be as written in the example:
+	
+			python
+			import sys
+			sys.path.insert(0, '/home/maude/gdb_printers/python')
+			from libstdcxx.v6.printers import register_libstdcxx_printers
+			register_libstdcxx_printers (None)
+			end

@@ -134,11 +134,18 @@
 - 给用户设置远程权限
 
 		update user set host = '%' where user = 'root';
+- 忘记mysql密码时， 可以使用如下 ：
+
+		mysqld --skip-grant-tables # 不需要密码直接进入, mysql -uroot -p
+		# 在lampp 时， 可以
+		/opt/lampp/sbin/mysqld --skip-grant-tables
+
 
 ### 0x04 导入大量数据, 参考[[1]](http://www.serhatdundar.com/blog/import-huge-databases-faster-in-mysql),[[2]](https://dba.stackexchange.com/questions/44297/speeding-up-mysqldump-reload/44309#44309),[[3]](https://dba.stackexchange.com/questions/150962/mysql-settings-useful-to-speed-up-a-mysqldump-import),[[4]](https://dba.stackexchange.com/questions/83125/mysql-any-way-to-import-a-huge-32-gb-sql-dump-faster)
 - 经常使用如下命令导入数据表, 如果要一次性导入多张表， 可以在sh 文件中添加多行来导入多张数据表 
 
 		mysql -u username -p 'pwd' some_db < database1.sql
+
 
 - 在 my.cnf 中修改配置, 关系如下![](https://p5g5pw-sn3302.files.1drv.com/y4m9ZoxeL1h_aft60cuBkGm1j5OFjwmbj62KVca5HhJlUBUXsHtrZVDZCM7iS2KMvnkwtkcsgArXPXig-m-ZtN9BWzEgJLoLdZDlEg5hnOPwh60SM_X-ZRjvfd8CI-rwLIW6JbvI_oYdG-Z290IDtNDHqxD7an6doFy8ohFT4eX-GoeeSKl9g7M0X7KKU31Ne6v0zfJz9_UthXTzaJLWYwFdA?width=803&height=601&cropmode=none)
 
