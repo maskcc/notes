@@ -38,3 +38,39 @@ egrep 是扩展的grep, 支持更多的元字符
 	2. `?` gr?p     //匹配零个或多个先前的字符
 	3. `a|b|c`      //匹配a或b或c,如(grep) | (sed)
 	4. `()`         //分组符号,如 love(able|rs)ov+, 匹配loveableov 或loversov
+	
+## 输出配色设置
+这里用到grep的一个参数-color，color有三个值供选择：never、always、auto。
+always和auto的区别就是，always会在任何情况下都给匹配字段加上颜色标记，当通过管道或重定向时就会多出一些控制字符，结果会变成
+
+		export ^[[1;32m^[[KGREP^[[m^[[K_OPTIONS='-color=always'
+
+而auto则只在输出到终端时才加上颜色。
+
+
+可以在.bashrc里加上
+export GREP_OPTIONS='-color=auto'
+来实现高亮匹配，具体用什么颜色，可以通过
+export GREP_COLOR='a;b' #默认是1;31，即高亮的红色
+来设置，其中:
+
+	a可以选择:【0,1,4,5,7,8】
+	0 关闭所有属性
+	1 设置高亮度
+	4 下划线
+	5 闪烁
+	7 反显
+	8 消隐
+
+	b可以选择:【30-37或40-47】
+	30 black
+	31 red
+	32 green
+	33 yellow
+	34 blue
+	35 purple
+	36 cyan
+	37 white
+	30 — 37 设置前景色
+	40 — 47 设置背景色
+	
