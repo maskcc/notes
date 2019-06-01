@@ -1,4 +1,5 @@
 [参考文档](http://www.cnblogs.com/dmcpxy/archive/2012/02/28/grep-normal-usage.html)
+[参考 man](http://man7.org/linux/man-pages/man1/grep.1.html)
 ##grep的参数
 1. -c 只输出匹配行的计数
 2. -i 不区分大小写
@@ -11,11 +12,16 @@
 9. -B num 打印匹配行的上文num行
 10. -C num 打印匹配行的上下num行
 
+
 		grep -C number pattern files ：匹配的上下文分别显示[number]行，
 11. -m NUM 找到num个匹配的行后不再读这个文件
 12. -R/-r 递归地读每一目录下的所有文件
 13. -R/-r --include=PATTERN 仅仅在搜索匹配PATERN的文件时在目录中递归搜索.
 14. -R/-r --exclued=PATTERN 在目录中递归搜索,但是跳过匹配PATTERN的文件
+15. -s --no-messages 不打印错误消息(不存在或不可读的文件)
+16. -a 把 binary file 当成 text 来过滤
+17. --include=GLOB 只找文件名匹配 GLOBG的
+18. wildcard matching
 
 ##grep中的正则表达式
 1. ^ 匹配行首
@@ -73,4 +79,11 @@ export GREP_COLOR='a;b' #默认是1;31，即高亮的红色
 	37 white
 	30 — 37 设置前景色
 	40 — 47 设置背景色
+	
+## cut 使用
+1. -c=LIST 只查找这些字符
+2. -d --delimiter=Delim 使用分隔符 delim 替代Table
+3. -f --fields=LIST 只选择这些字段
+4. -s 不打印不包含分隔符的行
+5. -z 使用NULL 分割字符, 不是用新的行
 	

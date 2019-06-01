@@ -70,5 +70,23 @@ date 发现系统时区不对, 使用 `tzselect` 选择时区,会生成一个修
 ##0x13
 使用 GDB 调试程序时, 使用watch 观测变量时, 如果观测点如  (bool *) 0x7ffff7efc278 处, 此处变量为 bool值, 当运行程序时程序会变得非常慢, 因为观测时使用了
 强制转换, 可以直接观测  *0x7ffff7efc278 内存处.[stf](https://stackoverflow.com/questions/2446116/gdb-hardware-watchpoint-very-slow-why)
-             
+
+## 0x14
+在windows 和linux 系统同时编辑源码时, 可能会出现windows 下得某行代码不被编译, 调试时也时直接跳过, 但是把这行放到后面几行时, 就可以编译这行. 类似代码如下:
+	
+	#1 int a = 9;
+	#2 if( a > 0){
+	#3	a = 1; // 把 a 设置为 1
+	#4	cout << "a:" << a << endl;
+	#5 }
+            
+	会发现第4行并没生效, 什么也没有打印, 将第4行移动到第5行, 就可以打印.
+	这时由于 windows 和  Linux下换行符的区别造成的问题, 可能 第3行是在 linux 下编写的, 换行符是 LF, 但是到了windows, 换行符得是 CRLF, 
+	会不认为第三行后有换行, 把第四行也认为是注释内容! 代码其实如下 
+	
+	#1 int a = 9;CRLF
+	#2 if( a > 0){CRLF
+	#3	a = 1; // 把 a 设置为 1 LF
+	#4	cout << "a:" << a << endl;CRLF
+	#5 }CRLF
          
