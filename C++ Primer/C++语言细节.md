@@ -211,5 +211,8 @@
 			Foo k;   // 是 foo 的一个对象
 		}
 
+32. 在对 map 中的数据进行sort 排序时, 要注意将比较操作函数修改为  const, 因为如果在其中修改了key, 可能导致重排, 正确写法
 
-			
+		bool operator<(const A& rsh) const{
+			return rsh.x < x;
+		}
