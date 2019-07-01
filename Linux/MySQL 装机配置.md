@@ -139,6 +139,8 @@
 		mysqld --skip-grant-tables # 不需要密码直接进入, mysql -uroot -p
 		# 在lampp 时， 可以
 		/opt/lampp/sbin/mysqld --skip-grant-tables
+		#或者直接清空密码 
+		mysqladmin -u root -pType_in_your_current_password_here password ''
 
 
 ### 0x04 导入大量数据, 参考[[1]](http://www.serhatdundar.com/blog/import-huge-databases-faster-in-mysql),[[2]](https://dba.stackexchange.com/questions/44297/speeding-up-mysqldump-reload/44309#44309),[[3]](https://dba.stackexchange.com/questions/150962/mysql-settings-useful-to-speed-up-a-mysqldump-import),[[4]](https://dba.stackexchange.com/questions/83125/mysql-any-way-to-import-a-huge-32-gb-sql-dump-faster)
