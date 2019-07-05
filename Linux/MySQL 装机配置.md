@@ -185,3 +185,5 @@
 
 ### 导出数据
 mysqldump --opt -uroot -p123 test > test.dump # 加上 --opt 会添加如果表存在先 drop 的操作, --no-data 只备份表结构
+### 导入数据
+# mysql -uroot -p123456 < runoob.sql
