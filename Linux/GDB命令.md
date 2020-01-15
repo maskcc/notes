@@ -142,3 +142,7 @@
 			from libstdcxx.v6.printers import register_libstdcxx_printers
 			register_libstdcxx_printers (None)
 			end
+			
+38. 设置打印字符串长度
+
+		set print elements [n] 
