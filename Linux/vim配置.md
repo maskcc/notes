@@ -117,5 +117,7 @@
         set fileencodings=ucs-bom,utf-8,GB18030,gbk
     
 
+11. vim 显示不可见字符
 
+		:set invlist
    
