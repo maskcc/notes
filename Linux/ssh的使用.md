@@ -13,7 +13,7 @@ SSH的一些基本常识
 
         $ ssh-keygen -t rsa -C "mio@163.com"   //后面都按回车，密码为空.
 
-7. 生成的`id_rsa`(私钥),和`id_rsa.pub`公钥.一般存放在 `/home/mio(用户名)/.ssh`文件中，可以通过`ls -an` 看到.
+7. 生成的`id_rsa`(私钥),和`id_rsa.pub`公钥.一般存放在 `/home/mio(用户名)/.ssh`文件中，可以通过`ls -an` 看到. 目录 .ssh 的权限应该是 `chmod ~/.ssh 700`
 8. 将公钥添加到GitHub中.网址:[https://github.com/settings/ssh](https://github.com/settings/ssh).点击 `Add SSH key`将 `cat /home/mio/.ssh/id_rsa.pub`的内容粘贴到提示框中.git中就能使用ssh了.
 
 8. ssh到`localhost`免密码:
@@ -54,3 +54,7 @@ SSH的一些基本常识
 
         eval `ssh-agent -s` //这里是1左边的符号 `
         ssh-add
+16. 可以查看登录相关错误在 /var/log/secure, 可能的问题:
+	1. .ssh 目录权限需要设置为 700
+	2. 需要将 id_rsa 写入 authorized_keys, 且其权限应该是 `600`
+	3. 公钥需要权限是 `644`
